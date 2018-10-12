@@ -16,7 +16,7 @@
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<var>2705</var>
+			<var>2706</var>
 		</line>
 		<line linenr="003" indent="" />
 		<line linenr="004" indent="">
@@ -7093,7 +7093,7 @@
 			<text> </text>
 			<text>type</text>
 			<text>=</text>
-			<var>{Argon Cahoona Bakery L}</var>
+			<var>{Argon Cahoona Bakery XL}</var>
 			<text> </text>
 			<text>status</text>
 			<text>=</text>
@@ -7253,7 +7253,7 @@
 			<text> </text>
 			<text>type</text>
 			<text>=</text>
-			<var>{Teladianium Foundry L}</var>
+			<var>{Teladianium Foundry XL}</var>
 			<text> </text>
 			<text>status</text>
 			<text>=</text>
@@ -16968,14 +16968,14 @@
 			<text>/</text>
 			<text>station</text>
 		</line>
-		<line linenr="1344" indent="&#160;">
+		<line linenr="1344" indent="&#160;&#160;">
 			<var>$oneDefender</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<var>[FALSE]</var>
 		</line>
-		<line linenr="1345" indent="&#160;">
+		<line linenr="1345" indent="&#160;&#160;">
 			<var>$XS.Iterator22</var>
 			<text> </text>
 			<text>=</text>
@@ -16988,17 +16988,17 @@
 			<text> </text>
 			<var>$ships</var>
 		</line>
-		<line linenr="1346" indent="">
+		<line linenr="1346" indent="&#160;&#160;&#160;">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator22</var>
 		</line>
-		<line linenr="1347" indent="">
+		<line linenr="1347" indent="&#160;&#160;">
 			<text>dec</text>
 			<text> </text>
 			<var>$XS.Iterator22</var>
 		</line>
-		<line linenr="1348" indent="">
+		<line linenr="1348" indent="&#160;">
 			<var>$ship</var>
 			<text> </text>
 			<text>=</text>
@@ -17008,7 +17008,7 @@
 			<var>$XS.Iterator22</var>
 			<text>]</text>
 		</line>
-		<line linenr="1349" indent="">
+		<line linenr="1349" indent="&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$ship</var>
@@ -17037,23 +17037,23 @@
 			<text> </text>
 			<var>[TRUE]</var>
 		</line>
-		<line linenr="1351" indent="&#160;">
+		<line linenr="1351" indent="">
 			<text>break</text>
 		</line>
-		<line linenr="1352" indent="&#160;&#160;">
+		<line linenr="1352" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1353" indent="&#160;&#160;">
+		<line linenr="1353" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1354" indent="&#160;&#160;">
+		<line linenr="1354" indent="">
 			<text>skip</text>
 			<text> </text>
 			<text>if</text>
 			<text> </text>
 			<var>$oneDefender</var>
 		</line>
-		<line linenr="1355" indent="&#160;&#160;" interruptable="@">
+		<line linenr="1355" indent="&#160;" interruptable="@">
 			<text>START</text>
 			<text> </text>
 			<var>[NULL]</var>
@@ -17094,12 +17094,12 @@
 		</line>
 		<line linenr="1361" indent="&#160;&#160;" />
 		<line linenr="1362" indent="&#160;&#160;" />
-		<line linenr="1363" indent="&#160;&#160;&#160;">
+		<line linenr="1363" indent="&#160;&#160;">
 			<var>Maintenance</var>
 			<text>:</text>
 		</line>
-		<line linenr="1364" indent="&#160;&#160;&#160;&#160;" />
-		<line linenr="1365" indent="&#160;&#160;&#160;&#160;">
+		<line linenr="1364" indent="&#160;&#160;" />
+		<line linenr="1365" indent="&#160;&#160;">
 			<var>$gameVersion</var>
 			<text> </text>
 			<text>=</text>
@@ -17115,8 +17115,8 @@
 			<text>=</text>
 			<text>'mayhemVersion'</text>
 		</line>
-		<line linenr="1366" indent="&#160;&#160;&#160;&#160;&#160;" />
-		<line linenr="1367" indent="&#160;&#160;&#160;&#160;&#160;">
+		<line linenr="1366" indent="&#160;&#160;" />
+		<line linenr="1367" indent="&#160;&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17125,8 +17125,8 @@
 			<text> </text>
 			<var>$currentVersion</var>
 		</line>
-		<line linenr="1368" indent="&#160;&#160;&#160;&#160;&#160;" />
-		<line linenr="1369" indent="&#160;&#160;&#160;&#160;&#160;">
+		<line linenr="1368" indent="&#160;&#160;&#160;&#160;" />
+		<line linenr="1369" indent="&#160;&#160;&#160;&#160;">
 			<text>set</text>
 			<text> </text>
 			<text>global</text>
@@ -17143,7 +17143,7 @@
 			<var>$currentVersion</var>
 		</line>
 		<line linenr="1370" indent="&#160;&#160;&#160;&#160;&#160;" />
-		<line linenr="1371" indent="&#160;&#160;&#160;&#160;">
+		<line linenr="1371" indent="&#160;&#160;&#160;&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17152,14 +17152,14 @@
 			<text> </text>
 			<var>2500</var>
 		</line>
-		<line linenr="1372" indent="&#160;&#160;&#160;&#160;">
+		<line linenr="1372" indent="&#160;&#160;&#160;&#160;&#160;">
 			<var>$t</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Sorry my love, your game is fucked. Super Panda.'</text>
 		</line>
-		<line linenr="1373" indent="&#160;&#160;&#160;">
+		<line linenr="1373" indent="&#160;&#160;&#160;&#160;&#160;">
 			<text>send</text>
 			<text> </text>
 			<text>incoming</text>
@@ -17179,7 +17179,7 @@
 			<text>=</text>
 			<var>1</var>
 		</line>
-		<line linenr="1374" indent="&#160;&#160;">
+		<line linenr="1374" indent="&#160;&#160;&#160;&#160;&#160;">
 			<text>display</text>
 			<text> </text>
 			<text>info</text>
@@ -17210,17 +17210,17 @@
 			<text> </text>
 			<var>1000</var>
 		</line>
-		<line linenr="1375" indent="&#160;&#160;">
+		<line linenr="1375" indent="&#160;&#160;&#160;&#160;">
 			<text>play</text>
 			<text> </text>
 			<text>sample</text>
 			<text> </text>
 			<var>1217</var>
 		</line>
-		<line linenr="1376" indent="&#160;&#160;">
+		<line linenr="1376" indent="&#160;&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1377" indent="&#160;&#160;" />
+		<line linenr="1377" indent="&#160;&#160;&#160;" />
 		<line linenr="1378" indent="&#160;&#160;">
 			<text>if</text>
 			<text> </text>
@@ -17230,18 +17230,18 @@
 			<text> </text>
 			<var>2501</var>
 		</line>
-		<line linenr="1379" indent="&#160;">
+		<line linenr="1379" indent="&#160;&#160;">
 			<var>$versionText</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.1'</text>
 		</line>
-		<line linenr="1380" indent="">
+		<line linenr="1380" indent="&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1381" indent="" />
-		<line linenr="1382" indent="">
+		<line linenr="1381" indent="&#160;&#160;" />
+		<line linenr="1382" indent="&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17257,11 +17257,11 @@
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.2'</text>
 		</line>
-		<line linenr="1384" indent="&#160;">
+		<line linenr="1384" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1385" indent="&#160;" />
-		<line linenr="1386" indent="&#160;">
+		<line linenr="1385" indent="" />
+		<line linenr="1386" indent="">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17273,7 +17273,7 @@
 		<line linenr="1387" indent="&#160;">
 			<comment>* Marines were not properly killed in earlier versions.</comment>
 		</line>
-		<line linenr="1388" indent="&#160;&#160;">
+		<line linenr="1388" indent="&#160;">
 			<var>$marines</var>
 			<text> </text>
 			<text>=</text>
@@ -17289,7 +17289,7 @@
 			<text>=</text>
 			<text>'mayhem_marines'</text>
 		</line>
-		<line linenr="1389" indent="&#160;&#160;">
+		<line linenr="1389" indent="&#160;">
 			<var>$keys</var>
 			<text> </text>
 			<text>=</text>
@@ -17306,7 +17306,7 @@
 			<text> </text>
 			<var>$marines</var>
 		</line>
-		<line linenr="1390" indent="&#160;&#160;&#160;">
+		<line linenr="1390" indent="&#160;">
 			<var>$XS.Iterator23</var>
 			<text> </text>
 			<text>=</text>
@@ -17319,7 +17319,7 @@
 			<text> </text>
 			<var>$keys</var>
 		</line>
-		<line linenr="1391" indent="&#160;&#160;&#160;">
+		<line linenr="1391" indent="&#160;">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator23</var>
@@ -17329,7 +17329,7 @@
 			<text> </text>
 			<var>$XS.Iterator23</var>
 		</line>
-		<line linenr="1393" indent="&#160;">
+		<line linenr="1393" indent="&#160;&#160;">
 			<var>$marineName</var>
 			<text> </text>
 			<text>=</text>
@@ -17339,7 +17339,7 @@
 			<var>$XS.Iterator23</var>
 			<text>]</text>
 		</line>
-		<line linenr="1394" indent="">
+		<line linenr="1394" indent="&#160;&#160;&#160;">
 			<var>$marine</var>
 			<text> </text>
 			<text>=</text>
@@ -17356,7 +17356,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1395" indent="">
+		<line linenr="1395" indent="&#160;&#160;&#160;">
 			<var>$location</var>
 			<text> </text>
 			<text>=</text>
@@ -17373,7 +17373,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1396" indent="">
+		<line linenr="1396" indent="&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$location</var>
@@ -17406,12 +17406,12 @@
 			<text>=</text>
 			<text>'mayhem_expedition'</text>
 		</line>
-		<line linenr="1398" indent="&#160;">
+		<line linenr="1398" indent="">
 			<text>if</text>
 			<text> </text>
 			<var>$expedition</var>
 		</line>
-		<line linenr="1399" indent="&#160;&#160;">
+		<line linenr="1399" indent="">
 			<var>$isInRift</var>
 			<text> </text>
 			<text>=</text>
@@ -17428,7 +17428,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1400" indent="&#160;&#160;">
+		<line linenr="1400" indent="">
 			<var>$inProgress</var>
 			<text> </text>
 			<text>=</text>
@@ -17445,7 +17445,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1401" indent="&#160;&#160;&#160;">
+		<line linenr="1401" indent="&#160;">
 			<text>if</text>
 			<text> </text>
 			<text>!</text>
@@ -17455,10 +17455,10 @@
 			<text> </text>
 			<var>$isInRift</var>
 		</line>
-		<line linenr="1402" indent="&#160;&#160;&#160;&#160;">
+		<line linenr="1402" indent="&#160;">
 			<comment>* There's no expedition in progress.</comment>
 		</line>
-		<line linenr="1403" indent="&#160;&#160;&#160;&#160;">
+		<line linenr="1403" indent="&#160;&#160;">
 			<text>=</text>
 			<text> </text>
 			<text>table</text>
@@ -17477,7 +17477,7 @@
 			<text>=</text>
 			<var>$marineName</var>
 		</line>
-		<line linenr="1404" indent="&#160;&#160;&#160;">
+		<line linenr="1404" indent="&#160;&#160;">
 			<text>else</text>
 			<text> </text>
 			<text>if</text>
@@ -17546,25 +17546,25 @@
 		<line linenr="1410" indent="&#160;&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1411" indent="&#160;&#160;&#160;&#160;&#160;">
+		<line linenr="1411" indent="&#160;&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1412" indent="&#160;&#160;&#160;&#160;&#160;">
+		<line linenr="1412" indent="&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1413" indent="&#160;&#160;&#160;&#160;" />
-		<line linenr="1414" indent="&#160;&#160;&#160;">
+		<line linenr="1413" indent="&#160;&#160;&#160;" />
+		<line linenr="1414" indent="&#160;&#160;&#160;&#160;">
 			<var>$versionText</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.3'</text>
 		</line>
-		<line linenr="1415" indent="&#160;&#160;">
+		<line linenr="1415" indent="&#160;&#160;&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1416" indent="&#160;" />
-		<line linenr="1417" indent="">
+		<line linenr="1416" indent="&#160;&#160;&#160;&#160;&#160;" />
+		<line linenr="1417" indent="&#160;&#160;&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17573,18 +17573,18 @@
 			<text> </text>
 			<var>2504</var>
 		</line>
-		<line linenr="1418" indent="">
+		<line linenr="1418" indent="&#160;&#160;&#160;">
 			<var>$versionText</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.4'</text>
 		</line>
-		<line linenr="1419" indent="">
+		<line linenr="1419" indent="&#160;&#160;">
 			<text>end</text>
 		</line>
 		<line linenr="1420" indent="&#160;" />
-		<line linenr="1421" indent="&#160;">
+		<line linenr="1421" indent="">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17593,7 +17593,7 @@
 			<text> </text>
 			<var>2505</var>
 		</line>
-		<line linenr="1422" indent="&#160;">
+		<line linenr="1422" indent="">
 			<var>$stations</var>
 			<text> </text>
 			<text>=</text>
@@ -17617,7 +17617,7 @@
 			<text>=</text>
 			<var>{Goner Temple (DOCK_GONER_NEW)}</var>
 		</line>
-		<line linenr="1423" indent="&#160;">
+		<line linenr="1423" indent="">
 			<var>$XS.Iterator24</var>
 			<text> </text>
 			<text>=</text>
@@ -17630,17 +17630,17 @@
 			<text> </text>
 			<var>$stations</var>
 		</line>
-		<line linenr="1424" indent="&#160;&#160;">
+		<line linenr="1424" indent="&#160;">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator24</var>
 		</line>
-		<line linenr="1425" indent="&#160;&#160;">
+		<line linenr="1425" indent="&#160;">
 			<text>dec</text>
 			<text> </text>
 			<var>$XS.Iterator24</var>
 		</line>
-		<line linenr="1426" indent="&#160;&#160;">
+		<line linenr="1426" indent="&#160;">
 			<var>$station</var>
 			<text> </text>
 			<text>=</text>
@@ -17650,7 +17650,7 @@
 			<var>$XS.Iterator24</var>
 			<text>]</text>
 		</line>
-		<line linenr="1427" indent="&#160;&#160;&#160;">
+		<line linenr="1427" indent="&#160;">
 			<text>=</text>
 			<text> </text>
 			<var>$station</var>
@@ -17666,7 +17666,7 @@
 			<text> </text>
 			<var>{Jumpdrive}</var>
 		</line>
-		<line linenr="1428" indent="&#160;&#160;&#160;">
+		<line linenr="1428" indent="&#160;&#160;">
 			<text>=</text>
 			<text> </text>
 			<var>$station</var>
@@ -17685,7 +17685,7 @@
 		<line linenr="1429" indent="&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1430" indent="&#160;&#160;&#160;" />
+		<line linenr="1430" indent="&#160;&#160;" />
 		<line linenr="1431" indent="&#160;&#160;&#160;">
 			<var>$versionText</var>
 			<text> </text>
@@ -17693,10 +17693,10 @@
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.5'</text>
 		</line>
-		<line linenr="1432" indent="&#160;&#160;">
+		<line linenr="1432" indent="&#160;&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="1433" indent="&#160;&#160;&#160;" />
+		<line linenr="1433" indent="&#160;&#160;" />
 		<line linenr="1434" indent="&#160;&#160;&#160;">
 			<text>if</text>
 			<text> </text>
@@ -17706,18 +17706,18 @@
 			<text> </text>
 			<var>2506</var>
 		</line>
-		<line linenr="1435" indent="&#160;&#160;">
+		<line linenr="1435" indent="&#160;&#160;&#160;">
 			<var>$versionText</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Mayhem has been updated to 2.5.6'</text>
 		</line>
-		<line linenr="1436" indent="&#160;&#160;&#160;">
+		<line linenr="1436" indent="&#160;&#160;">
 			<text>end</text>
 		</line>
 		<line linenr="1437" indent="&#160;&#160;&#160;" />
-		<line linenr="1438" indent="&#160;&#160;">
+		<line linenr="1438" indent="&#160;&#160;&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$gameVersion</var>
@@ -17726,14 +17726,14 @@
 			<text> </text>
 			<var>2600</var>
 		</line>
-		<line linenr="1439" indent="&#160;&#160;&#160;">
+		<line linenr="1439" indent="&#160;&#160;">
 			<var>$scraps</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1440" indent="&#160;&#160;">
+		<line linenr="1440" indent="&#160;&#160;&#160;">
 			<var>$stations</var>
 			<text> </text>
 			<text>=</text>
@@ -17757,7 +17757,7 @@
 			<text>=</text>
 			<var>{*** UNDEFINED *** (SS_DOCK_SANCTUARY)}</var>
 		</line>
-		<line linenr="1441" indent="&#160;">
+		<line linenr="1441" indent="&#160;&#160;&#160;">
 			<var>$XS.Iterator25</var>
 			<text> </text>
 			<text>=</text>
@@ -17770,17 +17770,17 @@
 			<text> </text>
 			<var>$stations</var>
 		</line>
-		<line linenr="1442" indent="&#160;">
+		<line linenr="1442" indent="&#160;&#160;">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator25</var>
 		</line>
-		<line linenr="1443" indent="">
+		<line linenr="1443" indent="&#160;&#160;&#160;">
 			<text>dec</text>
 			<text> </text>
 			<var>$XS.Iterator25</var>
 		</line>
-		<line linenr="1444" indent="">
+		<line linenr="1444" indent="&#160;&#160;">
 			<var>$station</var>
 			<text> </text>
 			<text>=</text>
@@ -17790,7 +17790,7 @@
 			<var>$XS.Iterator25</var>
 			<text>]</text>
 		</line>
-		<line linenr="1445" indent="">
+		<line linenr="1445" indent="&#160;">
 			<var>$has</var>
 			<text> </text>
 			<text>=</text>
@@ -17819,7 +17819,7 @@
 			<text> </text>
 			<var>$has</var>
 		</line>
-		<line linenr="1447" indent="&#160;">
+		<line linenr="1447" indent="">
 			<var>$scraps</var>
 			<text> </text>
 			<text>=</text>
@@ -17830,7 +17830,7 @@
 			<text> </text>
 			<var>$has</var>
 		</line>
-		<line linenr="1448" indent="&#160;">
+		<line linenr="1448" indent="">
 			<var>$neg</var>
 			<text> </text>
 			<text>=</text>
@@ -17841,7 +17841,7 @@
 			<text> </text>
 			<var>-1</var>
 		</line>
-		<line linenr="1449" indent="&#160;">
+		<line linenr="1449" indent="">
 			<text>=</text>
 			<text> </text>
 			<var>$station</var>
@@ -18193,7 +18193,7 @@
 			<var>$XS.Iterator28</var>
 			<text>]</text>
 		</line>
-		<line linenr="1487" indent="">
+		<line linenr="1487" indent="&#160;">
 			<var>$task</var>
 			<text> </text>
 			<text>=</text>
@@ -18210,7 +18210,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1488" indent="">
+		<line linenr="1488" indent="&#160;">
 			<var>$target</var>
 			<text> </text>
 			<text>=</text>
@@ -18227,7 +18227,7 @@
 			<text> </text>
 			<text>)</text>
 		</line>
-		<line linenr="1489" indent="">
+		<line linenr="1489" indent="&#160;">
 			<var>$isTargetFactory</var>
 			<text> </text>
 			<text>=</text>
@@ -18258,7 +18258,7 @@
 			<text> </text>
 			<var>$isTargetFactory</var>
 		</line>
-		<line linenr="1491" indent="&#160;">
+		<line linenr="1491" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -18275,10 +18275,10 @@
 			<text> </text>
 			<var>[TRUE]</var>
 		</line>
-		<line linenr="1492" indent="&#160;">
+		<line linenr="1492" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1493" indent="&#160;">
+		<line linenr="1493" indent="">
 			<text>end</text>
 		</line>
 		<line linenr="1494" indent="&#160;">
@@ -18301,7 +18301,7 @@
 			<text>=</text>
 			<var>[TRUE]</var>
 		</line>
-		<line linenr="1495" indent="&#160;&#160;" />
+		<line linenr="1495" indent="&#160;" />
 		<line linenr="1496" indent="&#160;">
 			<var>$mainStory</var>
 			<text> </text>
@@ -18337,7 +18337,7 @@
 			<text> </text>
 			<var>11</var>
 		</line>
-		<line linenr="1498" indent="">
+		<line linenr="1498" indent="&#160;">
 			<text>set</text>
 			<text> </text>
 			<text>global</text>
@@ -18353,15 +18353,15 @@
 			<text>=</text>
 			<var>12</var>
 		</line>
-		<line linenr="1499" indent="" />
-		<line linenr="1500" indent="">
+		<line linenr="1499" indent="&#160;&#160;" />
+		<line linenr="1500" indent="&#160;">
 			<var>$versionText</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Mayhem has been updated to 2.7.0'</text>
 		</line>
-		<line linenr="1501" indent="">
+		<line linenr="1501" indent="&#160;">
 			<text>end</text>
 		</line>
 		<line linenr="1502" indent="" />
@@ -18466,13 +18466,33 @@
 		</line>
 		<line linenr="1522" indent="" />
 		<line linenr="1523" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$gameVersion</var>
+			<text> </text>
+			<text>&lt;</text>
+			<text> </text>
+			<var>2706</var>
+		</line>
+		<line linenr="1524" indent="">
+			<var>$versionText</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'Mayhem has been updated to 2.7.6'</text>
+		</line>
+		<line linenr="1525" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="1526" indent="" />
+		<line linenr="1527" indent="">
 			<text>skip</text>
 			<text> </text>
 			<text>if</text>
 			<text> </text>
 			<var>$firstRun</var>
 		</line>
-		<line linenr="1524" indent="">
+		<line linenr="1528" indent="">
 			<text>write</text>
 			<text> </text>
 			<text>to</text>
@@ -18483,22 +18503,22 @@
 			<text> </text>
 			<var>$versionText</var>
 		</line>
-		<line linenr="1525" indent="" />
-		<line linenr="1526" indent="">
+		<line linenr="1529" indent="" />
+		<line linenr="1530" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1527" indent="" />
-		<line linenr="1528" indent="">
-			<text>endsub</text>
-		</line>
-		<line linenr="1529" indent="" />
-		<line linenr="1530" indent="" />
 		<line linenr="1531" indent="" />
 		<line linenr="1532" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="1533" indent="" />
+		<line linenr="1534" indent="" />
+		<line linenr="1535" indent="" />
+		<line linenr="1536" indent="">
 			<var>Debug</var>
 			<text>:</text>
 		</line>
-		<line linenr="1533" indent="">
+		<line linenr="1537" indent="">
 			<text>if</text>
 			<text> </text>
 			<text>get</text>
@@ -18512,12 +18532,12 @@
 			<text>=</text>
 			<text>'mayhem_debug'</text>
 		</line>
-		<line linenr="1534" indent="" />
-		<line linenr="1535" indent="">
+		<line linenr="1538" indent="" />
+		<line linenr="1539" indent="">
 			<comment>* same as in Mayhem.Signal.Story</comment>
 		</line>
-		<line linenr="1536" indent="" />
-		<line linenr="1537" indent="">
+		<line linenr="1540" indent="" />
+		<line linenr="1541" indent="">
 			<text>set</text>
 			<text> </text>
 			<text>global</text>
@@ -18533,7 +18553,7 @@
 			<text>=</text>
 			<var>[TRUE]</var>
 		</line>
-		<line linenr="1538" indent="">
+		<line linenr="1542" indent="">
 			<text>set</text>
 			<text> </text>
 			<text>global</text>
@@ -18549,8 +18569,8 @@
 			<text>=</text>
 			<var>[TRUE]</var>
 		</line>
-		<line linenr="1539" indent="" />
-		<line linenr="1540" indent="" interruptable="@">
+		<line linenr="1543" indent="" />
+		<line linenr="1544" indent="" interruptable="@">
 			<text>=</text>
 			<text> </text>
 			<var>[NULL]</var>
@@ -18576,8 +18596,8 @@
 			<text>=</text>
 			<var>[Neutral]</var>
 		</line>
-		<line linenr="1541" indent="" />
-		<line linenr="1542" indent="">
+		<line linenr="1545" indent="" />
+		<line linenr="1546" indent="">
 			<var>$allRaces</var>
 			<text> </text>
 			<text>=</text>
@@ -18591,7 +18611,7 @@
 			<text>=</text>
 			<var>8</var>
 		</line>
-		<line linenr="1543" indent="">
+		<line linenr="1547" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>0</var>
@@ -18601,7 +18621,7 @@
 			<text> </text>
 			<var>[Argon]</var>
 		</line>
-		<line linenr="1544" indent="">
+		<line linenr="1548" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>1</var>
@@ -18611,7 +18631,7 @@
 			<text> </text>
 			<var>[Boron]</var>
 		</line>
-		<line linenr="1545" indent="">
+		<line linenr="1549" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>2</var>
@@ -18621,7 +18641,7 @@
 			<text> </text>
 			<var>[Paranid]</var>
 		</line>
-		<line linenr="1546" indent="">
+		<line linenr="1550" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>3</var>
@@ -18631,7 +18651,7 @@
 			<text> </text>
 			<var>[Split]</var>
 		</line>
-		<line linenr="1547" indent="">
+		<line linenr="1551" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>4</var>
@@ -18641,7 +18661,7 @@
 			<text> </text>
 			<var>[Teladi]</var>
 		</line>
-		<line linenr="1548" indent="">
+		<line linenr="1552" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>5</var>
@@ -18651,7 +18671,7 @@
 			<text> </text>
 			<var>[Terran]</var>
 		</line>
-		<line linenr="1549" indent="">
+		<line linenr="1553" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>6</var>
@@ -18661,7 +18681,7 @@
 			<text> </text>
 			<var>[ATF]</var>
 		</line>
-		<line linenr="1550" indent="">
+		<line linenr="1554" indent="">
 			<var>$allRaces</var>
 			<text>[</text>
 			<var>7</var>
@@ -18671,42 +18691,9 @@
 			<text> </text>
 			<var>[Goner]</var>
 		</line>
-		<line linenr="1551" indent="" />
-		<line linenr="1552" indent="">
-			<var>$XS.Iterator29</var>
-			<text> </text>
-			<text>=</text>
-			<text> </text>
-			<text>size</text>
-			<text> </text>
-			<text>of</text>
-			<text> </text>
-			<text>array</text>
-			<text> </text>
-			<var>$allRaces</var>
-		</line>
-		<line linenr="1553" indent="">
-			<text>while</text>
-			<text> </text>
-			<var>$XS.Iterator29</var>
-		</line>
-		<line linenr="1554" indent="">
-			<text>dec</text>
-			<text> </text>
-			<var>$XS.Iterator29</var>
-		</line>
-		<line linenr="1555" indent="">
-			<var>$race</var>
-			<text> </text>
-			<text>=</text>
-			<text> </text>
-			<var>$allRaces</var>
-			<text>[</text>
-			<var>$XS.Iterator29</var>
-			<text>]</text>
-		</line>
+		<line linenr="1555" indent="" />
 		<line linenr="1556" indent="">
-			<var>$XS.Iterator30</var>
+			<var>$XS.Iterator29</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
@@ -18721,14 +18708,47 @@
 		<line linenr="1557" indent="">
 			<text>while</text>
 			<text> </text>
-			<var>$XS.Iterator30</var>
+			<var>$XS.Iterator29</var>
 		</line>
 		<line linenr="1558" indent="">
 			<text>dec</text>
 			<text> </text>
-			<var>$XS.Iterator30</var>
+			<var>$XS.Iterator29</var>
 		</line>
 		<line linenr="1559" indent="">
+			<var>$race</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$allRaces</var>
+			<text>[</text>
+			<var>$XS.Iterator29</var>
+			<text>]</text>
+		</line>
+		<line linenr="1560" indent="">
+			<var>$XS.Iterator30</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>size</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$allRaces</var>
+		</line>
+		<line linenr="1561" indent="">
+			<text>while</text>
+			<text> </text>
+			<var>$XS.Iterator30</var>
+		</line>
+		<line linenr="1562" indent="">
+			<text>dec</text>
+			<text> </text>
+			<var>$XS.Iterator30</var>
+		</line>
+		<line linenr="1563" indent="">
 			<var>$subrace</var>
 			<text> </text>
 			<text>=</text>
@@ -18738,8 +18758,8 @@
 			<var>$XS.Iterator30</var>
 			<text>]</text>
 		</line>
-		<line linenr="1560" indent="" />
-		<line linenr="1561" indent="">
+		<line linenr="1564" indent="" />
+		<line linenr="1565" indent="">
 			<text>if</text>
 			<text> </text>
 			<var>$subrace</var>
@@ -18748,11 +18768,11 @@
 			<text> </text>
 			<var>$race</var>
 		</line>
-		<line linenr="1562" indent="" />
-		<line linenr="1563" indent="">
+		<line linenr="1566" indent="" />
+		<line linenr="1567" indent="">
 			<comment>* invasions are possible when the relation is [Neutral]</comment>
 		</line>
-		<line linenr="1564" indent="" interruptable="@">
+		<line linenr="1568" indent="" interruptable="@">
 			<text>=</text>
 			<text> </text>
 			<var>[NULL]</var>
@@ -18778,22 +18798,22 @@
 			<text>=</text>
 			<var>[Neutral]</var>
 		</line>
-		<line linenr="1565" indent="">
+		<line linenr="1569" indent="">
 			<comment>* = [NULL] -&gt; call script 'Mayhem.SetRelation': race1=$race race2=[Teladi] relation=[Neutral]</comment>
 		</line>
-		<line linenr="1566" indent="" />
-		<line linenr="1567" indent="">
+		<line linenr="1570" indent="" />
+		<line linenr="1571" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1568" indent="" />
-		<line linenr="1569" indent="">
+		<line linenr="1572" indent="" />
+		<line linenr="1573" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1570" indent="">
+		<line linenr="1574" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1571" indent="" />
-		<line linenr="1572" indent="" interruptable="@">
+		<line linenr="1575" indent="" />
+		<line linenr="1576" indent="" interruptable="@">
 			<text>=</text>
 			<text> </text>
 			<var>[NULL]</var>
@@ -18819,7 +18839,7 @@
 			<text>=</text>
 			<var>[Friend]</var>
 		</line>
-		<line linenr="1573" indent="" interruptable="@">
+		<line linenr="1577" indent="" interruptable="@">
 			<text>=</text>
 			<text> </text>
 			<var>[NULL]</var>
@@ -18845,29 +18865,29 @@
 			<text>=</text>
 			<var>[Friend]</var>
 		</line>
-		<line linenr="1574" indent="" />
-		<line linenr="1575" indent="">
+		<line linenr="1578" indent="" />
+		<line linenr="1579" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1576" indent="">
+		<line linenr="1580" indent="">
 			<text>endsub</text>
 		</line>
-		<line linenr="1577" indent="" />
-		<line linenr="1578" indent="">
+		<line linenr="1581" indent="" />
+		<line linenr="1582" indent="">
 			<var>GetAlliedRaceFromGamestart</var>
 			<text>:</text>
 		</line>
-		<line linenr="1579" indent="">
+		<line linenr="1583" indent="">
 			<comment>* Alliance gamestarts</comment>
 		</line>
-		<line linenr="1580" indent="">
+		<line linenr="1584" indent="">
 			<var>$alliedRace</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<var>null</var>
 		</line>
-		<line linenr="1581" indent="">
+		<line linenr="1585" indent="">
 			<var>$alliableRaces</var>
 			<text> </text>
 			<text>=</text>
@@ -18881,7 +18901,7 @@
 			<text>=</text>
 			<var>6</var>
 		</line>
-		<line linenr="1582" indent="">
+		<line linenr="1586" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>0</var>
@@ -18891,7 +18911,7 @@
 			<text> </text>
 			<var>[Argon]</var>
 		</line>
-		<line linenr="1583" indent="">
+		<line linenr="1587" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>1</var>
@@ -18901,7 +18921,7 @@
 			<text> </text>
 			<var>[Boron]</var>
 		</line>
-		<line linenr="1584" indent="">
+		<line linenr="1588" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>2</var>
@@ -18911,7 +18931,7 @@
 			<text> </text>
 			<var>[Paranid]</var>
 		</line>
-		<line linenr="1585" indent="">
+		<line linenr="1589" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>3</var>
@@ -18921,7 +18941,7 @@
 			<text> </text>
 			<var>[Split]</var>
 		</line>
-		<line linenr="1586" indent="">
+		<line linenr="1590" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>4</var>
@@ -18931,7 +18951,7 @@
 			<text> </text>
 			<var>[Teladi]</var>
 		</line>
-		<line linenr="1587" indent="">
+		<line linenr="1591" indent="">
 			<var>$alliableRaces</var>
 			<text>[</text>
 			<var>5</var>
@@ -18941,7 +18961,7 @@
 			<text> </text>
 			<var>[Terran]</var>
 		</line>
-		<line linenr="1588" indent="">
+		<line linenr="1592" indent="">
 			<var>$alliedShips</var>
 			<text> </text>
 			<text>=</text>
@@ -18955,7 +18975,7 @@
 			<text>=</text>
 			<var>6</var>
 		</line>
-		<line linenr="1589" indent="">
+		<line linenr="1593" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>0</var>
@@ -18965,7 +18985,7 @@
 			<text> </text>
 			<var>{Argon Elite}</var>
 		</line>
-		<line linenr="1590" indent="">
+		<line linenr="1594" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>1</var>
@@ -18975,7 +18995,7 @@
 			<text> </text>
 			<var>{Boron Pike}</var>
 		</line>
-		<line linenr="1591" indent="">
+		<line linenr="1595" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>2</var>
@@ -18985,7 +19005,7 @@
 			<text> </text>
 			<var>{Paranid Theseus}</var>
 		</line>
-		<line linenr="1592" indent="">
+		<line linenr="1596" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>3</var>
@@ -18995,7 +19015,7 @@
 			<text> </text>
 			<var>{Split Asp}</var>
 		</line>
-		<line linenr="1593" indent="">
+		<line linenr="1597" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>4</var>
@@ -19005,7 +19025,7 @@
 			<text> </text>
 			<var>{Teladi Kite}</var>
 		</line>
-		<line linenr="1594" indent="">
+		<line linenr="1598" indent="">
 			<var>$alliedShips</var>
 			<text>[</text>
 			<var>5</var>
@@ -19015,7 +19035,7 @@
 			<text> </text>
 			<var>{ATF Hel}</var>
 		</line>
-		<line linenr="1595" indent="">
+		<line linenr="1599" indent="">
 			<var>$index</var>
 			<text> </text>
 			<text>=</text>
@@ -19028,17 +19048,17 @@
 			<text> </text>
 			<var>$alliableRaces</var>
 		</line>
-		<line linenr="1596" indent="">
+		<line linenr="1600" indent="">
 			<text>while</text>
 			<text> </text>
 			<var>$index</var>
 		</line>
-		<line linenr="1597" indent="">
+		<line linenr="1601" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$index</var>
 		</line>
-		<line linenr="1598" indent="">
+		<line linenr="1602" indent="">
 			<var>$alliableRace</var>
 			<text> </text>
 			<text>=</text>
@@ -19048,7 +19068,7 @@
 			<var>$index</var>
 			<text>]</text>
 		</line>
-		<line linenr="1599" indent="">
+		<line linenr="1603" indent="">
 			<var>$alliedShip</var>
 			<text> </text>
 			<text>=</text>
@@ -19058,7 +19078,7 @@
 			<var>$index</var>
 			<text>]</text>
 		</line>
-		<line linenr="1600" indent="">
+		<line linenr="1604" indent="">
 			<text>if</text>
 			<text> </text>
 			<var>[PLAYERSHIP]</var>
@@ -19072,34 +19092,34 @@
 			<text> </text>
 			<var>$alliedShip</var>
 		</line>
-		<line linenr="1601" indent="">
+		<line linenr="1605" indent="">
 			<var>$alliedRace</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<var>$alliableRace</var>
 		</line>
-		<line linenr="1602" indent="">
+		<line linenr="1606" indent="">
 			<text>break</text>
 		</line>
-		<line linenr="1603" indent="">
+		<line linenr="1607" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1604" indent="">
+		<line linenr="1608" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1605" indent="">
+		<line linenr="1609" indent="">
 			<text>endsub</text>
 		</line>
-		<line linenr="1606" indent="" />
-		<line linenr="1607" indent="">
+		<line linenr="1610" indent="" />
+		<line linenr="1611" indent="">
 			<var>RemoveEquipment</var>
 			<text>:</text>
 		</line>
-		<line linenr="1608" indent="">
+		<line linenr="1612" indent="">
 			<comment>* Remove QJE and MK3, and jumpdrive if Intruder gamestart (don't know why they respawn after a while)</comment>
 		</line>
-		<line linenr="1609" indent="">
+		<line linenr="1613" indent="">
 			<var>$XS.Iterator31</var>
 			<text> </text>
 			<text>=</text>
@@ -19112,17 +19132,17 @@
 			<text> </text>
 			<var>$allSectors</var>
 		</line>
-		<line linenr="1610" indent="">
+		<line linenr="1614" indent="">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator31</var>
 		</line>
-		<line linenr="1611" indent="">
+		<line linenr="1615" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$XS.Iterator31</var>
 		</line>
-		<line linenr="1612" indent="">
+		<line linenr="1616" indent="">
 			<var>$sector</var>
 			<text> </text>
 			<text>=</text>
@@ -19132,7 +19152,7 @@
 			<var>$XS.Iterator31</var>
 			<text>]</text>
 		</line>
-		<line linenr="1613" indent="">
+		<line linenr="1617" indent="">
 			<var>$allStations</var>
 			<text> </text>
 			<text>=</text>
@@ -19150,7 +19170,7 @@
 			<text> </text>
 			<text>sector</text>
 		</line>
-		<line linenr="1614" indent="">
+		<line linenr="1618" indent="">
 			<var>$XS.Iterator32</var>
 			<text> </text>
 			<text>=</text>
@@ -19163,17 +19183,17 @@
 			<text> </text>
 			<var>$allStations</var>
 		</line>
-		<line linenr="1615" indent="">
+		<line linenr="1619" indent="">
 			<text>while</text>
 			<text> </text>
 			<var>$XS.Iterator32</var>
 		</line>
-		<line linenr="1616" indent="">
+		<line linenr="1620" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$XS.Iterator32</var>
 		</line>
-		<line linenr="1617" indent="">
+		<line linenr="1621" indent="">
 			<var>$station</var>
 			<text> </text>
 			<text>=</text>
@@ -19182,77 +19202,6 @@
 			<text>[</text>
 			<var>$XS.Iterator32</var>
 			<text>]</text>
-		</line>
-		<line linenr="1618" indent="">
-			<text>if</text>
-			<text> </text>
-			<var>$station</var>
-			<text>-&gt;</text>
-			<text> </text>
-			<text>get</text>
-			<text> </text>
-			<text>amount</text>
-			<text> </text>
-			<text>of</text>
-			<text> </text>
-			<text>ware</text>
-			<text> </text>
-			<var>{Quantum Jumpgate Extension}</var>
-			<text> </text>
-			<text>in</text>
-			<text> </text>
-			<text>cargo</text>
-			<text> </text>
-			<text>bay</text>
-		</line>
-		<line linenr="1619" indent="">
-			<var>$station</var>
-			<text>-&gt;</text>
-			<text> </text>
-			<text>begin</text>
-			<text> </text>
-			<text>task</text>
-			<text> </text>
-			<var>190</var>
-			<text> </text>
-			<text>with</text>
-			<text> </text>
-			<text>script</text>
-			<text> </text>
-			<call>Mayhem.RemoveQjeAndMk3</call>
-			<text> </text>
-			<text>and</text>
-			<text> </text>
-			<text>priority</text>
-			<text> </text>
-			<var>100</var>
-			<text>:</text>
-			<text> </text>
-			<text>arg1</text>
-			<text>=</text>
-			<var>null</var>
-			<text> </text>
-			<text>arg2</text>
-			<text>=</text>
-			<var>null</var>
-			<text> </text>
-			<text>arg3</text>
-			<text>=</text>
-			<var>null</var>
-			<text> </text>
-			<text>arg4</text>
-			<text>=</text>
-			<var>null</var>
-			<text> </text>
-			<text>arg5</text>
-			<text>=</text>
-			<var>null</var>
-		</line>
-		<line linenr="1620" indent="">
-			<text>continue</text>
-		</line>
-		<line linenr="1621" indent="">
-			<text>end</text>
 		</line>
 		<line linenr="1622" indent="">
 			<text>if</text>
@@ -19268,7 +19217,7 @@
 			<text> </text>
 			<text>ware</text>
 			<text> </text>
-			<var>{Plutarch Tractor System}</var>
+			<var>{Quantum Jumpgate Extension}</var>
 			<text> </text>
 			<text>in</text>
 			<text> </text>
@@ -19328,20 +19277,6 @@
 		<line linenr="1626" indent="">
 			<text>if</text>
 			<text> </text>
-			<text>get</text>
-			<text> </text>
-			<text>global</text>
-			<text> </text>
-			<text>variable</text>
-			<text>:</text>
-			<text> </text>
-			<text>name</text>
-			<text>=</text>
-			<text>'mayhem_intruderPlayer'</text>
-		</line>
-		<line linenr="1627" indent="">
-			<text>if</text>
-			<text> </text>
 			<var>$station</var>
 			<text>-&gt;</text>
 			<text> </text>
@@ -19353,7 +19288,7 @@
 			<text> </text>
 			<text>ware</text>
 			<text> </text>
-			<var>{Jumpdrive}</var>
+			<var>{Plutarch Tractor System}</var>
 			<text> </text>
 			<text>in</text>
 			<text> </text>
@@ -19361,7 +19296,7 @@
 			<text> </text>
 			<text>bay</text>
 		</line>
-		<line linenr="1628" indent="">
+		<line linenr="1627" indent="">
 			<var>$station</var>
 			<text>-&gt;</text>
 			<text> </text>
@@ -19404,30 +19339,115 @@
 			<text>=</text>
 			<var>null</var>
 		</line>
-		<line linenr="1629" indent="">
+		<line linenr="1628" indent="">
 			<text>continue</text>
 		</line>
-		<line linenr="1630" indent="">
+		<line linenr="1629" indent="">
 			<text>end</text>
+		</line>
+		<line linenr="1630" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'mayhem_intruderPlayer'</text>
 		</line>
 		<line linenr="1631" indent="">
-			<text>end</text>
+			<text>if</text>
+			<text> </text>
+			<var>$station</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>amount</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>{Jumpdrive}</var>
+			<text> </text>
+			<text>in</text>
+			<text> </text>
+			<text>cargo</text>
+			<text> </text>
+			<text>bay</text>
 		</line>
 		<line linenr="1632" indent="">
-			<text>end</text>
+			<var>$station</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>begin</text>
+			<text> </text>
+			<text>task</text>
+			<text> </text>
+			<var>190</var>
+			<text> </text>
+			<text>with</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>Mayhem.RemoveQjeAndMk3</call>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<text>priority</text>
+			<text> </text>
+			<var>100</var>
+			<text>:</text>
+			<text> </text>
+			<text>arg1</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>arg2</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>arg3</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>arg4</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>arg5</text>
+			<text>=</text>
+			<var>null</var>
 		</line>
 		<line linenr="1633" indent="">
-			<text>end</text>
+			<text>continue</text>
 		</line>
 		<line linenr="1634" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="1635" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="1636" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="1637" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="1638" indent="">
 			<text>endsub</text>
 		</line>
-		<line linenr="1635" indent="" />
-		<line linenr="1636" indent="">
+		<line linenr="1639" indent="" />
+		<line linenr="1640" indent="">
 			<var>InitOCVSectors</var>
 			<text>:</text>
 		</line>
-		<line linenr="1637" indent="">
+		<line linenr="1641" indent="">
 			<var>$max</var>
 			<text> </text>
 			<text>=</text>
@@ -19443,7 +19463,7 @@
 			<text>=</text>
 			<text>'mayhem_OCVStationsInUniverse'</text>
 		</line>
-		<line linenr="1638" indent="">
+		<line linenr="1642" indent="">
 			<var>$OCVSectors</var>
 			<text> </text>
 			<text>=</text>
@@ -19457,7 +19477,7 @@
 			<text>=</text>
 			<var>0</var>
 		</line>
-		<line linenr="1639" indent="" interruptable="@">
+		<line linenr="1643" indent="" interruptable="@">
 			<var>$safeSectors</var>
 			<text> </text>
 			<text>=</text>
@@ -19473,7 +19493,7 @@
 			<text> </text>
 			<text>:</text>
 		</line>
-		<line linenr="1640" indent="">
+		<line linenr="1644" indent="">
 			<var>$x</var>
 			<text> </text>
 			<text>=</text>
@@ -19484,7 +19504,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1641" indent="">
+		<line linenr="1645" indent="">
 			<text>while</text>
 			<text> </text>
 			<var>$x</var>
@@ -19493,7 +19513,7 @@
 			<text> </text>
 			<var>$max</var>
 		</line>
-		<line linenr="1642" indent="">
+		<line linenr="1646" indent="">
 			<var>$x</var>
 			<text> </text>
 			<text>=</text>
@@ -19504,7 +19524,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1643" indent="">
+		<line linenr="1647" indent="">
 			<var>$sector</var>
 			<text> </text>
 			<text>=</text>
@@ -19532,7 +19552,7 @@
 			<text>=</text>
 			<var>null</var>
 		</line>
-		<line linenr="1644" indent="">
+		<line linenr="1648" indent="">
 			<var>$owner</var>
 			<text> </text>
 			<text>=</text>
@@ -19546,7 +19566,7 @@
 			<text> </text>
 			<text>race</text>
 		</line>
-		<line linenr="1645" indent="">
+		<line linenr="1649" indent="">
 			<text>if</text>
 			<text> </text>
 			<text>find</text>
@@ -19560,15 +19580,15 @@
 			<text> </text>
 			<var>$safeSectors</var>
 		</line>
-		<line linenr="1646" indent="">
+		<line linenr="1650" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$x</var>
 		</line>
-		<line linenr="1647" indent="">
+		<line linenr="1651" indent="">
 			<text>continue</text>
 		</line>
-		<line linenr="1648" indent="">
+		<line linenr="1652" indent="">
 			<text>else</text>
 			<text> </text>
 			<text>if</text>
@@ -19584,15 +19604,15 @@
 			<text> </text>
 			<var>$OCVSectors</var>
 		</line>
-		<line linenr="1649" indent="">
+		<line linenr="1653" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$x</var>
 		</line>
-		<line linenr="1650" indent="">
+		<line linenr="1654" indent="">
 			<text>continue</text>
 		</line>
-		<line linenr="1651" indent="">
+		<line linenr="1655" indent="">
 			<text>else</text>
 			<text> </text>
 			<text>if</text>
@@ -19603,15 +19623,15 @@
 			<text> </text>
 			<var>[Unknown Sector Kappa]</var>
 		</line>
-		<line linenr="1652" indent="">
+		<line linenr="1656" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$x</var>
 		</line>
-		<line linenr="1653" indent="">
+		<line linenr="1657" indent="">
 			<text>continue</text>
 		</line>
-		<line linenr="1654" indent="">
+		<line linenr="1658" indent="">
 			<text>else</text>
 			<text> </text>
 			<text>if</text>
@@ -19622,18 +19642,18 @@
 			<text> </text>
 			<var>[Goner]</var>
 		</line>
-		<line linenr="1655" indent="">
+		<line linenr="1659" indent="">
 			<text>dec</text>
 			<text> </text>
 			<var>$x</var>
 		</line>
-		<line linenr="1656" indent="">
+		<line linenr="1660" indent="">
 			<text>continue</text>
 		</line>
-		<line linenr="1657" indent="">
+		<line linenr="1661" indent="">
 			<text>else</text>
 		</line>
-		<line linenr="1658" indent="">
+		<line linenr="1662" indent="">
 			<text>append</text>
 			<text> </text>
 			<var>$sector</var>
@@ -19644,13 +19664,13 @@
 			<text> </text>
 			<var>$OCVSectors</var>
 		</line>
-		<line linenr="1659" indent="">
+		<line linenr="1663" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1660" indent="">
+		<line linenr="1664" indent="">
 			<text>end</text>
 		</line>
-		<line linenr="1661" indent="">
+		<line linenr="1665" indent="">
 			<text>set</text>
 			<text> </text>
 			<text>global</text>
@@ -19666,22 +19686,22 @@
 			<text>=</text>
 			<var>$OCVSectors</var>
 		</line>
-		<line linenr="1662" indent="">
+		<line linenr="1666" indent="">
 			<text>endsub</text>
 		</line>
-		<line linenr="1663" indent="" />
-		<line linenr="1664" indent="">
+		<line linenr="1667" indent="" />
+		<line linenr="1668" indent="">
 			<var>CreateDefaultDesigns</var>
 			<text>:</text>
 		</line>
-		<line linenr="1665" indent="">
+		<line linenr="1669" indent="">
 			<var>$name</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Basic JHP'</text>
 		</line>
-		<line linenr="1666" indent="">
+		<line linenr="1670" indent="">
 			<var>$cartridge</var>
 			<text> </text>
 			<text>=</text>
@@ -19690,7 +19710,7 @@
 			<text> </text>
 			<text>alloc</text>
 		</line>
-		<line linenr="1667" indent="">
+		<line linenr="1671" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19707,7 +19727,7 @@
 			<text> </text>
 			<var>$name</var>
 		</line>
-		<line linenr="1668" indent="">
+		<line linenr="1672" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19724,7 +19744,7 @@
 			<text> </text>
 			<text>'cartridge'</text>
 		</line>
-		<line linenr="1669" indent="">
+		<line linenr="1673" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19741,7 +19761,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1670" indent="">
+		<line linenr="1674" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19758,7 +19778,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1671" indent="">
+		<line linenr="1675" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19775,7 +19795,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1672" indent="">
+		<line linenr="1676" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19792,7 +19812,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1673" indent="">
+		<line linenr="1677" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19809,15 +19829,15 @@
 			<text> </text>
 			<var>$cartridge</var>
 		</line>
-		<line linenr="1674" indent="" />
-		<line linenr="1675" indent="">
+		<line linenr="1678" indent="" />
+		<line linenr="1679" indent="">
 			<var>$name</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Basic FMJ'</text>
 		</line>
-		<line linenr="1676" indent="">
+		<line linenr="1680" indent="">
 			<var>$cartridge</var>
 			<text> </text>
 			<text>=</text>
@@ -19826,7 +19846,7 @@
 			<text> </text>
 			<text>alloc</text>
 		</line>
-		<line linenr="1677" indent="">
+		<line linenr="1681" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19843,7 +19863,7 @@
 			<text> </text>
 			<var>$name</var>
 		</line>
-		<line linenr="1678" indent="">
+		<line linenr="1682" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19860,7 +19880,7 @@
 			<text> </text>
 			<text>'cartridge'</text>
 		</line>
-		<line linenr="1679" indent="">
+		<line linenr="1683" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19877,7 +19897,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1680" indent="">
+		<line linenr="1684" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19894,7 +19914,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1681" indent="">
+		<line linenr="1685" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19911,7 +19931,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1682" indent="">
+		<line linenr="1686" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19928,7 +19948,7 @@
 			<text> </text>
 			<var>2</var>
 		</line>
-		<line linenr="1683" indent="">
+		<line linenr="1687" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19945,15 +19965,15 @@
 			<text> </text>
 			<var>$cartridge</var>
 		</line>
-		<line linenr="1684" indent="" />
-		<line linenr="1685" indent="">
+		<line linenr="1688" indent="" />
+		<line linenr="1689" indent="">
 			<var>$name</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Basic vest'</text>
 		</line>
-		<line linenr="1686" indent="">
+		<line linenr="1690" indent="">
 			<var>$gear</var>
 			<text> </text>
 			<text>=</text>
@@ -19962,7 +19982,7 @@
 			<text> </text>
 			<text>alloc</text>
 		</line>
-		<line linenr="1687" indent="">
+		<line linenr="1691" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19979,7 +19999,7 @@
 			<text> </text>
 			<var>$name</var>
 		</line>
-		<line linenr="1688" indent="">
+		<line linenr="1692" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -19996,7 +20016,7 @@
 			<text> </text>
 			<text>'gear'</text>
 		</line>
-		<line linenr="1689" indent="">
+		<line linenr="1693" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20013,7 +20033,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1690" indent="">
+		<line linenr="1694" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20030,7 +20050,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1691" indent="">
+		<line linenr="1695" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20047,7 +20067,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1692" indent="">
+		<line linenr="1696" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20064,7 +20084,7 @@
 			<text> </text>
 			<var>3</var>
 		</line>
-		<line linenr="1693" indent="">
+		<line linenr="1697" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20081,15 +20101,15 @@
 			<text> </text>
 			<var>$gear</var>
 		</line>
-		<line linenr="1694" indent="" />
-		<line linenr="1695" indent="">
+		<line linenr="1698" indent="" />
+		<line linenr="1699" indent="">
 			<var>$name</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<text>'Disintegrator rifle'</text>
 		</line>
-		<line linenr="1696" indent="">
+		<line linenr="1700" indent="">
 			<var>$weapon</var>
 			<text> </text>
 			<text>=</text>
@@ -20098,7 +20118,7 @@
 			<text> </text>
 			<text>alloc</text>
 		</line>
-		<line linenr="1697" indent="">
+		<line linenr="1701" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20115,7 +20135,7 @@
 			<text> </text>
 			<var>$name</var>
 		</line>
-		<line linenr="1698" indent="">
+		<line linenr="1702" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20132,7 +20152,7 @@
 			<text> </text>
 			<text>'weapon'</text>
 		</line>
-		<line linenr="1699" indent="">
+		<line linenr="1703" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20149,7 +20169,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1700" indent="">
+		<line linenr="1704" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20166,7 +20186,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1701" indent="">
+		<line linenr="1705" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20183,7 +20203,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1702" indent="">
+		<line linenr="1706" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20200,7 +20220,7 @@
 			<text> </text>
 			<var>0</var>
 		</line>
-		<line linenr="1703" indent="">
+		<line linenr="1707" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20217,7 +20237,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1704" indent="">
+		<line linenr="1708" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20234,7 +20254,7 @@
 			<text> </text>
 			<var>1</var>
 		</line>
-		<line linenr="1705" indent="">
+		<line linenr="1709" indent="">
 			<text>table</text>
 			<text> </text>
 			<text>set</text>
@@ -20251,22 +20271,22 @@
 			<text> </text>
 			<var>$weapon</var>
 		</line>
-		<line linenr="1706" indent="">
+		<line linenr="1710" indent="">
 			<text>endsub</text>
 		</line>
-		<line linenr="1707" indent="" />
-		<line linenr="1708" indent="">
+		<line linenr="1711" indent="" />
+		<line linenr="1712" indent="">
 			<var>SpawnRandom</var>
 			<text>:</text>
 		</line>
-		<line linenr="1709" indent="">
+		<line linenr="1713" indent="">
 			<var>$origin</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
 			<var>[Unknown Sector Omega]</var>
 		</line>
-		<line linenr="1710" indent="">
+		<line linenr="1714" indent="">
 			<var>$forbiddenRaces</var>
 			<text> </text>
 			<text>=</text>
@@ -20280,7 +20300,7 @@
 			<text>=</text>
 			<var>6</var>
 		</line>
-		<line linenr="1711" indent="">
+		<line linenr="1715" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>0</var>
@@ -20290,7 +20310,7 @@
 			<text> </text>
 			<var>[Xenon]</var>
 		</line>
-		<line linenr="1712" indent="">
+		<line linenr="1716" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>1</var>
@@ -20300,7 +20320,7 @@
 			<text> </text>
 			<var>[Pirates]</var>
 		</line>
-		<line linenr="1713" indent="">
+		<line linenr="1717" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>2</var>
@@ -20310,7 +20330,7 @@
 			<text> </text>
 			<var>[Unknown]</var>
 		</line>
-		<line linenr="1714" indent="">
+		<line linenr="1718" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>3</var>
@@ -20320,7 +20340,7 @@
 			<text> </text>
 			<var>[Yaki]</var>
 		</line>
-		<line linenr="1715" indent="">
+		<line linenr="1719" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>4</var>
@@ -20330,7 +20350,7 @@
 			<text> </text>
 			<var>[Goner]</var>
 		</line>
-		<line linenr="1716" indent="">
+		<line linenr="1720" indent="">
 			<var>$forbiddenRaces</var>
 			<text>[</text>
 			<var>5</var>
@@ -20340,7 +20360,7 @@
 			<text> </text>
 			<var>[ATF]</var>
 		</line>
-		<line linenr="1717" indent="">
+		<line linenr="1721" indent="">
 			<var>$randomSector</var>
 			<text> </text>
 			<text>=</text>
@@ -20368,7 +20388,7 @@
 			<text>=</text>
 			<var>null</var>
 		</line>
-		<line linenr="1718" indent="">
+		<line linenr="1722" indent="">
 			<var>$randomSectorOwner</var>
 			<text> </text>
 			<text>=</text>
@@ -20382,7 +20402,7 @@
 			<text> </text>
 			<text>race</text>
 		</line>
-		<line linenr="1719" indent="">
+		<line linenr="1723" indent="">
 			<text>do</text>
 			<text> </text>
 			<text>if</text>
@@ -20398,13 +20418,13 @@
 			<text> </text>
 			<var>$forbiddenRaces</var>
 		</line>
-		<line linenr="1720" indent="">
+		<line linenr="1724" indent="">
 			<text>gosub</text>
 			<text> </text>
 			<var>SpawnRandom</var>
 			<text>:</text>
 		</line>
-		<line linenr="1721" indent="">
+		<line linenr="1725" indent="">
 			<var>[PLAYERSHIP]</var>
 			<text>-&gt;</text>
 			<text> </text>
@@ -20417,7 +20437,7 @@
 			<var>$randomSector</var>
 			<text>-&gt;</text>
 		</line>
-		<line linenr="1722" indent="">
+		<line linenr="1726" indent="">
 			<var>$origin</var>
 			<text>-&gt;</text>
 			<text> </text>
@@ -20431,7 +20451,7 @@
 			<text> </text>
 			<var>[FALSE]</var>
 		</line>
-		<line linenr="1723" indent="">
+		<line linenr="1727" indent="">
 			<text>endsub</text>
 		</line>
 	</sourcetext>
@@ -20604,13 +20624,13 @@
 				<sval type="string" val="origin" />
 				<sval type="string" val="forbiddenRaces" />
 			</sval>
-			<sval type="array" size="1330">
+			<sval type="array" size="1332">
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
 					<sval type="int" val="4" />
-					<sval type="int" val="2705" />
+					<sval type="int" val="2706" />
 					<sval type="int" val="1" />
 					<sval type="int" val="-1" />
 				</sval>
@@ -20793,7 +20813,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1196" />
+					<sval type="int" val="1198" />
 				</sval>
 				<sval type="array" size="25">
 					<sval type="int" val="104" />
@@ -21714,7 +21734,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1196" />
+					<sval type="int" val="1198" />
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="710" />
@@ -21778,7 +21798,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1314" />
+					<sval type="int" val="1316" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
@@ -21828,7 +21848,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1314" />
+					<sval type="int" val="1316" />
 				</sval>
 				<sval type="array" size="5">
 					<sval type="int" val="157" />
@@ -22050,7 +22070,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1167" />
+					<sval type="int" val="1169" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="103" />
@@ -22353,11 +22373,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1222" />
+					<sval type="int" val="1224" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1245" />
+					<sval type="int" val="1247" />
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="126" />
@@ -22655,7 +22675,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1196" />
+					<sval type="int" val="1198" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
@@ -24410,7 +24430,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1274" />
+					<sval type="int" val="1276" />
 				</sval>
 				<sval type="array" size="4">
 					<sval type="int" val="128" />
@@ -30053,7 +30073,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1222" />
+					<sval type="int" val="1224" />
 				</sval>
 				<sval type="array" size="4">
 					<sval type="int" val="158" />
@@ -30334,7 +30354,7 @@
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610314237" />
+					<sval type="int" val="-1610313725" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="7" />
@@ -31362,9 +31382,33 @@
 					<sval type="int" val="1" />
 					<sval type="int" val="-1" />
 				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610314237" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2706" />
+					<sval type="int" val="15" />
+					<sval type="int" val="3" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-2" />
+				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-536572409" />
+					<sval type="int" val="117" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Mayhem has been updated to 2.7.6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536571897" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="8" />
@@ -31387,7 +31431,7 @@
 					<sval type="int" val="158" />
 					<sval type="int" val="5" />
 					<sval type="string" val="mayhem_debug" />
-					<sval type="int" val="-1610306813" />
+					<sval type="int" val="-1610306301" />
 				</sval>
 				<sval type="array" size="5">
 					<sval type="int" val="157" />
@@ -31503,7 +31547,7 @@
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610307319" />
+					<sval type="int" val="-1610306807" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="143" />
@@ -31530,7 +31574,7 @@
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610307575" />
+					<sval type="int" val="-1610307063" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="144" />
@@ -31551,7 +31595,7 @@
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610307837" />
+					<sval type="int" val="-1610307325" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="13" />
@@ -31580,11 +31624,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1186" />
+					<sval type="int" val="1188" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1182" />
+					<sval type="int" val="1184" />
 				</sval>
 				<sval type="array" size="12">
 					<sval type="int" val="102" />
@@ -31758,7 +31802,7 @@
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610300151" />
+					<sval type="int" val="-1610299639" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="148" />
@@ -31789,7 +31833,7 @@
 					<sval type="int" val="710" />
 					<sval type="int" val="131075" />
 					<sval type="int" val="3" />
-					<sval type="int" val="-1610300413" />
+					<sval type="int" val="-1610299901" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="149" />
 				</sval>
@@ -31804,11 +31848,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1221" />
+					<sval type="int" val="1223" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1213" />
+					<sval type="int" val="1215" />
 				</sval>
 				<sval type="array" size="1">
 					<sval type="int" val="1168" />
@@ -31825,7 +31869,7 @@
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610294263" />
+					<sval type="int" val="-1610293751" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="150" />
@@ -31858,7 +31902,7 @@
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610294519" />
+					<sval type="int" val="-1610294007" />
 					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="151" />
@@ -31881,7 +31925,7 @@
 					<sval type="int" val="618" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="33" />
-					<sval type="int" val="-1610296573" />
+					<sval type="int" val="-1610296061" />
 					<sval type="int" val="9" />
 					<sval type="int" val="1048638" />
 				</sval>
@@ -31907,13 +31951,13 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1229" />
+					<sval type="int" val="1231" />
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="618" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="33" />
-					<sval type="int" val="-1610295805" />
+					<sval type="int" val="-1610295293" />
 					<sval type="int" val="9" />
 					<sval type="int" val="1048637" />
 				</sval>
@@ -31939,19 +31983,19 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1229" />
+					<sval type="int" val="1231" />
 				</sval>
 				<sval type="array" size="4">
 					<sval type="int" val="158" />
 					<sval type="int" val="5" />
 					<sval type="string" val="mayhem_intruderPlayer" />
-					<sval type="int" val="-1610294781" />
+					<sval type="int" val="-1610294269" />
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="618" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="33" />
-					<sval type="int" val="-1610294781" />
+					<sval type="int" val="-1610294269" />
 					<sval type="int" val="9" />
 					<sval type="int" val="1048611" />
 				</sval>
@@ -31977,15 +32021,15 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1229" />
+					<sval type="int" val="1231" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1229" />
+					<sval type="int" val="1231" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1224" />
+					<sval type="int" val="1226" />
 				</sval>
 				<sval type="array" size="1">
 					<sval type="int" val="1168" />
@@ -32031,7 +32075,7 @@
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610287095" />
+					<sval type="int" val="-1610286583" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="18" />
@@ -32077,7 +32121,7 @@
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="1406" />
-					<sval type="int" val="-1610290685" />
+					<sval type="int" val="-1610290173" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="16" />
 					<sval type="int" val="131074" />
@@ -32089,15 +32133,15 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1250" />
+					<sval type="int" val="1252" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1271" />
+					<sval type="int" val="1273" />
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="1406" />
-					<sval type="int" val="-1610289659" />
+					<sval type="int" val="-1610289147" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="16" />
 					<sval type="int" val="131074" />
@@ -32109,15 +32153,15 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1250" />
+					<sval type="int" val="1252" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1271" />
+					<sval type="int" val="1273" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610288635" />
+					<sval type="int" val="-1610288123" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="16" />
@@ -32136,15 +32180,15 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1250" />
+					<sval type="int" val="1252" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1271" />
+					<sval type="int" val="1273" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610287611" />
+					<sval type="int" val="-1610287099" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="48" />
@@ -32163,11 +32207,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1250" />
+					<sval type="int" val="1252" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1271" />
+					<sval type="int" val="1273" />
 				</sval>
 				<sval type="array" size="5">
 					<sval type="int" val="135" />
@@ -32178,7 +32222,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="1250" />
+					<sval type="int" val="1252" />
 				</sval>
 				<sval type="array" size="5">
 					<sval type="int" val="157" />
@@ -32610,7 +32654,7 @@
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="1406" />
-					<sval type="int" val="-1610273016" />
+					<sval type="int" val="-1610272504" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="42" />
 					<sval type="int" val="131074" />
@@ -32618,7 +32662,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="1314" />
+					<sval type="int" val="1316" />
 				</sval>
 				<sval type="array" size="5">
 					<sval type="int" val="906" />
@@ -32639,7 +32683,7 @@
 				</sval>
 			</sval>
 			<sval type="int" val="0" />
-			<sval type="array" size="467">
+			<sval type="array" size="469">
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
@@ -34348,10 +34392,6 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1166" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1166" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
@@ -34359,25 +34399,24 @@
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1167" />
+					<sval type="int" val="1168" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1167" />
-					<sval type="int" val="2" />
+					<sval type="int" val="1168" />
+					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1167" />
+					<sval type="int" val="1168" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1169" />
 					<sval type="int" val="2" />
 				</sval>
-				<sval type="array" size="3">
+				<sval type="array" size="2">
 					<sval type="int" val="1169" />
-					<sval type="int" val="1" />
-					<sval type="string" val="same as in Mayhem.Signal.Story" />
+					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1169" />
@@ -34387,39 +34426,26 @@
 					<sval type="int" val="1171" />
 					<sval type="int" val="2" />
 				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1172" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1181" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1189" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1190" />
-					<sval type="int" val="2" />
-				</sval>
 				<sval type="array" size="3">
-					<sval type="int" val="1190" />
+					<sval type="int" val="1171" />
 					<sval type="int" val="1" />
-					<sval type="string" val="invasions are possible when the relation is [Neutral]" />
-				</sval>
-				<sval type="array" size="3">
-					<sval type="int" val="1191" />
-					<sval type="int" val="1" />
-					<sval type="string" val="= [NULL] -&gt; call script 'Mayhem.SetRelation': race1=$race race2=[Teladi] relation=[Neutral]" />
+					<sval type="string" val="same as in Mayhem.Signal.Story" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1191" />
+					<sval type="int" val="1171" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1191" />
-					<sval type="int" val="4" />
+					<sval type="int" val="1173" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1174" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1183" />
+					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1191" />
@@ -34427,84 +34453,102 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1192" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1193" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1193" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1195" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1195" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1196" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="3">
+					<sval type="int" val="1192" />
+					<sval type="int" val="1" />
+					<sval type="string" val="invasions are possible when the relation is [Neutral]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1193" />
+					<sval type="int" val="1" />
+					<sval type="string" val="= [NULL] -&gt; call script 'Mayhem.SetRelation': race1=$race race2=[Teladi] relation=[Neutral]" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1193" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1193" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1193" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1194" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1195" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1195" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
 					<sval type="int" val="1197" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1197" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1198" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1199" />
 					<sval type="int" val="1" />
 					<sval type="string" val="Alliance gamestarts" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1220" />
+					<sval type="int" val="1222" />
 					<sval type="int" val="7" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1220" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1221" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
 					<sval type="int" val="1222" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1223" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1224" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="3">
-					<sval type="int" val="1223" />
+					<sval type="int" val="1225" />
 					<sval type="int" val="1" />
 					<sval type="string" val="Remove QJE and MK3, and jumpdrive if Intruder gamestart (don't know why they respawn after a while)" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1235" />
+					<sval type="int" val="1237" />
 					<sval type="int" val="6" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1235" />
+					<sval type="int" val="1237" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1238" />
+					<sval type="int" val="1240" />
 					<sval type="int" val="6" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1238" />
+					<sval type="int" val="1240" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1242" />
+					<sval type="int" val="1244" />
 					<sval type="int" val="6" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1242" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1242" />
-					<sval type="int" val="4" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1243" />
+					<sval type="int" val="1244" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
@@ -34513,54 +34557,62 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1245" />
-					<sval type="int" val="2" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1257" />
-					<sval type="int" val="6" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1261" />
-					<sval type="int" val="6" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1265" />
-					<sval type="int" val="6" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1269" />
-					<sval type="int" val="6" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1270" />
-					<sval type="int" val="5" />
-				</sval>
-				<sval type="array" size="2">
-					<sval type="int" val="1271" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
+					<sval type="int" val="1246" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1247" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1259" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1263" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1267" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1271" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
 					<sval type="int" val="1272" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1273" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1274" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1276" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1284" />
+					<sval type="int" val="1286" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1293" />
+					<sval type="int" val="1295" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1302" />
+					<sval type="int" val="1304" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="1314" />
+					<sval type="int" val="1316" />
 					<sval type="int" val="2" />
 				</sval>
 			</sval>
