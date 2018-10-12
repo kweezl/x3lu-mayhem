@@ -1,0 +1,1793 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>!plugin.autotrade.buyware</name>
+	<version>1896</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Buys ware from buystation, returns amount bought, price and success</description>
+	<arguments>
+		<argument index="1" name="ware" type="Var/Ware" desc="Ware" />
+		<argument index="2" name="buystation" type="Var/Station" desc="Buystation" />
+		<argument index="3" name="sellstation" type="Var/Station" desc="Sellstation" />
+	</arguments>
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* Gnasirator, 05.03.2012</comment>
+		</line>
+		<line linenr="002" indent="" />
+		<line linenr="003" indent="">
+			<var>init</var>
+			<text>:</text>
+		</line>
+		<line linenr="004" indent="">
+			<var>$earlyReturn</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="005" indent="">
+			<var>$amount.bought</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="006" indent="">
+			<var>$price</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>-1</var>
+		</line>
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="">
+			<comment>* this determines how much of the calculated ware amount must be successfully </comment>
+		</line>
+		<line linenr="009" indent="">
+			<comment>* bought to see the buying process as successfull</comment>
+		</line>
+		<line linenr="010" indent="">
+			<comment>* see at very end of script!</comment>
+		</line>
+		<line linenr="011" indent="">
+			<var>$min.buy.percent.for.success</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>80</var>
+		</line>
+		<line linenr="012" indent="" />
+		<line linenr="013" indent="">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$buystation</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<var>$sellstation</var>
+		</line>
+		<line linenr="014" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="015" indent="" />
+		<line linenr="016" indent="">
+			<comment>* Get proper buyamount</comment>
+		</line>
+		<line linenr="017" indent="" />
+		<line linenr="018" indent="">
+			<var>$price</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$buystation</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>price</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>$ware</var>
+		</line>
+		<line linenr="019" indent="" />
+		<line linenr="020" indent="">
+			<comment>* try to get a lock</comment>
+		</line>
+		<line linenr="021" indent="">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>request</text>
+			<text> </text>
+			<text>station</text>
+			<text> </text>
+			<text>trade</text>
+			<text> </text>
+			<text>lock</text>
+			<text>:</text>
+			<text> </text>
+			<text>station</text>
+			<text>=</text>
+			<text> </text>
+			<var>$buystation</var>
+			<text> </text>
+			<text>ware</text>
+			<text>=</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>buy</text>
+			<text>-</text>
+			<text>sell</text>
+			<text>=</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="022" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="023" indent="" />
+		<line linenr="024" indent="" />
+		<line linenr="025" indent="">
+			<comment>* set commands right</comment>
+		</line>
+		<line linenr="026" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<var>[COMMAND_GET_WARE]</var>
+			<text>  </text>
+			<text>target</text>
+			<text>=</text>
+			<var>$ware</var>
+			<text> </text>
+			<text>target2</text>
+			<text>=</text>
+			<var>$buystation</var>
+			<text> </text>
+			<text>par1</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>par2</text>
+			<text>=</text>
+			<var>null</var>
+		</line>
+		<line linenr="027" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>wanted</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>$ware</var>
+		</line>
+		<line linenr="028" indent="" />
+		<line linenr="029" indent="" />
+		<line linenr="030" indent="">
+			<var>$ware.before.dock</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>true</text>
+			<text> </text>
+			<text>amount</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>in</text>
+			<text> </text>
+			<text>cargo</text>
+			<text> </text>
+			<text>bay</text>
+		</line>
+		<line linenr="031" indent="">
+			<var>$missiles.autobought</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>missile</text>
+			<text> </text>
+			<text>resupply</text>
+			<text>:</text>
+			<text> </text>
+			<text>missile</text>
+			<text>=</text>
+			<var>$ware</var>
+		</line>
+		<line linenr="032" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$missiles.autobought</var>
+		</line>
+		<line linenr="033" indent="&#160;">
+			<var>$missiles.autobought</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$missiles.autobought</var>
+			<text> </text>
+			<text>-</text>
+			<text> </text>
+			<var>$ware.before.dock</var>
+		</line>
+		<line linenr="034" indent="">
+			<text>else</text>
+		</line>
+		<line linenr="035" indent="&#160;">
+			<var>$missiles.autobought</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="036" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="037" indent="" />
+		<line linenr="038" indent="" />
+		<line linenr="039" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>[ENVIRONMENT]</var>
+			<text> </text>
+			<text>!=</text>
+			<text> </text>
+			<var>$buystation</var>
+		</line>
+		<line linenr="040" indent="&#160;">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>destination</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>$buystation</var>
+		</line>
+		<line linenr="041" indent="&#160;" interruptable="@">
+			<var>$arrived</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.jump.to.env</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>env.target</text>
+			<text>=</text>
+			<var>$buystation</var>
+		</line>
+		<line linenr="042" indent="&#160;">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$arrived</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="043" indent="&#160;&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="044" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="045" indent="" />
+		<line linenr="046" indent="" />
+		<line linenr="047" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>destination</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="048" indent="">
+			<var>$price.check</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$buystation</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>price</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>$ware</var>
+		</line>
+		<line linenr="049" indent="" />
+		<line linenr="050" indent="">
+			<comment>* we don't care about price changes if buying only ship hardware</comment>
+		</line>
+		<line linenr="051" indent="">
+			<comment>* TODO: investigate, $buying.ship.hardware is used without being set, probably due to functionality being moved to '!plugin.autotrade.buyhardware'</comment>
+		</line>
+		<line linenr="052" indent="">
+			<comment>* it could probably be removed.</comment>
+		</line>
+		<line linenr="053" indent="">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$price.check</var>
+			<text> </text>
+			<text>&gt;</text>
+			<text> </text>
+			<var>$price</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<text>!</text>
+			<var>$buying.ship.hardware</var>
+		</line>
+		<line linenr="054" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="055" indent="">
+			<var>$price</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$price.check</var>
+		</line>
+		<line linenr="056" indent="" />
+		<line linenr="057" indent="">
+			<var>$ware.beforebuy</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>true</text>
+			<text> </text>
+			<text>amount</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>in</text>
+			<text> </text>
+			<text>cargo</text>
+			<text> </text>
+			<text>bay</text>
+		</line>
+		<line linenr="058" indent="" />
+		<line linenr="059" indent="">
+			<comment>* regular flight, use normal amount calculation</comment>
+		</line>
+		<line linenr="060" indent="" interruptable="@">
+			<var>$amount</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.get.buyamount</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>ware</text>
+			<text>=</text>
+			<var>$ware</var>
+			<text> </text>
+			<text>buystation</text>
+			<text>=</text>
+			<var>$buystation</var>
+			<text> </text>
+			<text>sellstation</text>
+			<text>=</text>
+			<var>$sellstation</var>
+		</line>
+		<line linenr="061" indent="">
+			<var>$amount</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$amount</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+		</line>
+		<line linenr="062" indent="" />
+		<line linenr="063" indent="">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$amount</var>
+			<text> </text>
+			<text>&gt;</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="064" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="065" indent="" />
+		<line linenr="066" indent="" />
+		<line linenr="067" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<text>wait</text>
+			<text> </text>
+			<var>200</var>
+			<text> </text>
+			<text>ms</text>
+		</line>
+		<line linenr="068" indent="" />
+		<line linenr="069" indent="">
+			<comment>* final check before buying, is sell station still available?</comment>
+		</line>
+		<line linenr="070" indent="">
+			<var>$Sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$sellstation</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>sector</text>
+		</line>
+		<line linenr="071" indent="" interruptable="@">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>Lib.Gen.SectorSecurityCheck</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<var>$Sector</var>
+		</line>
+		<line linenr="072" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="073" indent="" />
+		<line linenr="074" indent="">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$sellstation</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>is</text>
+			<text> </text>
+			<text>station</text>
+			<text> </text>
+			<text>trade</text>
+			<text> </text>
+			<text>locked</text>
+			<text>:</text>
+			<text> </text>
+			<text>ware</text>
+			<text>=</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>buy</text>
+			<text>-</text>
+			<text>sell</text>
+			<text>=</text>
+			<text> </text>
+			<var>[FALSE]</var>
+		</line>
+		<line linenr="075" indent="&#160;">
+			<text>goto</text>
+			<text> </text>
+			<text>label</text>
+			<text> </text>
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="076" indent="" />
+		<line linenr="077" indent="" />
+		<line linenr="078" indent="">
+			<comment>* - - - - - - - - - - - - - - - - - - - - - - - - - - - - </comment>
+		</line>
+		<line linenr="079" indent="">
+			<comment>* BUY ware!</comment>
+		</line>
+		<line linenr="080" indent="">
+			<comment>* - - - - - - - - - - - - - - - - - - - - - - - - - - - - </comment>
+		</line>
+		<line linenr="081" indent="" />
+		<line linenr="082" indent="" />
+		<line linenr="083" indent="">
+			<comment>* missiles.autobought enhält die automatisch gekaufte Menge an raketen</comment>
+		</line>
+		<line linenr="084" indent="">
+			<comment>* aber NUR, wenn die zu kaufende ware auch eine rakete ist</comment>
+		</line>
+		<line linenr="085" indent="">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>buy</text>
+			<text> </text>
+			<var>$amount</var>
+			<text> </text>
+			<text>units</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>a</text>
+			<text> </text>
+			<text>max.</text>
+			<text> </text>
+			<text>price</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<var>$price</var>
+			<text> </text>
+			<text>cr</text>
+		</line>
+		<line linenr="086" indent="" />
+		<line linenr="087" indent="">
+			<var>$buystation</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>free</text>
+			<text> </text>
+			<text>station</text>
+			<text> </text>
+			<text>trade</text>
+			<text> </text>
+			<text>lock</text>
+			<text>:</text>
+			<text> </text>
+			<text>ware</text>
+			<text>=</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>buy</text>
+			<text>-</text>
+			<text>sell</text>
+			<text>=</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="088" indent="" />
+		<line linenr="089" indent="">
+			<var>$earlyReturn</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[FALSE]</var>
+		</line>
+		<line linenr="090" indent="">
+			<var>return</var>
+			<text>:</text>
+		</line>
+		<line linenr="091" indent="" />
+		<line linenr="092" indent="">
+			<var>$ware.afterbuy</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>true</text>
+			<text> </text>
+			<text>amount</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>in</text>
+			<text> </text>
+			<text>cargo</text>
+			<text> </text>
+			<text>bay</text>
+		</line>
+		<line linenr="093" indent="">
+			<var>$amount.bought</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$ware.afterbuy</var>
+			<text> </text>
+			<text>-</text>
+			<text> </text>
+			<var>$ware.beforebuy</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$missiles.autobought</var>
+		</line>
+		<line linenr="094" indent="">
+			<var>$cost.total</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$amount.bought</var>
+			<text> </text>
+			<text>*</text>
+			<text> </text>
+			<var>$price</var>
+		</line>
+		<line linenr="095" indent="" />
+		<line linenr="096" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.update.gain</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>income</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>cost</text>
+			<text>=</text>
+			<var>$cost.total</var>
+		</line>
+		<line linenr="097" indent="" />
+		<line linenr="098" indent="" />
+		<line linenr="099" indent="">
+			<var>$ret</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="100" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$amount.bought</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="101" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$price</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="102" indent="" />
+		<line linenr="103" indent="">
+			<comment>* only return true if at least 80% of wanted amount could be bought</comment>
+		</line>
+		<line linenr="104" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$earlyReturn</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="105" indent="&#160;">
+			<comment>* for some reason we aborted</comment>
+		</line>
+		<line linenr="106" indent="&#160;">
+			<text>append</text>
+			<text> </text>
+			<var>[FALSE]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="107" indent="">
+			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$amount.bought</var>
+			<text> </text>
+			<text>&gt;</text>
+			<text> </text>
+			<text>(</text>
+			<var>$amount</var>
+			<text> </text>
+			<text>*</text>
+			<text> </text>
+			<var>$min.buy.percent.for.success</var>
+			<text> </text>
+			<text>/</text>
+			<text> </text>
+			<var>100</var>
+			<text>)</text>
+		</line>
+		<line linenr="108" indent="&#160;">
+			<text>append</text>
+			<text> </text>
+			<var>[TRUE]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="109" indent="">
+			<text>else</text>
+		</line>
+		<line linenr="110" indent="&#160;">
+			<comment>* Only return false if station didn't have enough wares anymore, or buying otherwise failed.</comment>
+		</line>
+		<line linenr="111" indent="&#160;">
+			<text>append</text>
+			<text> </text>
+			<var>[FALSE]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="112" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="113" indent="" />
+		<line linenr="114" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>$ret</var>
+		</line>
+		<line linenr="115" indent="" />
+		<line linenr="116" indent="" />
+		<line linenr="117" indent="">
+			<var>breakpoint</var>
+			<text>:</text>
+		</line>
+		<line linenr="118" indent="&#160;" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>a.breakpoint</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="119" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="120" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="!plugin.autotrade.buyware" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Buys ware from buystation, returns amount bought, price and success" />
+			<sval type="int" val="1896" />
+			<sval type="int" val="0" />
+			<sval type="array" size="18">
+				<sval type="string" val="ware" />
+				<sval type="string" val="buystation" />
+				<sval type="string" val="sellstation" />
+				<sval type="string" val="earlyReturn" />
+				<sval type="string" val="amount.bought" />
+				<sval type="string" val="price" />
+				<sval type="string" val="min.buy.percent.for.success" />
+				<sval type="string" val="ware.before.dock" />
+				<sval type="string" val="missiles.autobought" />
+				<sval type="string" val="arrived" />
+				<sval type="string" val="price.check" />
+				<sval type="string" val="buying.ship.hardware" />
+				<sval type="string" val="ware.beforebuy" />
+				<sval type="string" val="amount" />
+				<sval type="string" val="Sector" />
+				<sval type="string" val="ware.afterbuy" />
+				<sval type="string" val="cost.total" />
+				<sval type="string" val="ret" />
+			</sval>
+			<sval type="array" size="62">
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="init" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="80" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536869113" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="627" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="1814" />
+					<sval type="int" val="-536868345" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="538" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="18" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="650" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="619" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1373" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610608381" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="15" />
+					<sval type="int" val="12" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="12" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="18" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610606845" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="519" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.jump.to.env" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536865017" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="519" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="627" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="10" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="22">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610605816" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="15" />
+					<sval type="int" val="65556" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="6" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="9" />
+					<sval type="int" val="65556" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="619" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.get.buyamount" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="13" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536862457" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="13" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="105" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="4" />
+					<sval type="int" val="200" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="703" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="14" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="Lib.Gen.SectorSecurityCheck" />
+					<sval type="int" val="-1610603256" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="14" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="1815" />
+					<sval type="int" val="-1610602744" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="602" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1816" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="return" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="619" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="4" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="15" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="12" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="16" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="15" />
+					<sval type="int" val="13" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="13" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.update.gain" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610599165" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="57" />
+				</sval>
+				<sval type="array" size="27">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610598395" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="15" />
+					<sval type="int" val="13" />
+					<sval type="int" val="4" />
+					<sval type="int" val="100" />
+					<sval type="int" val="15" />
+					<sval type="int" val="14" />
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="16" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="13" />
+					<sval type="int" val="-3" />
+					<sval type="int" val="14" />
+					<sval type="int" val="-5" />
+					<sval type="int" val="17" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="57" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="breakpoint" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="a.breakpoint" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="13" />
+					<sval type="string" val="Ware" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="string" val="Buystation" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="string" val="Sellstation" />
+				</sval>
+			</sval>
+			<sval type="array" size="61">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Gnasirator, 05.03.2012" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="string" val="this determines how much of the calculated ware amount must be successfully " />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="string" val="bought to see the buying process as successfull" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="string" val="see at very end of script!" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="5" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Get proper buyamount" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="8" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="string" val="try to get a lock" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set commands right" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="18" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="18" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="18" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="23" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="23" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="23" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="25" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="25" />
+					<sval type="int" val="1" />
+					<sval type="string" val="we don't care about price changes if buying only ship hardware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="25" />
+					<sval type="int" val="1" />
+					<sval type="string" val="TODO: investigate, $buying.ship.hardware is used without being set, probably due to functionality being moved to '!plugin.autotrade.buyhardware'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="25" />
+					<sval type="int" val="1" />
+					<sval type="string" val="it could probably be removed." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="28" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="29" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="29" />
+					<sval type="int" val="1" />
+					<sval type="string" val="regular flight, use normal amount calculation" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="31" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="33" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="33" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="34" />
+					<sval type="int" val="1" />
+					<sval type="string" val="final check before buying, is sell station still available?" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="37" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="39" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="39" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="39" />
+					<sval type="int" val="1" />
+					<sval type="string" val="- - - - - - - - - - - - - - - - - - - - - - - - - - - - " />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="39" />
+					<sval type="int" val="1" />
+					<sval type="string" val="BUY ware!" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="39" />
+					<sval type="int" val="1" />
+					<sval type="string" val="- - - - - - - - - - - - - - - - - - - - - - - - - - - - " />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="39" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="39" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="39" />
+					<sval type="int" val="1" />
+					<sval type="string" val="missiles.autobought enhält die automatisch gekaufte Menge an raketen" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="39" />
+					<sval type="int" val="1" />
+					<sval type="string" val="aber NUR, wenn die zu kaufende ware auch eine rakete ist" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="40" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="41" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="43" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="46" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="50" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="50" />
+					<sval type="int" val="1" />
+					<sval type="string" val="only return true if at least 80% of wanted amount could be bought" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="51" />
+					<sval type="int" val="1" />
+					<sval type="string" val="for some reason we aborted" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="56" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="56" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Only return false if station didn't have enough wares anymore, or buying otherwise failed." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="57" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="57" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="58" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="58" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

@@ -1,0 +1,1364 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>!plugin.autotrade.get.ware.arrays</name>
+	<version>1895</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Create trade ware arrays for getroute.long and short</description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* Gnasirator, 05.03.2012</comment>
+		</line>
+		<line linenr="002" indent="" />
+		<line linenr="003" indent="">
+			<comment>* check current version of wares array available</comment>
+		</line>
+		<line linenr="004" indent="">
+			<var>$version</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.wares.array.version'</text>
+		</line>
+		<line linenr="005" indent="">
+			<var>$version.script</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.version'</text>
+		</line>
+		<line linenr="006" indent="">
+			<var>$ware.arrays</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.ware.arrays'</text>
+		</line>
+		<line linenr="007" indent="">
+			<var>$wares.array</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.ware.arrays'</text>
+		</line>
+		<line linenr="008" indent="" />
+		<line linenr="009" indent="">
+			<comment>* cancel srebuild if already done</comment>
+		</line>
+		<line linenr="010" indent="">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$version</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>$version.script</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<var>$ware.arrays</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<var>$wares.array</var>
+		</line>
+		<line linenr="011" indent="&#160;">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="012" indent="" />
+		<line linenr="013" indent="">
+			<comment>* wares array hasn't been rebuilt. let's go</comment>
+		</line>
+		<line linenr="014" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.wares.array.version'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$version.script</var>
+		</line>
+		<line linenr="015" indent="" />
+		<line linenr="016" indent="">
+			<comment>* ware.arrays contains arrays with wares sorted by type</comment>
+		</line>
+		<line linenr="017" indent="">
+			<var>$ware.arrays</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="018" indent="">
+			<comment>* wares.array contains all wares in one array</comment>
+		</line>
+		<line linenr="019" indent="">
+			<var>$wares.array</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="020" indent="" />
+		<line linenr="021" indent="">
+			<var>build.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="022" indent="&#160;">
+			<var>$wares.energy</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="023" indent="&#160;">
+			<var>$wares.bio.food.mineral</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="024" indent="&#160;">
+			<var>$wares.tech</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="025" indent="&#160;">
+			<var>$wares.weapons</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="026" indent="&#160;" />
+		<line linenr="027" indent="&#160;">
+			<var>$wares.array.to.fill</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$wares.weapons</var>
+		</line>
+		<line linenr="028" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_LASER]</var>
+		</line>
+		<line linenr="029" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="030" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_MISSILE]</var>
+		</line>
+		<line linenr="031" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="032" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_SHIELD]</var>
+		</line>
+		<line linenr="033" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="034" indent="&#160;" />
+		<line linenr="035" indent="&#160;">
+			<var>$wares.array.to.fill</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$wares.tech</var>
+		</line>
+		<line linenr="036" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_W_TECH]</var>
+		</line>
+		<line linenr="037" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="038" indent="&#160;" />
+		<line linenr="039" indent="&#160;">
+			<var>$wares.array.to.fill</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$wares.bio.food.mineral</var>
+		</line>
+		<line linenr="040" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_W_BIO]</var>
+		</line>
+		<line linenr="041" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="042" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_W_FOOD]</var>
+		</line>
+		<line linenr="043" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="044" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_W_MINERALS]</var>
+		</line>
+		<line linenr="045" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="046" indent="&#160;" />
+		<line linenr="047" indent="&#160;">
+			<var>$wares.array.to.fill</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$wares.energy</var>
+		</line>
+		<line linenr="048" indent="&#160;">
+			<var>$maintype</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SSTYPE_W_ENERGY]</var>
+		</line>
+		<line linenr="049" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="050" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="051" indent="" />
+		<line linenr="052" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$wares.energy</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ware.arrays</var>
+		</line>
+		<line linenr="053" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$wares.bio.food.mineral</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ware.arrays</var>
+		</line>
+		<line linenr="054" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$wares.tech</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ware.arrays</var>
+		</line>
+		<line linenr="055" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>$wares.weapons</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$ware.arrays</var>
+		</line>
+		<line linenr="056" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.ware.arrays'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$ware.arrays</var>
+		</line>
+		<line linenr="057" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.wares.array'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$wares.array</var>
+		</line>
+		<line linenr="058" indent="" />
+		<line linenr="059" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="060" indent="" />
+		<line linenr="061" indent="" />
+		<line linenr="062" indent="" />
+		<line linenr="063" indent="" />
+		<line linenr="064" indent="" />
+		<line linenr="065" indent="">
+			<var>fill.ware.arrays</var>
+			<text>:</text>
+		</line>
+		<line linenr="066" indent="&#160;">
+			<var>$i</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>number</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>subtypes</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>maintype</text>
+			<text> </text>
+			<var>$maintype</var>
+		</line>
+		<line linenr="067" indent="&#160;">
+			<text>while</text>
+			<text> </text>
+			<var>$i</var>
+		</line>
+		<line linenr="068" indent="&#160;&#160;" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<text>wait</text>
+			<text> </text>
+			<var>1</var>
+			<text> </text>
+			<text>ms</text>
+		</line>
+		<line linenr="069" indent="&#160;&#160;">
+			<text>dec</text>
+			<text> </text>
+			<var>$i</var>
+		</line>
+		<line linenr="070" indent="&#160;&#160;">
+			<var>$ware</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>from</text>
+			<text> </text>
+			<text>maintype</text>
+			<text> </text>
+			<var>$maintype</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<text>subtype</text>
+			<text> </text>
+			<var>$i</var>
+		</line>
+		<line linenr="071" indent="&#160;&#160;" />
+		<line linenr="072" indent="&#160;&#160;">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$ware</var>
+		</line>
+		<line linenr="073" indent="&#160;&#160;&#160;">
+			<text>continue</text>
+		</line>
+		<line linenr="074" indent="&#160;&#160;" />
+		<line linenr="075" indent="&#160;&#160;">
+			<comment>* if ware can't be bought AND sold, filter it</comment>
+		</line>
+		<line linenr="076" indent="&#160;&#160;">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<text>find</text>
+			<text> </text>
+			<text>factory</text>
+			<text>:</text>
+			<text> </text>
+			<text>sells</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>with</text>
+			<text> </text>
+			<text>best</text>
+			<text> </text>
+			<text>price</text>
+			<text>:</text>
+			<text> </text>
+			<text>max.price</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>amount</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>max.jumps</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>startsector</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>trader</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>exclude</text>
+			<text> </text>
+			<text>array</text>
+			<text>=</text>
+			<var>$aanull</var>
+		</line>
+		<line linenr="077" indent="&#160;&#160;&#160;">
+			<text>continue</text>
+		</line>
+		<line linenr="078" indent="&#160;&#160;" />
+		<line linenr="079" indent="&#160;&#160;">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>find</text>
+			<text> </text>
+			<text>different</text>
+			<text> </text>
+			<text>factory</text>
+			<text>:</text>
+			<text> </text>
+			<text>buys</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>with</text>
+			<text> </text>
+			<text>best</text>
+			<text> </text>
+			<text>price</text>
+			<text>:</text>
+			<text> </text>
+			<text>min.price</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>amount</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>max.jumps</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>startsector</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>trader</text>
+			<text>=</text>
+			<var>$aanull</var>
+			<text>,</text>
+			<text> </text>
+			<text>exclude</text>
+			<text> </text>
+			<text>array</text>
+			<text>=</text>
+			<var>$aanull</var>
+		</line>
+		<line linenr="080" indent="&#160;&#160;&#160;">
+			<text>continue</text>
+		</line>
+		<line linenr="081" indent="&#160;&#160;" />
+		<line linenr="082" indent="&#160;&#160;" />
+		<line linenr="083" indent="&#160;&#160;">
+			<text>append</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$wares.array.to.fill</var>
+		</line>
+		<line linenr="084" indent="&#160;&#160;">
+			<text>skip</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<text>find</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>in</text>
+			<text> </text>
+			<text>array</text>
+			<text>:</text>
+			<text> </text>
+			<var>$wares.array</var>
+		</line>
+		<line linenr="085" indent="&#160;&#160;&#160;">
+			<text>append</text>
+			<text> </text>
+			<var>$ware</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$wares.array</var>
+		</line>
+		<line linenr="086" indent="&#160;&#160;" />
+		<line linenr="087" indent="&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="088" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="089" indent="" />
+		<line linenr="090" indent="">
+			<var>breakpoint</var>
+			<text>:</text>
+		</line>
+		<line linenr="091" indent="&#160;" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>a.breakpoint</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="092" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="093" indent="" />
+		<line linenr="094" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="095" indent="" />
+		<line linenr="096" indent="" />
+		<line linenr="097" indent="" />
+		<line linenr="098" indent="" />
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="!plugin.autotrade.get.ware.arrays" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Create trade ware arrays for getroute.long and short" />
+			<sval type="int" val="1895" />
+			<sval type="int" val="0" />
+			<sval type="array" size="13">
+				<sval type="string" val="version" />
+				<sval type="string" val="version.script" />
+				<sval type="string" val="ware.arrays" />
+				<sval type="string" val="wares.array" />
+				<sval type="string" val="wares.energy" />
+				<sval type="string" val="wares.bio.food.mineral" />
+				<sval type="string" val="wares.tech" />
+				<sval type="string" val="wares.weapons" />
+				<sval type="string" val="wares.array.to.fill" />
+				<sval type="string" val="maintype" />
+				<sval type="string" val="i" />
+				<sval type="string" val="ware" />
+				<sval type="string" val="aanull" />
+			</sval>
+			<sval type="array" size="63">
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.wares.array.version" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.version" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.ware.arrays" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.ware.arrays" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="25">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610611192" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="7" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-4" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-6" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.wares.array.version" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="2" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="3" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="build.ware.arrays" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="5" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="208" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="210" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="209" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="216" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="213" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="214" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="215" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="211" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="42" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.ware.arrays" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.wares.array" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="fill.ware.arrays" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="658" />
+					<sval type="int" val="10" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610597879" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="105" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="143" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="657" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536858105" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="44" />
+				</sval>
+				<sval type="array" size="16">
+					<sval type="int" val="606" />
+					<sval type="int" val="-536857593" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="44" />
+				</sval>
+				<sval type="array" size="18">
+					<sval type="int" val="1004" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-536857081" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="44" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1406" />
+					<sval type="int" val="-536856313" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="44" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="breakpoint" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="a.breakpoint" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="39">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Gnasirator, 05.03.2012" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="check current version of wares array available" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="string" val="cancel srebuild if already done" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="6" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="string" val="wares array hasn't been rebuilt. let's go" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="string" val="ware.arrays contains arrays with wares sorted by type" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="8" />
+					<sval type="int" val="1" />
+					<sval type="string" val="wares.array contains all wares in one array" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="24" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="31" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="35" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="41" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="42" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="42" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="42" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="42" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="42" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="48" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="50" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="50" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="50" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if ware can't be bought AND sold, filter it" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="54" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="54" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="54" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="57" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="58" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="59" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="62" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

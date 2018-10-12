@@ -1,0 +1,2790 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>Mayhem.GenerateSectorGates</name>
+	<version>1</version>
+	<engineversion>50</engineversion>
+	<description></description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="" />
+		<line linenr="002" indent="">
+			<var>$connections</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>table</text>
+			<text> </text>
+			<text>alloc</text>
+		</line>
+		<line linenr="003" indent="">
+			<var>$transOrbital</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="004" indent="" />
+		<line linenr="005" indent="">
+			<comment>* Key -&gt; Value is always West -&gt; East or North -&gt; South. No diagonales allowed.</comment>
+		</line>
+		<line linenr="006" indent="" />
+		<line linenr="007" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Queen's Space]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Antigone Memorial]</var>
+		</line>
+		<line linenr="008" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Atreus' Clouds]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Spaceweed Drift]</var>
+		</line>
+		<line linenr="009" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Spaceweed Drift]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Bala Gi's Joy]</var>
+		</line>
+		<line linenr="010" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Bala Gi's Joy]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Blue Profit]</var>
+		</line>
+		<line linenr="011" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Blue Profit]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Rhonkar's Fire]</var>
+		</line>
+		<line linenr="012" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Thuruk's Beard]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Creditania]</var>
+		</line>
+		<line linenr="013" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Freedom's Reach]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Xenon Sector 101]</var>
+		</line>
+		<line linenr="014" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Ocracoke's Storm]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Preacher's Void]</var>
+		</line>
+		<line linenr="015" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Weaver's Tempest]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Bad Debt]</var>
+		</line>
+		<line linenr="016" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Weaver's Tempest]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Depths of Silence]</var>
+		</line>
+		<line linenr="017" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Blue Storm]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Overmasters]</var>
+		</line>
+		<line linenr="018" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Unknown Sector Nu]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Emperor's Pride]</var>
+		</line>
+		<line linenr="019" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Patriarch's Retreat]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Home of Opportunity]</var>
+		</line>
+		<line linenr="020" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Tharka's Sun]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Akeela's Beacon]</var>
+		</line>
+		<line linenr="021" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Mines of Fortune]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Getsu Fune]</var>
+		</line>
+		<line linenr="022" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[V Beta]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[V Delta]</var>
+		</line>
+		<line linenr="023" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[V Delta]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Asteroid Belt (10, 12)]</var>
+		</line>
+		<line linenr="024" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Saturn 3 (12, 10)]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Sacred Relic]</var>
+		</line>
+		<line linenr="025" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Unknown Sector Kappa]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Lasting Vengeance (16, 10)]</var>
+		</line>
+		<line linenr="026" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Lasting Vengeance (16, 10)]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Thyn's Excavation]</var>
+		</line>
+		<line linenr="027" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Unknown Sector Alpha]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Ghinn's Escape]</var>
+		</line>
+		<line linenr="028" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Interworlds]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Merchant Haven]</var>
+		</line>
+		<line linenr="029" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Gaian Star]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Oort Cloud (11, 17)]</var>
+		</line>
+		<line linenr="030" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Pluto (13, 16)]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Sanctity of Corruption]</var>
+		</line>
+		<line linenr="031" indent="">
+			<text>table</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>[Thyn's Excavation]</var>
+			<text> </text>
+			<text>)</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[Veil of Delusion]</var>
+		</line>
+		<line linenr="032" indent="" />
+		<line linenr="033" indent="">
+			<var>$connections.keys</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>table</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>keys</text>
+			<text>:</text>
+			<text> </text>
+			<text>table</text>
+			<text>=</text>
+			<text> </text>
+			<var>$connections</var>
+		</line>
+		<line linenr="034" indent="" />
+		<line linenr="035" indent="">
+			<var>$XS.Iterator1</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>size</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$connections.keys</var>
+		</line>
+		<line linenr="036" indent="&#160;">
+			<text>while</text>
+			<text> </text>
+			<var>$XS.Iterator1</var>
+		</line>
+		<line linenr="037" indent="&#160;">
+			<text>dec</text>
+			<text> </text>
+			<var>$XS.Iterator1</var>
+		</line>
+		<line linenr="038" indent="&#160;&#160;">
+			<var>$source</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$connections.keys</var>
+			<text>[</text>
+			<var>$XS.Iterator1</var>
+			<text>]</text>
+		</line>
+		<line linenr="039" indent="&#160;">
+			<comment>* 33% chance of creating a gate.</comment>
+		</line>
+		<line linenr="040" indent="&#160;">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<text>random</text>
+			<text> </text>
+			<text>value</text>
+			<text> </text>
+			<text>from</text>
+			<text> </text>
+			<text>zero</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>2</var>
+		</line>
+		<line linenr="041" indent="&#160;">
+			<text>continue</text>
+		</line>
+		<line linenr="042" indent="&#160;" />
+		<line linenr="043" indent="&#160;">
+			<var>$destination</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>table</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<var>$connections</var>
+			<text> </text>
+			<text>(</text>
+			<text> </text>
+			<var>$source</var>
+			<text> </text>
+			<text>)</text>
+		</line>
+		<line linenr="044" indent="&#160;">
+			<var>$source.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>universe</text>
+			<text> </text>
+			<text>x</text>
+			<text> </text>
+			<text>index</text>
+		</line>
+		<line linenr="045" indent="&#160;">
+			<var>$source.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>universe</text>
+			<text> </text>
+			<text>y</text>
+			<text> </text>
+			<text>index</text>
+		</line>
+		<line linenr="046" indent="&#160;">
+			<var>$destination.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>universe</text>
+			<text> </text>
+			<text>x</text>
+			<text> </text>
+			<text>index</text>
+		</line>
+		<line linenr="047" indent="&#160;">
+			<var>$destination.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>universe</text>
+			<text> </text>
+			<text>y</text>
+			<text> </text>
+			<text>index</text>
+		</line>
+		<line linenr="048" indent="&#160;">
+			<var>$source.size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>size</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>object</text>
+		</line>
+		<line linenr="049" indent="&#160;&#160;">
+			<var>$destination.size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>size</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>object</text>
+		</line>
+		<line linenr="050" indent="&#160;&#160;" />
+		<line linenr="051" indent="&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$source.x</var>
+			<text> </text>
+			<text>&lt;</text>
+			<text> </text>
+			<var>$destination.x</var>
+		</line>
+		<line linenr="052" indent="&#160;&#160;">
+			<comment>* West -&gt; East connection.</comment>
+		</line>
+		<line linenr="053" indent="&#160;&#160;">
+			<var>$size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source.size</var>
+		</line>
+		<line linenr="054" indent="&#160;&#160;&#160;">
+			<var>$sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source</var>
+		</line>
+		<line linenr="055" indent="&#160;&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetGatePosEast</var>
+			<text>:</text>
+		</line>
+		<line linenr="056" indent="&#160;&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$transOrbital</var>
+		</line>
+		<line linenr="057" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>8</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$source</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>3</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$destination.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$destination.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>2</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="058" indent="&#160;&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="059" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>3</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$source</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>3</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$destination.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$destination.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>2</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="060" indent="&#160;&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="061" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'mayhem_isTOA'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$destination</var>
+		</line>
+		<line linenr="062" indent="&#160;&#160;">
+			<var>$size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination.size</var>
+		</line>
+		<line linenr="063" indent="&#160;&#160;&#160;">
+			<var>$sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination</var>
+		</line>
+		<line linenr="064" indent="&#160;&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetGatePosWest</var>
+			<text>:</text>
+		</line>
+		<line linenr="065" indent="&#160;&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$transOrbital</var>
+		</line>
+		<line linenr="066" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>7</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$destination</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>2</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$source.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$source.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>3</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="067" indent="&#160;&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="068" indent="&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>2</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$destination</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>2</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$source.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$source.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>3</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="069" indent="&#160;&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="070" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'mayhem_isTOA'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$destination</var>
+		</line>
+		<line linenr="071" indent="&#160;&#160;">
+			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$source.y</var>
+			<text> </text>
+			<text>&lt;</text>
+			<text> </text>
+			<var>$destination.y</var>
+		</line>
+		<line linenr="072" indent="&#160;&#160;">
+			<comment>* North -&gt; South connection.</comment>
+		</line>
+		<line linenr="073" indent="&#160;&#160;">
+			<var>$size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source.size</var>
+		</line>
+		<line linenr="074" indent="&#160;&#160;&#160;">
+			<var>$sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$source</var>
+		</line>
+		<line linenr="075" indent="&#160;&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetGatePosSouth</var>
+			<text>:</text>
+		</line>
+		<line linenr="076" indent="&#160;&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$transOrbital</var>
+		</line>
+		<line linenr="077" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>6</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$source</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>1</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$destination.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$destination.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="078" indent="&#160;&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="079" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>1</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$source</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>1</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$destination.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$destination.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="080" indent="&#160;&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="081" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'mayhem_isTOA'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$destination</var>
+		</line>
+		<line linenr="082" indent="&#160;&#160;">
+			<var>$size</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination.size</var>
+		</line>
+		<line linenr="083" indent="&#160;&#160;&#160;">
+			<var>$sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$destination</var>
+		</line>
+		<line linenr="084" indent="&#160;&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetGatePosNorth</var>
+			<text>:</text>
+		</line>
+		<line linenr="085" indent="&#160;&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$transOrbital</var>
+		</line>
+		<line linenr="086" indent="&#160;&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>5</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$destination</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$source.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$source.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>1</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="087" indent="&#160;&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="088" indent="&#160;">
+			<var>$gate</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>gate</text>
+			<text>:</text>
+			<text> </text>
+			<text>type</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>addto</text>
+			<text>=</text>
+			<var>$destination</var>
+			<text> </text>
+			<text>gateid</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>dstsecx</text>
+			<text>=</text>
+			<var>$source.x</var>
+			<text> </text>
+			<text>dstsecy</text>
+			<text>=</text>
+			<var>$source.y</var>
+			<text> </text>
+			<text>dstgateid</text>
+			<text>=</text>
+			<var>1</var>
+			<text> </text>
+			<text>x</text>
+			<text>=</text>
+			<var>$gate.x</var>
+			<text> </text>
+			<text>y</text>
+			<text>=</text>
+			<var>$gate.y</var>
+			<text> </text>
+			<text>z</text>
+			<text>=</text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="089" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="090" indent="">
+			<var>$gate</var>
+			<text> </text>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'mayhem_isTOA'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$destination</var>
+		</line>
+		<line linenr="091" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="092" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="093" indent="" />
+		<line linenr="094" indent="" />
+		<line linenr="095" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="096" indent="&#160;" />
+		<line linenr="097" indent="&#160;" />
+		<line linenr="098" indent="&#160;">
+			<var>GetVariations</var>
+			<text>:</text>
+		</line>
+		<line linenr="099" indent="">
+			<var>$var.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>random</text>
+			<text> </text>
+			<text>value</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>-10000</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>10000</var>
+		</line>
+		<line linenr="100" indent="">
+			<var>$var.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>random</text>
+			<text> </text>
+			<text>value</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>-5000</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>5000</var>
+		</line>
+		<line linenr="101" indent="">
+			<var>$var.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>random</text>
+			<text> </text>
+			<text>value</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>-10000</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>10000</var>
+		</line>
+		<line linenr="102" indent="">
+			<text>endsub</text>
+		</line>
+		<line linenr="103" indent="&#160;" />
+		<line linenr="104" indent="&#160;" />
+		<line linenr="105" indent="&#160;">
+			<var>GetGatePosWest</var>
+			<text>:</text>
+		</line>
+		<line linenr="106" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetVariations</var>
+			<text>:</text>
+		</line>
+		<line linenr="107" indent="">
+			<var>$gate.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$size</var>
+			<text> </text>
+			<text>*</text>
+			<text> </text>
+			<var>-1</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$var.x</var>
+		</line>
+		<line linenr="108" indent="">
+			<var>$gate.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.y</var>
+		</line>
+		<line linenr="109" indent="">
+			<var>$gate.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.z</var>
+		</line>
+		<line linenr="110" indent="&#160;">
+			<text>endsub</text>
+		</line>
+		<line linenr="111" indent="&#160;" />
+		<line linenr="112" indent="&#160;">
+			<var>GetGatePosEast</var>
+			<text>:</text>
+		</line>
+		<line linenr="113" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetVariations</var>
+			<text>:</text>
+		</line>
+		<line linenr="114" indent="">
+			<var>$gate.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$size</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$var.x</var>
+		</line>
+		<line linenr="115" indent="">
+			<var>$gate.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.y</var>
+		</line>
+		<line linenr="116" indent="">
+			<var>$gate.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.z</var>
+		</line>
+		<line linenr="117" indent="&#160;">
+			<text>endsub</text>
+		</line>
+		<line linenr="118" indent="&#160;" />
+		<line linenr="119" indent="&#160;">
+			<var>GetGatePosNorth</var>
+			<text>:</text>
+		</line>
+		<line linenr="120" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetVariations</var>
+			<text>:</text>
+		</line>
+		<line linenr="121" indent="">
+			<var>$gate.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.x</var>
+		</line>
+		<line linenr="122" indent="">
+			<var>$gate.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.y</var>
+		</line>
+		<line linenr="123" indent="">
+			<var>$gate.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$size</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$var.z</var>
+		</line>
+		<line linenr="124" indent="&#160;">
+			<text>endsub</text>
+		</line>
+		<line linenr="125" indent="&#160;" />
+		<line linenr="126" indent="&#160;">
+			<var>GetGatePosSouth</var>
+			<text>:</text>
+		</line>
+		<line linenr="127" indent="&#160;">
+			<text>gosub</text>
+			<text> </text>
+			<var>GetVariations</var>
+			<text>:</text>
+		</line>
+		<line linenr="128" indent="">
+			<var>$gate.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.x</var>
+		</line>
+		<line linenr="129" indent="">
+			<var>$gate.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$var.y</var>
+		</line>
+		<line linenr="130" indent="">
+			<var>$gate.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$size</var>
+			<text> </text>
+			<text>*</text>
+			<text> </text>
+			<var>-1</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$var.z</var>
+		</line>
+		<line linenr="131" indent="&#160;">
+			<text>endsub</text>
+		</line>
+		<line linenr="132" indent="&#160;" />
+		<line linenr="133" indent="&#160;">
+			<var>GetSafePosition</var>
+			<text>:</text>
+		</line>
+		<line linenr="134" indent="&#160;">
+			<var>$pos</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>3</var>
+		</line>
+		<line linenr="135" indent="&#160;">
+			<var>$pos</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$gate.x</var>
+		</line>
+		<line linenr="136" indent="">
+			<var>$pos</var>
+			<text>[</text>
+			<var>1</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$gate.y</var>
+		</line>
+		<line linenr="137" indent="">
+			<var>$pos</var>
+			<text>[</text>
+			<var>2</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$gate.z</var>
+		</line>
+		<line linenr="138" indent="" interruptable="@">
+			<var>$validPos</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[NULL]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>Joubarbe.Lib.GetValidPos</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>sector</text>
+			<text>=</text>
+			<var>$sector</var>
+			<text> </text>
+			<text>minDistance</text>
+			<text>=</text>
+			<var>10000</var>
+			<text> </text>
+			<text>posArray</text>
+			<text>=</text>
+			<var>$pos</var>
+			<text> </text>
+			<text>verticalOnly</text>
+			<text>=</text>
+			<var>[FALSE]</var>
+		</line>
+		<line linenr="139" indent="">
+			<var>$gate.x</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$validPos</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+		</line>
+		<line linenr="140" indent="">
+			<var>$gate.y</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$validPos</var>
+			<text>[</text>
+			<var>1</var>
+			<text>]</text>
+		</line>
+		<line linenr="141" indent="">
+			<var>$gate.z</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$validPos</var>
+			<text>[</text>
+			<var>2</var>
+			<text>]</text>
+		</line>
+		<line linenr="142" indent="">
+			<text>endsub</text>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="Mayhem.GenerateSectorGates" />
+			<sval type="int" val="50" />
+			<sval type="string" val="" />
+			<sval type="int" val="1" />
+			<sval type="int" val="2" />
+			<sval type="array" size="23">
+				<sval type="string" val="connections" />
+				<sval type="string" val="transOrbital" />
+				<sval type="string" val="connections.keys" />
+				<sval type="string" val="source" />
+				<sval type="string" val="XS.Iterator1" />
+				<sval type="string" val="destination" />
+				<sval type="string" val="source.x" />
+				<sval type="string" val="source.y" />
+				<sval type="string" val="destination.x" />
+				<sval type="string" val="destination.y" />
+				<sval type="string" val="source.size" />
+				<sval type="string" val="destination.size" />
+				<sval type="string" val="size" />
+				<sval type="string" val="sector" />
+				<sval type="string" val="gate" />
+				<sval type="string" val="gate.x" />
+				<sval type="string" val="gate.y" />
+				<sval type="string" val="gate.z" />
+				<sval type="string" val="var.x" />
+				<sval type="string" val="var.y" />
+				<sval type="string" val="var.z" />
+				<sval type="string" val="pos" />
+				<sval type="string" val="validPos" />
+			</sval>
+			<sval type="array" size="117">
+				<sval type="array" size="2">
+					<sval type="int" val="1706" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="131072" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="131073" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="196610" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="262146" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="262146" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="262147" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="262147" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="327683" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="327683" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="393219" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="393221" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="589829" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="262151" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="327687" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="8" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="65544" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="10" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="196618" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="10" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="13" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="327690" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="327692" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="196623" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="458767" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="589826" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="917506" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="524291" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="524294" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="917505" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1114113" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="786439" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="786440" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="786440" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="786442" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="655372" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="655373" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="524304" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="655376" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="655376" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="983056" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1048576" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1048579" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1048584" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1245192" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1114121" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1114123" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1048589" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1114125" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1708" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="983056" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1048592" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1710" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="131" />
+					<sval type="int" val="4" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610593015" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="143" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="106" />
+					<sval type="int" val="-1610604024" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="29" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1709" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="804" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="805" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="804" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="8" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="805" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="780" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="780" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="11" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610597629" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="15" />
+					<sval type="int" val="3" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="12" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="13" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="89" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610600445" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="49" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="155" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="14" />
+					<sval type="int" val="5" />
+					<sval type="string" val="mayhem_isTOA" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="12" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="13" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="83" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610598397" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="57" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="155" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="14" />
+					<sval type="int" val="5" />
+					<sval type="string" val="mayhem_isTOA" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="76" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610593275" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="15" />
+					<sval type="int" val="3" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="12" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="13" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="101" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610595837" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="67" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="155" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="14" />
+					<sval type="int" val="5" />
+					<sval type="string" val="mayhem_isTOA" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="12" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="13" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="95" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610593789" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="75" />
+				</sval>
+				<sval type="array" size="20">
+					<sval type="int" val="748" />
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="155" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="14" />
+					<sval type="int" val="5" />
+					<sval type="string" val="mayhem_isTOA" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="29" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetVariations" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="110" />
+					<sval type="int" val="18" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-10000" />
+					<sval type="int" val="4" />
+					<sval type="int" val="10001" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="110" />
+					<sval type="int" val="19" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-5000" />
+					<sval type="int" val="4" />
+					<sval type="int" val="5001" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="110" />
+					<sval type="int" val="20" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-10000" />
+					<sval type="int" val="4" />
+					<sval type="int" val="10001" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetGatePosWest" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="78" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="15" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="18" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="13" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="19" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetGatePosEast" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="78" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="15" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="18" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="19" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetGatePosNorth" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="78" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="15" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="19" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="17" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="20" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetGatePosSouth" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1167" />
+					<sval type="int" val="78" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="15" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="19" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="17" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="12" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="13" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="20" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="13" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="string" val="GetSafePosition" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="15" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="16" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="17" />
+				</sval>
+				<sval type="array" size="14">
+					<sval type="int" val="102" />
+					<sval type="string" val="Joubarbe.Lib.GetValidPos" />
+					<sval type="int" val="22" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="12" />
+					<sval type="int" val="4" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="13" />
+					<sval type="int" val="4" />
+					<sval type="int" val="10000" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="21" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="15" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="22" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="16" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="22" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="17" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="22" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="1">
+					<sval type="int" val="1168" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="32">
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="2" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Key -&gt; Value is always West -&gt; East or North -&gt; South. No diagonales allowed." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="27" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="28" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="32" />
+					<sval type="int" val="1" />
+					<sval type="string" val="33% chance of creating a gate." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="41" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="42" />
+					<sval type="int" val="1" />
+					<sval type="string" val="West -&gt; East connection." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="48" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="49" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="56" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="57" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="60" />
+					<sval type="int" val="1" />
+					<sval type="string" val="North -&gt; South connection." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="66" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="67" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="74" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="75" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="76" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="77" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="77" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="77" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="78" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="78" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="83" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="83" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="89" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="95" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="107" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>al.plugin.Mayhem</name>
+	<version>1</version>
+	<engineversion>50</engineversion>
+	<description></description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="">
+			<text>al</text>
+			<text> </text>
+			<text>engine</text>
+			<text>:</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Mayhem.al.Bail</call>
+		</line>
+		<line linenr="002" indent="" />
+		<line linenr="003" indent="">
+			<text>al</text>
+			<text> </text>
+			<text>engine</text>
+			<text>:</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Mayhem.al.FLC</call>
+		</line>
+		<line linenr="004" indent="" />
+		<line linenr="005" indent="">
+			<text>al</text>
+			<text> </text>
+			<text>engine</text>
+			<text>:</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Mayhem.al.SmartPlacement</call>
+		</line>
+		<line linenr="006" indent="" />
+		<line linenr="007" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="al.plugin.Mayhem" />
+			<sval type="int" val="50" />
+			<sval type="string" val="" />
+			<sval type="int" val="1" />
+			<sval type="int" val="0" />
+			<sval type="int" val="0" />
+			<sval type="array" size="4">
+				<sval type="array" size="2">
+					<sval type="int" val="1000" />
+					<sval type="string" val="Mayhem.al.Bail" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1000" />
+					<sval type="string" val="Mayhem.al.FLC" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1000" />
+					<sval type="string" val="Mayhem.al.SmartPlacement" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language id="44">
+
+
+<page id="8385" title="Litcube's Revelation" descr="Texts" voice="yes">
+ <t id="1">Litcube's Revelation</t>
+ <t id="2">[author][green]%s[/green][/author]FLASH %sZ\nFM COMUNOM UNIFIED OMICRON COMMAND RINGO MOON\n\nTO ALL REGISTERED MERCENARY FORCES\nINFO\nCOMCENTARG ARGON PRIME\nCOMCENTBOR KINGDOM END\nCOMCENTSPL FAMILY PRIDE\nCOMCENTPAR PARANID PRIME\nCOMCENTTER EARTH\nCOMCENTTEL SEIZEWELL\n\nUNCLAS\nMSGID/MERCLIASON/COMUNOM\nSUBJ/OCV INCURSION IMMINENT\n\nRMKS/1. OCV RECON ACTIVITY DETECTED IN %s.\n2. ASSUME PRELUDE TO ASSAULT FROM %s.\n3. MERCENARY AUTHORIZATION ACT PARAGRAPH 3B IN EFFECT.\n4. STANDARD REWARD OFFERED FOR OCV KILLS IN %s.\n4. ADM DEWOLF SENDS.//</t>
+ <t id="3">[author][green]%s[/green][/author]FLASH %sZ\nFM COMUNOM UNIFIED OMICRON COMMAND RINGO MOON\n\nTO ALL ACTIVE COMUNOM UNITS AND SUPPORTING FORCES\nINFO\nCOMCENTARG ARGON PRIME\nCOMCENTBOR KINGDOM END\nCOMCENTSPL FAMILY PRIDE\nCOMCENTPAR PARANID PRIME\nCOMCENTTER EARTH\nCOMCENTTEL SEIZEWELL\n\nTOPSEC\nMSGID/OPSTAFF/COMUNOM\nSUBJ/OPERATIONAL ORDERS\n\nRMKS/1.   CONTINGENCY ROMEO IS NOW IN EFFECT. ALL SHIPS ARE HEREBY ORDERED TO CEASE OPERATIONS IN %s AND WITHDRAW TO STAGING POINT BAKER.\n2.     LOSS OF %s IS CLASSIFIED TOP SECRET. ALL PRIVATE MILITARY UNITS ARE REMINDED THEY ARE SUBJECT TO UCMJ WHILE OPERATING IN COMUNOM AOR.\n3.     ADM DEWOLF SENDS.//</t>
+ <t id="4">[author][green]%s[/green][/author]PRIORITY %sZ\nFM COMUNOM UNIFIED OMICRON COMMAND RINGO MOON\n\nTO ALL ACTIVE COMUNOM UNITS AND SUPPORTING FORCES\nINFO\nCOMCENTARG ARGON PRIME\nCOMCENTBOR KINGDOM END\nCOMCENTSPL FAMILY PRIDE\nCOMCENTPAR PARANID PRIME\nCOMCENTTER EARTH\nCOMCENTTEL SEIZEWELL\n\nCLASSIFIED\nMSGID/OPSTAFF/COMUNOM\nSUBJ/SITUATION REPORT\n\nRMKS/1.   ALL OCV INFRASTRUCTURE IN %s CONFIRMED DESTROYED. \n2.     COMUNOM FORCES WILL RTB UPON CONFIRMATION THAT ALL OCV MOBILE UNITS HAVE BEEN ELIMINATED.\n3.     COMUNOM HAS RECOMMENDED IMMEDIATE DISPATCH OF %s REGULAR MILITARY FORCE TO GARRISON %s.\n4.     ALL PARTICIPATING MERCENARY FORCES HAVE BEEN PAID AS STIPULATED IN MERCENARY AUTHROIZATION ACT PARAGRAPH 5D.\n5.     GOOD WORK, PEOPLE.\n6.     ADM DEWOLF SENDS.///</t>
+ <t id="5">[author][green]%s[/green][/author]IMMEDIATE %sZ\nFM COMUNOM UNIFIED OMICRON COMMAND RINGO MOON\n\nTO ALL REGISTERED MERCENARY FORCES\nINFO\nCOMCENTARG ARGON PRIME\nCOMCENTBOR KINGDOM END\nCOMCENTSPL FAMILY PRIDE\nCOMCENTPAR PARANID PRIME\nCOMCENTTER EARTH\nCOMCENTTEL SEIZEWELL\n\nUNCLASS\nMSGID/MERCLIASON/COMUNOM\nSUBJ/COMUNOM STRIKE IMMINENT\n\nRMKS/1.   COMUNOM RECON ELEMENTS HAVE IDENTIFIED A TEMPORARY WEAKNESS IN %s OCV DEFENSES. \n2.     RAPID RESPONSE FORCE HAS BEEN ACTIVATED FOR AN IMMIDIATE DEPLOYMENT BUT REQUIRES ESCORT.\n3.     STRIKE FORCE IS RENDEZVOUSING IN %s SECTOR CENTER AND WILL JUMP TO %s EXACTLY 10 MIZURA FROM DISSEMINATION OF THIS MESSAGE.\n4.     ANY MERCENARY FORCES THAT CHOOSE TO PARTICIPATE WILL BE PAID A PER KILL BOUNTY AS STIPULATED IN MERCENARY AUTHROIZATION ACT PARAGRAPH 5D.\n5.     ADM DEWOLF SENDS.//</t>
+ <t id="6">[author][green]%s[/green][/author]To private party %s:\n\nIt is with great honour that we present to you this award of %s for assisting in this latest military operation in sector %s. Your efforts have contributed to the eradication of the Omicron Channel Virus.</t>
+ <t id="7">[author][green]Commonwealth[/green][/author]A new era has begun. Reports from all over the Universe confirm that the threat of the Omicron Channel Virus has been eliminated once and for all. Military mobilization will slowly return to normal levels in the coming weeks, and the lives of the Commonwealth can resume in the relative peaceful existence the Universe once was prior to the horrors exacted upon them by this most insidious and mysterious revelation.</t>
+ <t id="8">[author][green]Argon Federation[/green][/author]To all reachable parties:\n\nAs you may have already heard through various media channels within your respective homeworlds, it has become apparent that we are not alone in the Omicron Channel sectors. As of yesterday, scout ships in sector %s have reported sightings of what appear to be ships of Xenon and ancient terraformer make assembling within proximity to a Xenon station. While we are unclear of the intentions of this new entity, or if this possible threat is Xenon in nature, we would urge that all scheduled jumps and passage to Tokyo Kappa be restricted.\n\nMore information will be available as Boron expedition teams continue to uncover the origins and intentions of this new entity.</t>
+ <t id="9">OCV Neutralized: \033C%s\033X \033Y%s Cr\033X</t>
+ <t id="101">Argon Federation</t>
+ <t id="102">Kingdom of Boron</t>
+ <t id="103">Split Dynasty</t>
+ <t id="104">Paranid Empire</t>
+ <t id="105">Teladi Company</t>
+ <t id="106">United Space Command</t>
+ <t id="107">Goner</t>
+ <t id="108">Yaki Syndicate</t>
+ <t id="200">500</t>
+ <t id="201">15</t>
+ <t id="202">20</t>
+ <t id="203">50</t>
+ <t id="204">1000</t>
+ <t id="205">1000</t>
+ <t id="206">2750</t>
+ <t id="207">5000</t>
+ <t id="208">8000</t>
+</page>
+  
+<page id="12" title="Boardcomp. greek" descr="Spoken greek letters" voice="yes">
+ <t id="200">Alpha</t>
+ <t id="201">Beta</t>
+ <t id="202">Gamma</t>
+ <t id="203">Delta</t>
+ <t id="204">Epsilon</t>
+ <t id="205">Zeta</t>
+ <t id="206">Eta</t>
+ <t id="207">Theta</t>
+ <t id="208">Iota</t>
+ <t id="209">Kappa</t>
+ <t id="210">Lambda</t>
+ <t id="211">Mu</t>
+ <t id="212">Nu</t>
+ <t id="213">Xi</t>
+ <t id="214">Omicron</t>
+ <t id="215">Pi</t>
+ <t id="216">Rho</t>
+ <t id="217">Sigma</t>
+ <t id="218">Tau</t>
+ <t id="219">Upsilon</t>
+ <t id="220">Phi</t>
+ <t id="221">Chi</t>
+ <t id="222">Psi</t>
+ <t id="223">Omega</t>
+ <t id="224">Omega</t> 
+</page>
+
+
+<page id="350007" title="Boardcomp. Sectornames" descr="Names of all sectors (spoken by Boardcomputer)" voice="yes">
+ <t id="1020121">{7,1020000} {12,223}</t>
+ <t id="1020122">{17,10821} {12,210}</t>
+ <t id="1020222">{17,10531} {12,209}</t>
+ <t id="1020223">{17,10431} {12,208}</t>
+ <t id="1020320">{17,10131} {12,200}</t>
+ <t id="1020322">{17,10231} {12,206}</t>
+ <t id="1020323">{17,10321} {12,207}</t>
+ <t id="1020420">{17,10261} {12,201}</t>
+ <t id="1020421">{17,10331} {12,202}</t>
+ <t id="1020422">{17,10191} {12,205}</t>
+ <t id="1020521">{17,10451} {12,203}</t>
+ <t id="1020522">{17,10501} {12,204}</t>
+</page>
+<page id="19" title="Sector Descriptions" descr="">
+ <t id="1030121"></t>
+ <t id="1030122"></t>
+ <t id="1030222"></t>
+ <t id="1030223"></t>
+ <t id="1030320"></t>
+ <t id="1030322"></t>
+ <t id="1030323"></t>
+ <t id="1030420"></t>
+ <t id="1030421"></t>
+ <t id="1030422"></t>
+ <t id="1030521"></t>
+ <t id="1030522"></t>
+</page>
+</language>

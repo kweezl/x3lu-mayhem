@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language id="44">
+<page id="1500" title="Handelssoftware MK3" descr="">
+ <t id="400">Delivery Ship</t>
+ <t id="424">Your trader \033G%s\033X with ID \033G%s\033X has been attacked in sector \033G%s\033X by \033R%s\033X.\n</t>
+ <t id="425">%sHe's initiating emergency jump routines to \033G%s\033X. He will take up work from there.</t>
+ <t id="426">%sHe can't jump and therefore docks at station \033G%s\033X. He'll wait there until the threat is gone.</t>
+ <t id="427">Raaaak Software Ltd.\nImproved %s v%s\nShip: %s\nPilot: %s\nSector: %s</t>
+ <t id="428">The homebase \033G%s\033X of your trader \033G%s\033X in sector \033G%s\033X has not enough money. There are only \033G%s\033X credits available while the pilot needs at least \033G%s\033X. He continues to work under protest.</t>
+ <t id="501">MK3 Cargo Bay Manager</t>
+ <t id="502">Choose amount of wares to stay on board:</t>
+ <t id="503">No lockable amounts of wares have been found.</t>
+ <t id="504">Save</t>
+ <t id="505">Load</t>
+ <t id="506">Global Data</t>
+ <t id="507">Keep all</t>
+ <t id="508">Sell all</t>
+ <t id="509">Add ware...</t>
+ <t id="510">Choose ware</t>
+ <t id="511">Amount</t>
+ <t id="512">Pilot salaries</t>
+ <t id="513">Ship repair costs</t>
+ <t id="514">Hint: MK3 traders can use fighter drones MkII...</t>
+ <t id="515">Apply to all traders</t>
+ <t id="601">0</t>
+ <t id="610">1</t>
+ <t id="611">2</t>
+ <t id="612">3</t>
+ <t id="613">5</t>
+ <t id="614">40</t>
+ <t id="615">10</t>
+ <t id="616">40</t>
+ <t id="617">40</t>
+ <t id="618">45</t>
+ <t id="619">1</t>
+ <t id="620">10</t>
+ <t id="621">3</t>
+ <t id="622">6000</t>
+</page>
+<page id="1509" title="Blacklist Manager" descr="">
+ <t id="1">0.9(version)</t>
+ <t id="2">MK3 Blacklist Manager(script name)</t>
+ <t id="3">1202(command number)</t>
+ <t id="10">Blacklist Manager</t>
+ <t id="11">Current Blacklist</t>
+ <t id="12">%s</t>
+ <t id="13">Options</t>
+ <t id="14">Add Sector</t>
+ <t id="15">Add Station</t>
+ <t id="16">Remove Item</t>
+ <t id="17">View Automatic Blacklist</t>
+ <t id="18">Exit</t>
+ <t id="19">Add Sector to Blacklist</t>
+ <t id="20">Add Station to Blacklist</t>
+ <t id="21">Remove Item from Blacklist</t>
+ <t id="22">%s</t>
+ <t id="23">List is empty</t>
+ <t id="24">Automatic Blacklist</t>
+ <t id="25">%s</t>
+ <t id="26">View: %s</t>
+ <t id="27">This manager modifies the global station/sector-blacklist used by sector- and universe traders.</t>
+ <t id="28">Select sector or station to remove from permanent blacklist.</t>
+ <t id="29">This list is being maintained by traders to lock stations they want to trade with, and to communicate sectors with potential threats.</t>
+</page>
+<page id="2008" title="scipt objects commands" descr="0">
+ <t id="1202">COMMAND_MK3_1202_BLMGR_RUN</t>
+ <t id="1247">COMMAND_MK3_1247_Cargobay_MGR</t>
+ <t id="6500">COMMAND_MK3_6500_DELIVERY</t>
+ <t id="6501">COMMAND_MK3_6501_UPGRADE_SHIELDS</t>
+ <t id="6502">COMMAND_MK3_6502_BUY_TUNINGS</t>
+ <t id="6503">COMMAND_MK3_6503_BUY_HARDWARE</t>
+ <t id="6504">COMMAND_MK3_6504_REFUEL</t>
+ <t id="6505">COMMAND_MK3_6505_SCAN</t>
+</page>
+<page id="2010" title="commands" descr="Long version of commandos. These are the commandos assigned to ships using the commandconsole. Page 2010 and 2011 belong together and hold short and long versions of the same commands">
+ <t id="1202">Start MK3 Blacklist Manager</t>
+ <t id="1247">Enter MK3 Cargo Bay Manager</t>
+ <t id="6500">Delivery...</t>
+ <t id="6501">Upgrading shields...</t>
+ <t id="6502">Upgrading ship...</t>
+ <t id="6503">Buying ship hardware...</t>
+ <t id="6504">Refuelling ship...</t>
+ <t id="6505">Scanning trade routes...</t>
+</page>
+<page id="2011" title="commands" descr="Short version of commandos. These are the commandos assigned to ships using the commandconsole. Page 2010 and 2011 belong together and hold short and long versions of the same commands">
+ <t id="1202">MK3.BLMGR</t>
+ <t id="1247">MK3.Crg.MGR</t>
+ <t id="6500">MK3.DLVRY</t>
+ <t id="6501">MK3.UPG.SHLD</t>
+ <t id="6502">MK3.UPG.SHP</t>
+ <t id="6503">MK3.BUY.HW</t>
+ <t id="6504">MK3.REFUEL</t>
+ <t id="6505">MK3.SCAN</t>
+</page>
+<page id="2022" title="command info" descr="">
+ <t id="1202">This command starts the Blacklist Manager for Trade Command Software MK3. You can create and manage a global blacklist of sectors and stations, which all MK3 traders will then ignore as flight destinations.\n{2022,99993}</t>
+ <t id="1247">Manages amounts of wares to stay board.</t>
+ <t id="6500">This command indicates that the trader is awaiting a shipment from the Goner delivery service.</t>
+ <t id="6501">This command indicates that the trader is upgrading his shields.</t>
+ <t id="6502">This command indicates that the trader is buying tunings or cargo extensions.</t>
+ <t id="6503">This command indicates that the trader is buying fight drones or other hardware.</t>
+ <t id="6504">This command indicates that the trader is currently refuelling. (Currently not used!)</t>
+ <t id="6505">This command indicates that the trader is currently scanning for a profitable trade route.</t>
+</page>
+<page id="17" title="Boardcomp. objects" descr="Quad line groups for ware factory pairs or twins (spoken by Boardcomputer)">
+ <t id="15083">Ship repair costs</t>
+ <t id="15084">The repair costs for a damaged Mk3 trader.</t>
+ <t id="15093">Pilot salaries</t>
+ <t id="15094">The salary of an Mk3 trader.</t>
+</page>
+</language>

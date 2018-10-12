@@ -1,0 +1,2578 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>setup.HotKeys</name>
+	<version>12</version>
+	<engineversion>50</engineversion>
+	<description>Setup: HotKeys</description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.EmergencyRetreatDrive'</text>
+		</line>
+		<line linenr="002" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="003" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="004" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Activate emergency retreat drive'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.EmergencyRetreatDrive</call>
+		</line>
+		<line linenr="005" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="006" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.RemoteSystemControl'</text>
+		</line>
+		<line linenr="009" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="010" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="011" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Activate remote system control'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.RemoteSystemControl</call>
+		</line>
+		<line linenr="012" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="013" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="014" indent="" />
+		<line linenr="015" indent="">
+			<comment>*$String = 'LitQB.HK.TargetDisplayShipType'</comment>
+		</line>
+		<line linenr="016" indent="">
+			<comment>*$Key = get global variable: name=$String</comment>
+		</line>
+		<line linenr="017" indent="">
+			<comment>*if not $Key</comment>
+		</line>
+		<line linenr="018" indent="">
+			<comment>*$Key = register hotkey 'Display target object type' to call script 'HK.Target.DisplayShipType'</comment>
+		</line>
+		<line linenr="019" indent="">
+			<comment>*set global variable: name=$String value=$Key</comment>
+		</line>
+		<line linenr="020" indent="">
+			<comment>*end</comment>
+		</line>
+		<line linenr="021" indent="" />
+		<line linenr="022" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.FireChaff'</text>
+		</line>
+		<line linenr="023" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="024" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="025" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Fire chaff'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.FireChaff</call>
+		</line>
+		<line linenr="026" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="027" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="028" indent="" />
+		<line linenr="029" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.Tug.Flag'</text>
+		</line>
+		<line linenr="030" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="031" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="032" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Flag ship for tug'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Tug.Flag</call>
+		</line>
+		<line linenr="033" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="034" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="035" indent="" />
+		<line linenr="036" indent="">
+			<comment>*$String = 'LitQB.HK.PlayerJumpToHomePoint'</comment>
+		</line>
+		<line linenr="037" indent="">
+			<comment>*$Key = get global variable: name=$String</comment>
+		</line>
+		<line linenr="038" indent="">
+			<comment>*if not $Key</comment>
+		</line>
+		<line linenr="039" indent="">
+			<comment>*$Key = register hotkey 'Jump to home point' to call script 'HK.PlayerJumpToHomePoint'</comment>
+		</line>
+		<line linenr="040" indent="">
+			<comment>*set global variable: name=$String value=$Key</comment>
+		</line>
+		<line linenr="041" indent="">
+			<comment>*end</comment>
+		</line>
+		<line linenr="042" indent="" />
+		<line linenr="043" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.MLCC.Console'</text>
+		</line>
+		<line linenr="044" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="045" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="046" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'MLCC console'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.MLCC.Console</call>
+		</line>
+		<line linenr="047" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="048" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="049" indent="" />
+		<line linenr="050" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.MLCC.AssistGoCode'</text>
+		</line>
+		<line linenr="051" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="052" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="053" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'MLCC go code'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.MLCC.AssistGoCode</call>
+		</line>
+		<line linenr="054" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="055" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="056" indent="" />
+		<line linenr="057" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.Screenshot'</text>
+		</line>
+		<line linenr="058" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="059" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="060" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'No HUD Screenshot'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Screenshot</call>
+		</line>
+		<line linenr="061" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="062" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="063" indent="" />
+		<line linenr="064" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.PlayerConsole'</text>
+		</line>
+		<line linenr="065" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="066" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="067" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Personal console'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.PlayerConsole</call>
+		</line>
+		<line linenr="068" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="069" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="070" indent="" />
+		<line linenr="071" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QLaserConfig.One.Get'</text>
+		</line>
+		<line linenr="072" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="073" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="074" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'QLaser config save I'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QLaserConfig.One.Get</call>
+		</line>
+		<line linenr="075" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="076" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="077" indent="" />
+		<line linenr="078" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QLaserConfig.One.Set'</text>
+		</line>
+		<line linenr="079" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="080" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="081" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'QLaser config equip I'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QLaserConfig.One.Set</call>
+		</line>
+		<line linenr="082" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="083" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="084" indent="" />
+		<line linenr="085" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QLaserConfig.Two.Get'</text>
+		</line>
+		<line linenr="086" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="087" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="088" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'QLaser config save II'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QLaserConfig.Two.Get</call>
+		</line>
+		<line linenr="089" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="090" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="091" indent="" />
+		<line linenr="092" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QLaserConfig.Two.Set'</text>
+		</line>
+		<line linenr="093" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="094" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="095" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'QLaser config equip II'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QLaserConfig.Two.Set</call>
+		</line>
+		<line linenr="096" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="097" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="098" indent="" />
+		<line linenr="099" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QShuttle.Fuel.Go'</text>
+		</line>
+		<line linenr="100" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="101" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="102" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Quickshuttle fuel go'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QShuttle.Fuel.Go</call>
+		</line>
+		<line linenr="103" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="104" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="105" indent="" />
+		<line linenr="106" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QShuttle.Fuel.Home'</text>
+		</line>
+		<line linenr="107" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="108" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="109" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Quickshuttle fuel home'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QShuttle.Fuel.Home</call>
+		</line>
+		<line linenr="110" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="111" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="112" indent="" />
+		<line linenr="113" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QShuttle.Reap.Go'</text>
+		</line>
+		<line linenr="114" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="115" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="116" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Quickshuttle reap go'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QShuttle.Reap.Go</call>
+		</line>
+		<line linenr="117" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="118" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="119" indent="" />
+		<line linenr="120" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.QShuttle.Reap.Home'</text>
+		</line>
+		<line linenr="121" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="122" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="123" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Quickshuttle reap home'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.QShuttle.Reap.Home</call>
+		</line>
+		<line linenr="124" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="125" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="126" indent="" />
+		<line linenr="127" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.Save'</text>
+		</line>
+		<line linenr="128" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="129" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="130" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Save'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Save</call>
+		</line>
+		<line linenr="131" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="132" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="133" indent="" />
+		<line linenr="134" indent="">
+			<comment>*$String = 'LitQB.HK.ShowToggle.UT'</comment>
+		</line>
+		<line linenr="135" indent="">
+			<comment>*$Key = get global variable: name=$String</comment>
+		</line>
+		<line linenr="136" indent="">
+			<comment>*if not $Key</comment>
+		</line>
+		<line linenr="137" indent="">
+			<comment>*$Key = register hotkey 'Show in property menu: UT' to call script 'HK.ShowToggle.UT'</comment>
+		</line>
+		<line linenr="138" indent="">
+			<comment>*set global variable: name=$String value=$Key</comment>
+		</line>
+		<line linenr="139" indent="">
+			<comment>*end</comment>
+		</line>
+		<line linenr="140" indent="" />
+		<line linenr="141" indent="">
+			<comment>*$String = 'LitQB.HK.ShowToggle.Security'</comment>
+		</line>
+		<line linenr="142" indent="">
+			<comment>*$Key = get global variable: name=$String</comment>
+		</line>
+		<line linenr="143" indent="">
+			<comment>*if not $Key</comment>
+		</line>
+		<line linenr="144" indent="">
+			<comment>*$Key = register hotkey 'Show in property menu: Security' to call script 'HK.ShowToggle.Security'</comment>
+		</line>
+		<line linenr="145" indent="">
+			<comment>*set global variable: name=$String value=$Key</comment>
+		</line>
+		<line linenr="146" indent="">
+			<comment>*end</comment>
+		</line>
+		<line linenr="147" indent="" />
+		<line linenr="148" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.TargetNearestEnemy'</text>
+		</line>
+		<line linenr="149" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="150" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="151" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Target nearest enemy'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Target.NearEnemy</call>
+		</line>
+		<line linenr="152" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="153" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="154" indent="" />
+		<line linenr="155" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.TargetNearestWare'</text>
+		</line>
+		<line linenr="156" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="157" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="158" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Target nearest flying ware'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Target.NearestFlyingWare</call>
+		</line>
+		<line linenr="159" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="160" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="161" indent="" />
+		<line linenr="162" indent="">
+			<var>$String</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'LitQB.HK.TargetNearestUnclaimedShip'</text>
+		</line>
+		<line linenr="163" indent="">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+		</line>
+		<line linenr="164" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$Key</var>
+		</line>
+		<line linenr="165" indent="&#160;">
+			<var>$Key</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>register</text>
+			<text> </text>
+			<text>hotkey</text>
+			<text> </text>
+			<text>'Target nearest unclaimed ship'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>HK.Target.NearestUnclaimedShip</call>
+		</line>
+		<line linenr="166" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<var>$String</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$Key</var>
+		</line>
+		<line linenr="167" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="168" indent="" />
+		<line linenr="169" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="170" indent="" />
+		<line linenr="171" indent="" />
+		<line linenr="172" indent="" />
+		<line linenr="173" indent="" />
+		<line linenr="174" indent="" />
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="setup.HotKeys" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Setup: HotKeys" />
+			<sval type="int" val="12" />
+			<sval type="int" val="0" />
+			<sval type="array" size="2">
+				<sval type="string" val="String" />
+				<sval type="string" val="Key" />
+			</sval>
+			<sval type="array" size="101">
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.EmergencyRetreatDrive" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536869628" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Activate emergency retreat drive" />
+					<sval type="string" val="HK.EmergencyRetreatDrive" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.RemoteSystemControl" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536868348" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Activate remote system control" />
+					<sval type="string" val="HK.RemoteSystemControl" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.FireChaff" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536867068" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Fire chaff" />
+					<sval type="string" val="HK.FireChaff" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.Tug.Flag" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536865788" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Flag ship for tug" />
+					<sval type="string" val="HK.Tug.Flag" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.MLCC.Console" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536864508" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="MLCC console" />
+					<sval type="string" val="HK.MLCC.Console" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.MLCC.AssistGoCode" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536863228" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="MLCC go code" />
+					<sval type="string" val="HK.MLCC.AssistGoCode" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.Screenshot" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536861948" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="No HUD Screenshot" />
+					<sval type="string" val="HK.Screenshot" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.PlayerConsole" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536860668" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Personal console" />
+					<sval type="string" val="HK.PlayerConsole" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QLaserConfig.One.Get" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536859388" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="QLaser config save I" />
+					<sval type="string" val="HK.QLaserConfig.One.Get" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QLaserConfig.One.Set" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536858108" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="QLaser config equip I" />
+					<sval type="string" val="HK.QLaserConfig.One.Set" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QLaserConfig.Two.Get" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536856828" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="QLaser config save II" />
+					<sval type="string" val="HK.QLaserConfig.Two.Get" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QLaserConfig.Two.Set" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536855548" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="QLaser config equip II" />
+					<sval type="string" val="HK.QLaserConfig.Two.Set" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QShuttle.Fuel.Go" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536854268" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Quickshuttle fuel go" />
+					<sval type="string" val="HK.QShuttle.Fuel.Go" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QShuttle.Fuel.Home" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536852988" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Quickshuttle fuel home" />
+					<sval type="string" val="HK.QShuttle.Fuel.Home" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QShuttle.Reap.Go" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536851708" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Quickshuttle reap go" />
+					<sval type="string" val="HK.QShuttle.Reap.Go" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.QShuttle.Reap.Home" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536850428" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Quickshuttle reap home" />
+					<sval type="string" val="HK.QShuttle.Reap.Home" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.Save" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536849148" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Save" />
+					<sval type="string" val="HK.Save" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.TargetNearestEnemy" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536847868" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Target nearest enemy" />
+					<sval type="string" val="HK.Target.NearEnemy" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.TargetNearestWare" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536846588" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Target nearest flying ware" />
+					<sval type="string" val="HK.Target.NearestFlyingWare" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="LitQB.HK.TargetNearestUnclaimedShip" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536845308" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1100" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Target nearest unclaimed ship" />
+					<sval type="string" val="HK.Target.NearestUnclaimedShip" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="73">
+				<sval type="array" size="2">
+					<sval type="int" val="5" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="5" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$String = 'LitQB.HK.TargetDisplayShipType'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = get global variable: name=$String" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = register hotkey 'Display target object type' to call script 'HK.Target.DisplayShipType'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set global variable: name=$String value=$Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="20" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="20" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$String = 'LitQB.HK.PlayerJumpToHomePoint'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = get global variable: name=$String" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = register hotkey 'Jump to home point' to call script 'HK.PlayerJumpToHomePoint'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set global variable: name=$String value=$Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="20" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="20" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="25" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="25" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="30" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="30" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="35" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="35" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="40" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="40" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="45" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="45" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="50" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="50" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="55" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="55" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="60" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="60" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="65" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="65" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="70" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="70" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="75" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="75" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="80" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="80" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="85" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="85" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$String = 'LitQB.HK.ShowToggle.UT'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = get global variable: name=$String" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = register hotkey 'Show in property menu: UT' to call script 'HK.ShowToggle.UT'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set global variable: name=$String value=$Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="85" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$String = 'LitQB.HK.ShowToggle.Security'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = get global variable: name=$String" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Key = register hotkey 'Show in property menu: Security' to call script 'HK.ShowToggle.Security'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set global variable: name=$String value=$Key" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="85" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="85" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="90" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="90" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="95" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="95" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="100" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

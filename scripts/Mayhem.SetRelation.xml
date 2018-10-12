@@ -1,0 +1,463 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>Mayhem.SetRelation</name>
+	<version>1</version>
+	<engineversion>50</engineversion>
+	<description></description>
+	<arguments>
+		<argument index="1" name="race1" type="Var/Race" desc="" />
+		<argument index="2" name="race2" type="Var/Race" desc="" />
+		<argument index="3" name="relation" type="Var/Number" desc="-1=enemy ; 0=neutral ; 1=ally" />
+	</arguments>
+	<sourcetext>
+		<line linenr="001" indent="">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>$race2</var>
+		</line>
+		<line linenr="002" indent="&#160;">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="003" indent="" />
+		<line linenr="004" indent="">
+			<comment>* Fixes a bug where the player reputation dropped from positive rank to -5.</comment>
+		</line>
+		<line linenr="005" indent="">
+			<text>do</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>OR</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[Player]</var>
+		</line>
+		<line linenr="006" indent="&#160;">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$relation</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[Foe]</var>
+		</line>
+		<line linenr="009" indent="&#160;" />
+		<line linenr="010" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>-1000000</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="011" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>-1000000</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="012" indent="&#160;" />
+		<line linenr="013" indent="">
+			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$relation</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[Neutral]</var>
+		</line>
+		<line linenr="014" indent="&#160;" />
+		<line linenr="015" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>0</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="016" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>0</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="017" indent="&#160;" />
+		<line linenr="018" indent="">
+			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$relation</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>[Friend]</var>
+		</line>
+		<line linenr="019" indent="&#160;" />
+		<line linenr="020" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>1000000</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="021" indent="&#160;">
+			<text>set</text>
+			<text> </text>
+			<text>notoriety</text>
+			<text> </text>
+			<text>between</text>
+			<text> </text>
+			<var>$race2</var>
+			<text> </text>
+			<text>and</text>
+			<text> </text>
+			<var>$race1</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>1000000</var>
+			<text> </text>
+			<text>points</text>
+		</line>
+		<line linenr="022" indent="&#160;" />
+		<line linenr="023" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="024" indent="" />
+		<line linenr="025" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="Mayhem.SetRelation" />
+			<sval type="int" val="50" />
+			<sval type="string" val="" />
+			<sval type="int" val="1" />
+			<sval type="int" val="0" />
+			<sval type="array" size="3">
+				<sval type="string" val="race1" />
+				<sval type="string" val="race2" />
+				<sval type="string" val="relation" />
+			</sval>
+			<sval type="array" size="16">
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610612216" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="25">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610611704" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="10" />
+					<sval type="int" val="7" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="10" />
+					<sval type="int" val="-4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-5" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610610685" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="14" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-1000000" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="-1000000" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="15" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610609659" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="14" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="15" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610608891" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="14" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000000" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="1207" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000000" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="string" val="" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="string" val="" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="string" val="-1=enemy ; 0=neutral ; 1=ally" />
+				</sval>
+			</sval>
+			<sval type="array" size="11">
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="2" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Fixes a bug where the player reputation dropped from positive rank to -5." />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="5" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="13" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

@@ -1,0 +1,2003 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>setup.plugin.autotrade</name>
+	<version>1897</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Initialisation of sector- and universetrader scripts</description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* MK3 Improvement</comment>
+		</line>
+		<line linenr="002" indent="">
+			<comment>* Gnasirator (03.12.2012)</comment>
+		</line>
+		<line linenr="003" indent="" />
+		<line linenr="004" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6500</var>
+		</line>
+		<line linenr="005" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6501</var>
+		</line>
+		<line linenr="006" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6502</var>
+		</line>
+		<line linenr="007" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6503</var>
+		</line>
+		<line linenr="008" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6504</var>
+		</line>
+		<line linenr="009" indent="">
+			<text>add</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>custom</text>
+			<text> </text>
+			<text>command</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>6505</var>
+		</line>
+		<line linenr="010" indent="" />
+		<line linenr="011" indent="">
+			<var>$PageID</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>1500</var>
+		</line>
+		<line linenr="012" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.PageID'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$PageID</var>
+		</line>
+		<line linenr="013" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.XML'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>1</var>
+		</line>
+		<line linenr="014" indent="">
+			<text>load</text>
+			<text> </text>
+			<text>text</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>$PageID</var>
+		</line>
+		<line linenr="015" indent="" />
+		<line linenr="016" indent="">
+			<var>$version.current</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'0.6.1b'</text>
+		</line>
+		<line linenr="017" indent="" />
+		<line linenr="018" indent="">
+			<var>$cmd.galaxy</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_AUTOTRADER_UNIVERSE]</var>
+		</line>
+		<line linenr="019" indent="">
+			<var>$cmd.sector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_AUTOTRADER_SECTOR]</var>
+		</line>
+		<line linenr="020" indent="">
+			<var>$cmd.move</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SIGN_MOVE_PILOT]</var>
+		</line>
+		<line linenr="021" indent="">
+			<var>$cmd.ware</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>{Trade Command Software MK3}</var>
+		</line>
+		<line linenr="022" indent="" />
+		<line linenr="023" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.logging</call>
+			<text> </text>
+			<text>:</text>
+		</line>
+		<line linenr="024" indent="" />
+		<line linenr="025" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.version'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$version.current</var>
+		</line>
+		<line linenr="026" indent="" />
+		<line linenr="027" indent="">
+			<var>$Logging</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.log'</text>
+		</line>
+		<line linenr="028" indent="">
+			<comment>* makes an additional log entry due load games or new games</comment>
+		</line>
+		<line linenr="029" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$Logging</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>1</var>
+		</line>
+		<line linenr="030" indent="&#160;" interruptable="@">
+			<var>$log</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!lib.sprintf.format.gametime</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>pageid</text>
+			<text>=</text>
+			<var>$PageID</var>
+			<text> </text>
+			<text>TextId</text>
+			<text>=</text>
+			<var>206</var>
+		</line>
+		<line linenr="031" indent="&#160;">
+			<text>write</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>log</text>
+			<text> </text>
+			<text>file</text>
+			<text> </text>
+			<var>$PageID</var>
+			<text> </text>
+			<text>append</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$log</var>
+		</line>
+		<line linenr="032" indent="&#160;">
+			<text>write</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>log</text>
+			<text> </text>
+			<text>file</text>
+			<text> </text>
+			<var>$PageID</var>
+			<text> </text>
+			<text>append</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text> </text>
+			<text>printf</text>
+			<text>:</text>
+			<text> </text>
+			<text>pageid</text>
+			<text>=</text>
+			<var>$PageID</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<var>203</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="033" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="034" indent="" />
+		<line linenr="035" indent="">
+			<var>$locvars</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<text>'experience'</text>
+			<text>,</text>
+			<text> </text>
+			<text>'Gain'</text>
+			<text>,</text>
+			<text> </text>
+			<text>'pilotname'</text>
+			<text>,</text>
+			<text> </text>
+			<text>'pilotrace'</text>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="036" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'buyrange'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="037" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'jumps.reserve'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="038" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'sellrange'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="039" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'salary'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="040" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'repair.costs.subtracted'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="041" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'upgrade.budget'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="042" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'traderange'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="043" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'ware.bl.mgr.amounts'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="044" indent="">
+			<text>append</text>
+			<text> </text>
+			<text>'ware.bl.mgr.wares'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="045" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.movepilot.locvars'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>$locvars</var>
+		</line>
+		<line linenr="046" indent="" />
+		<line linenr="047" indent="">
+			<comment>* delete old named global var</comment>
+		</line>
+		<line linenr="048" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'movepilot.locvars'</text>
+			<text> </text>
+			<text>value</text>
+			<text>=</text>
+			<var>null</var>
+		</line>
+		<line linenr="049" indent="" />
+		<line linenr="050" indent="" />
+		<line linenr="051" indent="" />
+		<line linenr="052" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>$cmd.move</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Special Command Software MK1}</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.movepilotcheck</call>
+		</line>
+		<line linenr="053" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.move</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.movepilot.start</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="054" indent="" />
+		<line linenr="055" indent="">
+			<comment>* Sector + Local Trader Setup</comment>
+		</line>
+		<line linenr="056" indent="">
+			<comment>*set script command upgrade: command=$cmd.sector  upgrade=$cmd.ware  script='!plugin.autotrade.localcheck'</comment>
+		</line>
+		<line linenr="057" indent="">
+			<comment>*set ship command preload script: command=$cmd.sector script='!plugin.autotrade.local.preload'</comment>
+		</line>
+		<line linenr="058" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[TS], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="059" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[TP], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="060" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[TM], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="061" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[M3], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="062" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[M4], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="063" indent="">
+			<comment>*global script map: set: key=$cmd.sector, class=[M6], race=[Player], script='!plugin.autotrade.local.start', prio=0</comment>
+		</line>
+		<line linenr="064" indent="" />
+		<line linenr="065" indent="">
+			<comment>* Galaxy Trader Setup</comment>
+		</line>
+		<line linenr="066" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>$cmd.ware</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxycheck</call>
+		</line>
+		<line linenr="067" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[TS]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="068" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[TP]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="069" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[TM]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="070" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[M3]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="071" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[M4]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="072" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[M6]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>!plugin.autotrade.galaxy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="073" indent="" />
+		<line linenr="074" indent="">
+			<comment>* Drones Ignore</comment>
+		</line>
+		<line linenr="075" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>ignore</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.move</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Freight Drone]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+		</line>
+		<line linenr="076" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>ignore</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.move</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Fighter Drone]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+		</line>
+		<line linenr="077" indent="">
+			<comment>*global script map: ignore: key=$cmd.sector, class=[Freight Drone], race=[Player]</comment>
+		</line>
+		<line linenr="078" indent="">
+			<comment>*global script map: ignore: key=$cmd.sector, class=[Fighter Drone], race=[Player]</comment>
+		</line>
+		<line linenr="079" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>ignore</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Freight Drone]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+		</line>
+		<line linenr="080" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>ignore</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>$cmd.galaxy</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Fighter Drone]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+		</line>
+		<line linenr="081" indent="" />
+		<line linenr="082" indent="" />
+		<line linenr="083" indent="">
+			<comment>* if [PLAYERSHIP]</comment>
+		</line>
+		<line linenr="084" indent="">
+			<comment>* $sector = [PLAYERSHIP]-&gt; get sector</comment>
+		</line>
+		<line linenr="085" indent="">
+			<comment>* $station = find station in galaxy: startsector=$sector class or type={Aldrin {}Unused{} (DOCK_LC_4)} race=[Argon] flags=[Find.Nearest] refobj=null serial=null max.jumps=50</comment>
+		</line>
+		<line linenr="086" indent="">
+			<comment>* if $station-&gt; exists</comment>
+		</line>
+		<line linenr="087" indent="">
+			<comment>* if not $station-&gt; trades with ware $cmd.ware</comment>
+		</line>
+		<line linenr="088" indent="">
+			<comment>* $station-&gt; add product to factory or dock: $cmd.ware</comment>
+		</line>
+		<line linenr="089" indent="">
+			<comment>* = $station-&gt; add 1 units of $cmd.ware</comment>
+		</line>
+		<line linenr="090" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="091" indent="">
+			<comment>* else</comment>
+		</line>
+		<line linenr="092" indent="">
+			<comment>* $station = find station in galaxy: startsector=$sector class or type={Argon OTAS HQ} race=[Argon] flags=[Find.Nearest] refobj=null serial=null max.jumps=50</comment>
+		</line>
+		<line linenr="093" indent="">
+			<comment>* if $station-&gt; exists</comment>
+		</line>
+		<line linenr="094" indent="">
+			<comment>* if not $station-&gt; trades with ware $cmd.ware</comment>
+		</line>
+		<line linenr="095" indent="">
+			<comment>* $station-&gt; add product to factory or dock: $cmd.ware</comment>
+		</line>
+		<line linenr="096" indent="">
+			<comment>* = $station-&gt; add 1 units of $cmd.ware</comment>
+		</line>
+		<line linenr="097" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="098" indent="">
+			<comment>* else</comment>
+		</line>
+		<line linenr="099" indent="">
+			<comment>* $station = find station in galaxy: startsector=$sector class or type={Teladi Military Outpost} race=null flags=[Find.Nearest] refobj=null serial=null max.jumps=50</comment>
+		</line>
+		<line linenr="100" indent="">
+			<comment>* if $station-&gt; exists</comment>
+		</line>
+		<line linenr="101" indent="">
+			<comment>* if not $station-&gt; trades with ware $cmd.ware</comment>
+		</line>
+		<line linenr="102" indent="">
+			<comment>* $station-&gt; add product to factory or dock: $cmd.ware</comment>
+		</line>
+		<line linenr="103" indent="">
+			<comment>* = $station-&gt; add 1 units of $cmd.ware</comment>
+		</line>
+		<line linenr="104" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="105" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="106" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="107" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="108" indent="" />
+		<line linenr="109" indent="">
+			<comment>* $i = 4</comment>
+		</line>
+		<line linenr="110" indent="">
+			<comment>* while $i</comment>
+		</line>
+		<line linenr="111" indent="">
+			<comment>* dec $i</comment>
+		</line>
+		<line linenr="112" indent="">
+			<comment>* $station = find station in galaxy: startsector=$sector class or type={Teladi Space Equipment Dock} race=[Teladi] flags=[Find.Random] refobj=null serial=null max.jumps=null</comment>
+		</line>
+		<line linenr="113" indent="">
+			<comment>* if $station-&gt; exists</comment>
+		</line>
+		<line linenr="114" indent="">
+			<comment>* if not $station-&gt; trades with ware $cmd.ware</comment>
+		</line>
+		<line linenr="115" indent="">
+			<comment>* $station-&gt; add product to factory or dock: $cmd.ware</comment>
+		</line>
+		<line linenr="116" indent="">
+			<comment>* = $station-&gt; add 1 units of $cmd.ware</comment>
+		</line>
+		<line linenr="117" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="118" indent="">
+			<comment>* else</comment>
+		</line>
+		<line linenr="119" indent="">
+			<comment>* break</comment>
+		</line>
+		<line linenr="120" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="121" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="122" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="123" indent="" />
+		<line linenr="124" indent="" />
+		<line linenr="125" indent="" />
+		<line linenr="126" indent="">
+			<comment>* MK3 Cargo Manager</comment>
+		</line>
+		<line linenr="127" indent="">
+			<comment>* Gnasirator (13.02.2012)</comment>
+		</line>
+		<line linenr="128" indent="" />
+		<line linenr="129" indent="">
+			<comment>* Command setup</comment>
+		</line>
+		<line linenr="130" indent="">
+			<comment>* $cmd = [COMMAND_TYPE_SHIP_47]</comment>
+		</line>
+		<line linenr="131" indent="">
+			<comment>* set global variable: name='autotrade.ware.bl.mgr.cmd' value=$cmd</comment>
+		</line>
+		<line linenr="132" indent="">
+			<comment>* set script command upgrade: command=$cmd  upgrade={Trade Command Software MK3}</comment>
+		</line>
+		<line linenr="133" indent="">
+			<comment>* global script map: set: key=$cmd, class=[TS], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="134" indent="">
+			<comment>* global script map: set: key=$cmd, class=[TP], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="135" indent="">
+			<comment>* global script map: set: key=$cmd, class=[TM], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="136" indent="">
+			<comment>* global script map: set: key=$cmd, class=[M3], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="137" indent="">
+			<comment>* global script map: set: key=$cmd, class=[M4], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="138" indent="">
+			<comment>* global script map: set: key=$cmd, class=[M6], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0</comment>
+		</line>
+		<line linenr="139" indent="" />
+		<line linenr="140" indent="">
+			<comment>* global script map: remove: key=[COMMAND_TYPE_SHIP_22], class=[Ship], race=[Player]</comment>
+		</line>
+		<line linenr="141" indent="">
+			<comment>* global script map: ignore: key=[COMMAND_TYPE_SHIP_22], class=[Ship], race=[Player]</comment>
+		</line>
+		<line linenr="142" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="143" indent="" />
+		<line linenr="144" indent="" />
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="setup.plugin.autotrade" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Initialisation of sector- and universetrader scripts" />
+			<sval type="int" val="1897" />
+			<sval type="int" val="0" />
+			<sval type="array" size="9">
+				<sval type="string" val="PageID" />
+				<sval type="string" val="version.current" />
+				<sval type="string" val="cmd.galaxy" />
+				<sval type="string" val="cmd.sector" />
+				<sval type="string" val="cmd.move" />
+				<sval type="string" val="cmd.ware" />
+				<sval type="string" val="Logging" />
+				<sval type="string" val="log" />
+				<sval type="string" val="locvars" />
+			</sval>
+			<sval type="array" size="48">
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6500" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6501" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6502" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6503" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6504" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1463" />
+					<sval type="int" val="4" />
+					<sval type="int" val="6505" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1500" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.PageID" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.XML" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="151" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="0.6.1b" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="2" />
+					<sval type="int" val="1" />
+					<sval type="int" val="18" />
+					<sval type="int" val="401" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="18" />
+					<sval type="int" val="400" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="18" />
+					<sval type="int" val="501" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048647" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.logging" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.version" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.log" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610607101" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="102" />
+					<sval type="string" val="!lib.sprintf.format.gametime" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="206" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="404" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="406" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="203" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="experience" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Gain" />
+					<sval type="int" val="5" />
+					<sval type="string" val="pilotname" />
+					<sval type="int" val="5" />
+					<sval type="string" val="pilotrace" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="buyrange" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="jumps.reserve" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="sellrange" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="salary" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="repair.costs.subtracted" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="upgrade.budget" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="traderange" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="ware.bl.mgr.amounts" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="5" />
+					<sval type="string" val="ware.bl.mgr.wares" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.movepilot.locvars" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="157" />
+					<sval type="int" val="5" />
+					<sval type="string" val="movepilot.locvars" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048634" />
+					<sval type="string" val="!plugin.autotrade.movepilotcheck" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="string" val="!plugin.autotrade.movepilot.start" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="string" val="!plugin.autotrade.galaxycheck" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2031" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2030" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2141" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2023" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2024" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="string" val="!plugin.autotrade.galaxy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2026" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="127" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2092" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="127" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2067" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="127" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2092" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="127" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2067" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="96">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="MK3 Improvement" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Gnasirator (03.12.2012)" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="6" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="15" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="18" />
+					<sval type="int" val="1" />
+					<sval type="string" val="makes an additional log entry due load games or new games" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="22" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="22" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="33" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="33" />
+					<sval type="int" val="1" />
+					<sval type="string" val="delete old named global var" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="34" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="36" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Sector + Local Trader Setup" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command upgrade: command=$cmd.sector  upgrade=$cmd.ware  script='!plugin.autotrade.localcheck'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set ship command preload script: command=$cmd.sector script='!plugin.autotrade.local.preload'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[TS], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[TP], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[TM], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[M3], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[M4], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd.sector, class=[M6], race=[Player], script='!plugin.autotrade.local.start', prio=0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="36" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="36" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Galaxy Trader Setup" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="43" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="43" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Drones Ignore" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="45" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: ignore: key=$cmd.sector, class=[Freight Drone], race=[Player]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="45" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: ignore: key=$cmd.sector, class=[Fighter Drone], race=[Player]" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if [PLAYERSHIP]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$sector = [PLAYERSHIP]-&gt; get sector" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station = find station in galaxy: startsector=$sector class or type={Aldrin {}Unused{} (DOCK_LC_4)} race=[Argon] flags=[Find.Nearest] refobj=null serial=null max.jumps=50" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $station-&gt; exists" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $station-&gt; trades with ware $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station-&gt; add product to factory or dock: $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="= $station-&gt; add 1 units of $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="else" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station = find station in galaxy: startsector=$sector class or type={Argon OTAS HQ} race=[Argon] flags=[Find.Nearest] refobj=null serial=null max.jumps=50" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $station-&gt; exists" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $station-&gt; trades with ware $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station-&gt; add product to factory or dock: $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="= $station-&gt; add 1 units of $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="else" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station = find station in galaxy: startsector=$sector class or type={Teladi Military Outpost} race=null flags=[Find.Nearest] refobj=null serial=null max.jumps=50" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $station-&gt; exists" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $station-&gt; trades with ware $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station-&gt; add product to factory or dock: $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="= $station-&gt; add 1 units of $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$i = 4" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="while $i" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="dec $i" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station = find station in galaxy: startsector=$sector class or type={Teladi Space Equipment Dock} race=[Teladi] flags=[Find.Random] refobj=null serial=null max.jumps=null" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $station-&gt; exists" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $station-&gt; trades with ware $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$station-&gt; add product to factory or dock: $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="= $station-&gt; add 1 units of $cmd.ware" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="else" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="break" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="MK3 Cargo Manager" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Gnasirator (13.02.2012)" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Command setup" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$cmd = [COMMAND_TYPE_SHIP_47]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set global variable: name='autotrade.ware.bl.mgr.cmd' value=$cmd" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command upgrade: command=$cmd  upgrade={Trade Command Software MK3}" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[TS], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[TP], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[TM], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[M3], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[M4], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=$cmd, class=[M6], race=[Player], script='!plugin.autotrade.start.bl.mgr', prio=0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="47" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: remove: key=[COMMAND_TYPE_SHIP_22], class=[Ship], race=[Player]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="47" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: ignore: key=[COMMAND_TYPE_SHIP_22], class=[Ship], race=[Player]" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="48" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="48" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

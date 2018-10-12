@@ -1,0 +1,6386 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>setup.Commands</name>
+	<version>133</version>
+	<engineversion>50</engineversion>
+	<description>Setup: All Commands</description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* Litcube's</comment>
+		</line>
+		<line linenr="002" indent="">
+			<text>load</text>
+			<text> </text>
+			<text>text</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>8383</var>
+		</line>
+		<line linenr="003" indent="">
+			<comment>* Phanon Corporation</comment>
+		</line>
+		<line linenr="004" indent="">
+			<text>load</text>
+			<text> </text>
+			<text>text</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>8384</var>
+		</line>
+		<line linenr="005" indent="">
+			<comment>* Revelation</comment>
+		</line>
+		<line linenr="006" indent="">
+			<text>load</text>
+			<text> </text>
+			<text>text</text>
+			<text>:</text>
+			<text> </text>
+			<text>id</text>
+			<text>=</text>
+			<var>8385</var>
+		</line>
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="" />
+		<line linenr="009" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="010" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="011" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="012" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="013" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="014" indent="" />
+		<line linenr="015" indent="" />
+		<line linenr="016" indent="">
+			<comment>* Menu Preloads</comment>
+		</line>
+		<line linenr="017" indent="" />
+		<line linenr="018" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_CARRIER_COMMAND]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.CarrierCommand</call>
+		</line>
+		<line linenr="019" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_COURIER]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.Courier</call>
+		</line>
+		<line linenr="020" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_DEPLOY_SATS]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.DeploySat</call>
+		</line>
+		<line linenr="021" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_DIRECT_DEPOSIT]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.DirectDeposit</call>
+		</line>
+		<line linenr="022" indent="">
+			<comment>* set ship command preload script: command=[COMMAND_DOCK_AGENT] script='PL.DockAgent'</comment>
+		</line>
+		<line linenr="023" indent="">
+			<comment>* set ship command preload script: command=[COMMAND_MOVE_LOGISTICS] script='PL.MoveLogistics'</comment>
+		</line>
+		<line linenr="024" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_REMOTE_DROP_FACTORY]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.RemoteDropFactory</call>
+		</line>
+		<line linenr="025" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_REARM]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.Rearm</call>
+		</line>
+		<line linenr="026" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_REFUEL]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.Refuel</call>
+		</line>
+		<line linenr="027" indent="">
+			<comment>* set ship command preload script: command=[COMMAND_SATURN_CH_SHOP] script='PL.SaturnCH.Shop'</comment>
+		</line>
+		<line linenr="028" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_SHIP_TEMPLATE_OUTFIT]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.ShipTemplateOutfit</call>
+		</line>
+		<line linenr="029" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_SUPPLY]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.SupplyWare</call>
+		</line>
+		<line linenr="030" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_SURPLUS_CONTROL]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.SurplusControl</call>
+		</line>
+		<line linenr="031" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_TRADE_PRODUCT_SEARCH]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.TradeProductSearch</call>
+		</line>
+		<line linenr="032" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_TRADERUN_BUY]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.TradeRun.Buy</call>
+		</line>
+		<line linenr="033" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_TRADERUN_SELL]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.TradeRun.Sell</call>
+		</line>
+		<line linenr="034" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>ship</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>preload</text>
+			<text> </text>
+			<text>script</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_TUG]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>PL.Tug</call>
+		</line>
+		<line linenr="035" indent="" />
+		<line linenr="036" indent="" />
+		<line linenr="037" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="038" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="039" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="040" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="041" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="042" indent="" />
+		<line linenr="043" indent="" />
+		<line linenr="044" indent="">
+			<comment>* Script keys</comment>
+		</line>
+		<line linenr="045" indent="" />
+		<line linenr="046" indent="">
+			<comment>* global script map: set: key=[COMMAND_AUCTION_CARGO_STATIONS], class=[Big Ship], race=[Player], script='Cmd.AuctionCargoStations', prio=0</comment>
+		</line>
+		<line linenr="047" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_AUCTION_STATION]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Station]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.AuctionStation</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="048" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_CARRIER_COMMAND]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.CarrierCommand</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="049" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_COLLECT_FLYINGWARES]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.CollectWaresInSector</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="050" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_COLOURSHIPNAME]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.ColourShipName</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="051" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_COURIER]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Courier</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="052" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_DEPLOY_SATS]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.DeploySat</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="053" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_DIRECT_DEPOSIT]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Station]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.DirectDeposit</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="054" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_DOCK_AGENT]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Little Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.DockAgent</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="055" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_DROP_WARES]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.DropWares</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="056" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_REMOTE_DROP_FACTORY]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[TL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.RemoteDropFactory</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="057" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_EXPLORE_UNIVERSE]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.ExploreUniverse</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="058" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_FLAGTUG]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Tug.Flag</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="059" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_FLY_SAFE_PATH_SECTOR]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.FlySafe.Sector</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="060" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_FLY_SAFE_PATH_STATION]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.FlySafe.Station</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="061" indent="">
+			<comment>* global script map: set: key=[COMMAND_FREIGHTER], class=[Little Ship], race=[Player], script='Cmd.Freighter', prio=0</comment>
+		</line>
+		<line linenr="062" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_GET_FUEL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.GetFuel</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="063" indent="">
+			<comment>* global script map: set: key=[COMMAND_INSTALL_MLCC], class=[Dock], race=[Player], script='Cmd.InstallMLCC', prio=0</comment>
+		</line>
+		<line linenr="064" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_MINE]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Mine</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="065" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_MINE_OWNED_SHIP]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Mine.Owned</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="066" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_MINE_OWNED_STATION]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Station]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Mine.Owned</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="067" indent="">
+			<comment>* global script map: set: key=[COMMAND_MOVE_LOGISTICS], class=[Factory], race=[Player], script='Cmd.MoveLogistics', prio=0</comment>
+		</line>
+		<line linenr="068" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_PLUTARCH_TRACTOR_SYSTEM]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[TL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.PlutarchTractorSystem</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="069" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_REARM]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Rearm</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="070" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_REFUEL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Refuel</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="071" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_RETRIEVE_JUMP_BEACON]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.RetrieveJumpBeacon</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="072" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_RING_OF_FIRE]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.RingOfFire</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="073" indent="">
+			<comment>* global script map: set: key=[COMMAND_SATURN_CH_SHOP], class=[TL], race=[Player], script='Cmd.SaturnComplexHub.Shop', prio=0</comment>
+		</line>
+		<line linenr="074" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_SCAN_ASTEROID]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.ScanAsteroids</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="075" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_SELL_SPARE_EQUIPMENT]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.SellSpareEquipment</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="076" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_SHIP_TEMPLATE_OUTFIT]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.ShipTemplateOutfit</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="077" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_STATION_AGENT]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Freighter]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.StationAgent</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="078" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_STATION_PRODUCT_SET]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Complex Hub]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.StationProductSet</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="079" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_STRIP_SHIP]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.StripShip</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="080" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_SUPPLY]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.SupplyWare</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="081" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_SURPLUS_CONTROL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.SurplusControl</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="082" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_TRADE_PRODUCT_SEARCH]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.TradeProductSearch</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="083" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_TUG]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.Tug</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="084" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_TRADERUN_BUY]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.TradeRun.Buy</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="085" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>set</text>
+			<text>:</text>
+			<text> </text>
+			<text>key</text>
+			<text>=</text>
+			<var>[COMMAND_TRADERUN_SELL]</var>
+			<text>,</text>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text>,</text>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text>,</text>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Cmd.TradeRun.Sell</call>
+			<text>,</text>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="086" indent="" />
+		<line linenr="087" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="088" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="089" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="090" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="091" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="092" indent="" />
+		<line linenr="093" indent="" />
+		<line linenr="094" indent="">
+			<comment>* Upgrades and check scripts</comment>
+		</line>
+		<line linenr="095" indent="" />
+		<line linenr="096" indent="">
+			<comment>* set script command upgrade: command=[COMMAND_AUCTION_CARGO_STATIONS]  upgrade=[TRUE]  script='CmdChk.AuctionCargoStations'</comment>
+		</line>
+		<line linenr="097" indent="">
+			<comment>* set script command reference conditions: command= [COMMAND_AUCTION_CARGO_STATIONS] textid= 153, 202, 0, 0, 0, 0, 0, 0</comment>
+		</line>
+		<line linenr="098" indent="" />
+		<line linenr="099" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_AUCTION_STATION]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="100" indent="" />
+		<line linenr="101" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_CARRIER_COMMAND]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Carrier Command Software}</var>
+		</line>
+		<line linenr="102" indent="" />
+		<line linenr="103" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_COLLECT_FLYINGWARES]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Special Command Software MK1}</var>
+		</line>
+		<line linenr="104" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_COLOURSHIPNAME]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="105" indent="" />
+		<line linenr="106" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="107" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_COURIER]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="108" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_COURIER]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="109" indent="" />
+		<line linenr="110" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_DEPLOY_SATS]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Explorer Command Software}</var>
+		</line>
+		<line linenr="111" indent="" />
+		<line linenr="112" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_DIRECT_DEPOSIT]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="113" indent="" />
+		<line linenr="114" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trading System Extension}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="115" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_DOCK_AGENT]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.DockAgent</call>
+		</line>
+		<line linenr="116" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_DOCK_AGENT]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>102</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="117" indent="" />
+		<line linenr="118" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_DROP_WARES]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.DropWares</call>
+		</line>
+		<line linenr="119" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_DROP_WARES]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>152</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="120" indent="" />
+		<line linenr="121" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_REMOTE_DROP_FACTORY]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.RemoteDropFactory</call>
+		</line>
+		<line linenr="122" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_REMOTE_DROP_FACTORY]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>3</var>
+			<text>,</text>
+			<text> </text>
+			<var>204</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="123" indent="" />
+		<line linenr="124" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_EXPLORE_UNIVERSE]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Explorer Command Software}</var>
+		</line>
+		<line linenr="125" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_FLAGTUG]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="126" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_FLY_SAFE_PATH_SECTOR]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Navigation Command Software MK1}</var>
+		</line>
+		<line linenr="127" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_FLY_SAFE_PATH_STATION]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Navigation Command Software MK1}</var>
+		</line>
+		<line linenr="128" indent="" />
+		<line linenr="129" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="130" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_FREIGHTER]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.Freighter</call>
+		</line>
+		<line linenr="131" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_FREIGHTER]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>100</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="132" indent="" />
+		<line linenr="133" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Jumpdrive}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="134" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_GET_FUEL]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.GetFuel</call>
+		</line>
+		<line linenr="135" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_GET_FUEL]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>50</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="136" indent="" />
+		<line linenr="137" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_INSTALL_MLCC]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="138" indent="" />
+		<line linenr="139" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Special Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Ore Collector}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="140" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_MINE]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="141" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_MINE]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="142" indent="" />
+		<line linenr="143" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_MINE_OWNED_SHIP]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.Mine.Owned</call>
+		</line>
+		<line linenr="144" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_MINE_OWNED_SHIP]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>4</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="145" indent="" />
+		<line linenr="146" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_MINE_OWNED_STATION]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.Mine.Owned</call>
+		</line>
+		<line linenr="147" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_MINE_OWNED_STATION]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>4</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="148" indent="" />
+		<line linenr="149" indent="">
+			<comment>* set script command upgrade: command=[COMMAND_MOVE_LOGISTICS]  upgrade=[TRUE]</comment>
+		</line>
+		<line linenr="150" indent="" />
+		<line linenr="151" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Jumpdrive}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Plutarch Tractor System}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="152" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_PLUTARCH_TRACTOR_SYSTEM]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+		</line>
+		<line linenr="153" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_PLUTARCH_TRACTOR_SYSTEM]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="154" indent="" />
+		<line linenr="155" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Supply Command Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Transporter Device}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="156" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_REARM]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="157" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_REARM]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="158" indent="" />
+		<line linenr="159" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Supply Command Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Transporter Device}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="160" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_REFUEL]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="161" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_REFUEL]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="162" indent="" />
+		<line linenr="163" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_RETRIEVE_JUMP_BEACON]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Special Command Software MK1}</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.RetrieveJumpBeacon</call>
+		</line>
+		<line linenr="164" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_RETRIEVE_JUMP_BEACON]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>200</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="165" indent="" />
+		<line linenr="166" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Lasertower}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Transporter Device}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="167" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_RING_OF_FIRE]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+		</line>
+		<line linenr="168" indent="" />
+		<line linenr="169" indent="">
+			<comment>* $Wares = create new array, arguments={Trade Command Software MK1}, {Trade Command Software MK2}, {Trading System Extension}, null, null</comment>
+		</line>
+		<line linenr="170" indent="">
+			<comment>* set script command upgrade: command= [COMMAND_SATURN_CH_SHOP] wares= $Wares script= 'CmdChk.SaturnCH.Shop'</comment>
+		</line>
+		<line linenr="171" indent="">
+			<comment>* set script command reference conditions: command= [COMMAND_SATURN_CH_SHOP] textid= 1, 0, 0, 0, 0, 0, 0, 0</comment>
+		</line>
+		<line linenr="172" indent="" />
+		<line linenr="173" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Explorer Command Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Mineral Scanner}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="174" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SCAN_ASTEROID]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+		</line>
+		<line linenr="175" indent="" />
+		<line linenr="176" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_SELL_SPARE_EQUIPMENT]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.SellSpareEquipment</call>
+		</line>
+		<line linenr="177" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SELL_SPARE_EQUIPMENT]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>151</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="178" indent="" />
+		<line linenr="179" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Supply Command Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Transporter Device}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="180" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SHIP_TEMPLATE_OUTFIT]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="181" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SHIP_TEMPLATE_OUTFIT]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="182" indent="" />
+		<line linenr="183" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Station Agent Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trading System Extension}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="184" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_STATION_AGENT]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.StationAgent</call>
+		</line>
+		<line linenr="185" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_STATION_AGENT]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>101</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="186" indent="" />
+		<line linenr="187" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_STATION_PRODUCT_SET]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+		</line>
+		<line linenr="188" indent="" />
+		<line linenr="189" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_STRIP_SHIP]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.StripShip</call>
+		</line>
+		<line linenr="190" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_STRIP_SHIP]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>152</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="191" indent="" />
+		<line linenr="192" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Supply Command Software}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Transporter Device}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="193" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SUPPLY]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="194" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SUPPLY]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="195" indent="" />
+		<line linenr="196" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_SURPLUS_CONTROL]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.SurplusControl</call>
+		</line>
+		<line linenr="197" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_SURPLUS_CONTROL]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>155</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="198" indent="" />
+		<line linenr="199" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trading System Extension}</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="200" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TRADE_PRODUCT_SEARCH]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+		</line>
+		<line linenr="201" indent="" />
+		<line linenr="202" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<var>[COMMAND_TUG]</var>
+			<text>  </text>
+			<text>upgrade</text>
+			<text>=</text>
+			<var>{Special Command Software MK1}</var>
+			<text>  </text>
+			<text>script</text>
+			<text>=</text>
+			<call>CmdChk.Tug</call>
+		</line>
+		<line linenr="203" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TUG]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>51</var>
+			<text>,</text>
+			<text> </text>
+			<var>100</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="204" indent="" />
+		<line linenr="205" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trading System Extension}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Best Buys Locator}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Run Extension}</var>
+		</line>
+		<line linenr="206" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TRADERUN_BUY]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="207" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TRADERUN_BUY]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="208" indent="" />
+		<line linenr="209" indent="">
+			<var>$Wares</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>create</text>
+			<text> </text>
+			<text>new</text>
+			<text> </text>
+			<text>array</text>
+			<text>,</text>
+			<text> </text>
+			<text>arguments</text>
+			<text>=</text>
+			<var>{Trade Command Software MK1}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Command Software MK2}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trading System Extension}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Best Selling Price Locator}</var>
+			<text>,</text>
+			<text> </text>
+			<var>{Trade Run Extension}</var>
+		</line>
+		<line linenr="210" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>upgrade</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TRADERUN_SELL]</var>
+			<text> </text>
+			<text>wares</text>
+			<text>=</text>
+			<text> </text>
+			<var>$Wares</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<text> </text>
+			<call>CmdChk.PlayerShipDisabled</call>
+		</line>
+		<line linenr="211" indent="">
+			<text>set</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<text>command</text>
+			<text> </text>
+			<text>reference</text>
+			<text> </text>
+			<text>conditions</text>
+			<text>:</text>
+			<text> </text>
+			<text>command</text>
+			<text>=</text>
+			<text> </text>
+			<var>[COMMAND_TRADERUN_SELL]</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<text> </text>
+			<var>1</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+			<text>,</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="212" indent="" />
+		<line linenr="213" indent="" />
+		<line linenr="214" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="215" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="216" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="217" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="218" indent="">
+			<comment>* ------------------------------------------------------------</comment>
+		</line>
+		<line linenr="219" indent="" />
+		<line linenr="220" indent="">
+			<comment>* Global signals</comment>
+		</line>
+		<line linenr="221" indent="" />
+		<line linenr="222" indent="" />
+		<line linenr="223" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_KILLED]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.Killed.PlayerNotify</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.Killed.PlayerNotify</call>
+		</line>
+		<line linenr="224" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_DOCKED]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.Docked</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.Docked</call>
+		</line>
+		<line linenr="225" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_CAPTURED]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.Captured</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.Captured</call>
+		</line>
+		<line linenr="226" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_CHANGESECTOR]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Jump Beacon]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.ChangeSector.JumpBeacon</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.ChangeSector.JumpBeacon</call>
+		</line>
+		<line linenr="227" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_CHANGESECTOR]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Moveable Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.ChangeSector.Ship.SafePos</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.ChangeSector.Ship.SafePos</call>
+		</line>
+		<line linenr="228" indent="" />
+		<line linenr="229" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_BUYWARE]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.BuyWare.Ship.Player</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.BuyWare.Ship.Player</call>
+		</line>
+		<line linenr="230" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_SELWARE]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.SellWare.Ship.Player</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.SellWare.Ship.Player</call>
+		</line>
+		<line linenr="231" indent="" />
+		<line linenr="232" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_SELWARE]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Station]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.SellWare.Station.Player</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.SellWare.Station.Player</call>
+		</line>
+		<line linenr="233" indent="" />
+		<line linenr="234" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_BUYWARE]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>[Player]</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Station]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.BuyWare.Station.Player</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.BuyWare.Station.Player</call>
+		</line>
+		<line linenr="235" indent="" />
+		<line linenr="236" indent="">
+			<text>global</text>
+			<text> </text>
+			<text>secondary</text>
+			<text> </text>
+			<text>signal</text>
+			<text> </text>
+			<text>map</text>
+			<text>:</text>
+			<text> </text>
+			<text>add</text>
+			<text> </text>
+			<text>signal</text>
+			<text>=</text>
+			<var>[SIGNAL_MISSILE_FIRED]</var>
+			<text> </text>
+			<text>race</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>class</text>
+			<text>=</text>
+			<var>[Ship]</var>
+			<text> </text>
+			<text>script</text>
+			<text>=</text>
+			<call>Sig.MissileFired</call>
+			<text> </text>
+			<text>prio</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<call>Sig.MissileFired</call>
+		</line>
+		<line linenr="237" indent="" />
+		<line linenr="238" indent="" />
+		<line linenr="239" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="240" indent="" />
+		<line linenr="241" indent="" />
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="setup.Commands" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Setup: All Commands" />
+			<sval type="int" val="133" />
+			<sval type="int" val="0" />
+			<sval type="array" size="1">
+				<sval type="string" val="Wares" />
+			</sval>
+			<sval type="array" size="138">
+				<sval type="array" size="3">
+					<sval type="int" val="151" />
+					<sval type="int" val="4" />
+					<sval type="int" val="8383" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="151" />
+					<sval type="int" val="4" />
+					<sval type="int" val="8384" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="151" />
+					<sval type="int" val="4" />
+					<sval type="int" val="8385" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="301" />
+					<sval type="string" val="PL.CarrierCommand" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="421" />
+					<sval type="string" val="PL.Courier" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="48" />
+					<sval type="string" val="PL.DeploySat" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1110" />
+					<sval type="string" val="PL.DirectDeposit" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="512" />
+					<sval type="string" val="PL.RemoteDropFactory" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="43" />
+					<sval type="string" val="PL.Rearm" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="44" />
+					<sval type="string" val="PL.Refuel" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="511" />
+					<sval type="string" val="PL.ShipTemplateOutfit" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="42" />
+					<sval type="string" val="PL.SupplyWare" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="422" />
+					<sval type="string" val="PL.SurplusControl" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="411" />
+					<sval type="string" val="PL.TradeProductSearch" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="412" />
+					<sval type="string" val="PL.TradeRun.Buy" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="413" />
+					<sval type="string" val="PL.TradeRun.Sell" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1466" />
+					<sval type="int" val="18" />
+					<sval type="int" val="515" />
+					<sval type="string" val="PL.Tug" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1114" />
+					<sval type="string" val="Cmd.AuctionStation" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2016" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="301" />
+					<sval type="string" val="Cmd.CarrierCommand" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="30" />
+					<sval type="string" val="Cmd.CollectWaresInSector" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1259" />
+					<sval type="string" val="Cmd.ColourShipName" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="421" />
+					<sval type="string" val="Cmd.Courier" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="48" />
+					<sval type="string" val="Cmd.DeploySat" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1110" />
+					<sval type="string" val="Cmd.DirectDeposit" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2016" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="418" />
+					<sval type="string" val="Cmd.DockAgent" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2133" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="813" />
+					<sval type="string" val="Cmd.DropWares" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="512" />
+					<sval type="string" val="Cmd.RemoteDropFactory" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2032" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="46" />
+					<sval type="string" val="Cmd.ExploreUniverse" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1213" />
+					<sval type="string" val="Cmd.Tug.Flag" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="212" />
+					<sval type="string" val="Cmd.FlySafe.Sector" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="213" />
+					<sval type="string" val="Cmd.FlySafe.Station" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="211" />
+					<sval type="string" val="Cmd.GetFuel" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="502" />
+					<sval type="string" val="Cmd.Mine" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="503" />
+					<sval type="string" val="Cmd.Mine.Owned" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1100" />
+					<sval type="string" val="Cmd.Mine.Owned" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2016" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="814" />
+					<sval type="string" val="Cmd.PlutarchTractorSystem" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2032" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="43" />
+					<sval type="string" val="Cmd.Rearm" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="44" />
+					<sval type="string" val="Cmd.Refuel" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="517" />
+					<sval type="string" val="Cmd.RetrieveJumpBeacon" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="516" />
+					<sval type="string" val="Cmd.RingOfFire" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="76" />
+					<sval type="string" val="Cmd.ScanAsteroids" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="415" />
+					<sval type="string" val="Cmd.SellSpareEquipment" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="511" />
+					<sval type="string" val="Cmd.ShipTemplateOutfit" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="414" />
+					<sval type="string" val="Cmd.StationAgent" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2038" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1111" />
+					<sval type="string" val="Cmd.StationProductSet" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2044" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="811" />
+					<sval type="string" val="Cmd.StripShip" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="42" />
+					<sval type="string" val="Cmd.SupplyWare" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="422" />
+					<sval type="string" val="Cmd.SurplusControl" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="411" />
+					<sval type="string" val="Cmd.TradeProductSearch" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="515" />
+					<sval type="string" val="Cmd.Tug" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="412" />
+					<sval type="string" val="Cmd.TradeRun.Buy" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="118" />
+					<sval type="int" val="18" />
+					<sval type="int" val="413" />
+					<sval type="string" val="Cmd.TradeRun.Sell" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1114" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="301" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048660" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="30" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048634" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1259" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="421" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="421" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="48" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048658" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1110" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048590" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="418" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.DockAgent" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="418" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="102" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="813" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.DropWares" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="813" />
+					<sval type="int" val="4" />
+					<sval type="int" val="152" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="512" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.RemoteDropFactory" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="512" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+					<sval type="int" val="4" />
+					<sval type="int" val="204" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="46" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048658" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1213" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="212" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048629" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="213" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048629" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="417" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.Freighter" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="417" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="100" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048611" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="211" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.GetFuel" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="211" />
+					<sval type="int" val="4" />
+					<sval type="int" val="50" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1116" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048634" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048623" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="502" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="502" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="503" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.Mine.Owned" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="503" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1100" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.Mine.Owned" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1100" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048611" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048637" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1825" />
+					<sval type="int" val="18" />
+					<sval type="int" val="814" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="814" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048657" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048610" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="43" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="43" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048657" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048610" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="44" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="44" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="517" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048634" />
+					<sval type="string" val="CmdChk.RetrieveJumpBeacon" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="517" />
+					<sval type="int" val="4" />
+					<sval type="int" val="200" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048585" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048610" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1825" />
+					<sval type="int" val="18" />
+					<sval type="int" val="516" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048658" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048588" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1825" />
+					<sval type="int" val="18" />
+					<sval type="int" val="76" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="415" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.SellSpareEquipment" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="415" />
+					<sval type="int" val="4" />
+					<sval type="int" val="151" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048657" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048610" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="511" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="511" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048640" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048590" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="414" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.StationAgent" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="414" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="101" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="144" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1111" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="811" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="string" val="CmdChk.StripShip" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="811" />
+					<sval type="int" val="4" />
+					<sval type="int" val="152" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048657" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048610" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="42" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="42" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="422" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="string" val="CmdChk.SurplusControl" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="422" />
+					<sval type="int" val="4" />
+					<sval type="int" val="155" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048590" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="1825" />
+					<sval type="int" val="18" />
+					<sval type="int" val="411" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="154" />
+					<sval type="int" val="18" />
+					<sval type="int" val="515" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048634" />
+					<sval type="string" val="CmdChk.Tug" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="515" />
+					<sval type="int" val="4" />
+					<sval type="int" val="51" />
+					<sval type="int" val="4" />
+					<sval type="int" val="100" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048590" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048608" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048639" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="412" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="412" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1415" />
+					<sval type="int" val="0" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048630" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048631" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048590" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048609" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1048639" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1826" />
+					<sval type="int" val="18" />
+					<sval type="int" val="413" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="string" val="CmdChk.PlayerShipDisabled" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="1823" />
+					<sval type="int" val="18" />
+					<sval type="int" val="413" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1001" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.Killed.PlayerNotify" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.Killed.PlayerNotify" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1012" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.Docked" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.Docked" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1004" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.Captured" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.Captured" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1018" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2062" />
+					<sval type="string" val="Sig.ChangeSector.JumpBeacon" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.ChangeSector.JumpBeacon" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1018" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2134" />
+					<sval type="string" val="Sig.ChangeSector.Ship.SafePos" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.ChangeSector.Ship.SafePos" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1013" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.BuyWare.Ship.Player" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.BuyWare.Ship.Player" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1014" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.SellWare.Ship.Player" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.SellWare.Ship.Player" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1014" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2016" />
+					<sval type="string" val="Sig.SellWare.Station.Player" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.SellWare.Station.Player" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1013" />
+					<sval type="int" val="10" />
+					<sval type="int" val="10" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2016" />
+					<sval type="string" val="Sig.BuyWare.Station.Player" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.BuyWare.Station.Player" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="1407" />
+					<sval type="int" val="18" />
+					<sval type="int" val="1021" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="12" />
+					<sval type="int" val="2004" />
+					<sval type="string" val="Sig.MissileFired" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Sig.MissileFired" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="103">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Litcube's" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Phanon Corporation" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="2" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Revelation" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Menu Preloads" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="3" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set ship command preload script: command=[COMMAND_DOCK_AGENT] script='PL.DockAgent'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set ship command preload script: command=[COMMAND_MOVE_LOGISTICS] script='PL.MoveLogistics'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="10" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set ship command preload script: command=[COMMAND_SATURN_CH_SHOP] script='PL.SaturnCH.Shop'" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Script keys" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="17" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="17" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=[COMMAND_AUCTION_CARGO_STATIONS], class=[Big Ship], race=[Player], script='Cmd.AuctionCargoStations', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="31" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=[COMMAND_FREIGHTER], class=[Little Ship], race=[Player], script='Cmd.Freighter', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="32" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=[COMMAND_INSTALL_MLCC], class=[Dock], race=[Player], script='Cmd.InstallMLCC', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="35" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=[COMMAND_MOVE_LOGISTICS], class=[Factory], race=[Player], script='Cmd.MoveLogistics', prio=0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="40" />
+					<sval type="int" val="1" />
+					<sval type="string" val="global script map: set: key=[COMMAND_SATURN_CH_SHOP], class=[TL], race=[Player], script='Cmd.SaturnComplexHub.Shop', prio=0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Upgrades and check scripts" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command upgrade: command=[COMMAND_AUCTION_CARGO_STATIONS]  upgrade=[TRUE]  script='CmdChk.AuctionCargoStations'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="52" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command reference conditions: command= [COMMAND_AUCTION_CARGO_STATIONS] textid= 153, 202, 0, 0, 0, 0, 0, 0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="52" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="53" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="54" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="56" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="59" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="60" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="61" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="64" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="66" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="68" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="72" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="75" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="78" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="79" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="82" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="84" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="86" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="86" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command upgrade: command=[COMMAND_MOVE_LOGISTICS]  upgrade=[TRUE]" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="86" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="89" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="92" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="95" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="97" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="99" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="99" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$Wares = create new array, arguments={Trade Command Software MK1}, {Trade Command Software MK2}, {Trading System Extension}, null, null" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="99" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command upgrade: command= [COMMAND_SATURN_CH_SHOP] wares= $Wares script= 'CmdChk.SaturnCH.Shop'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="99" />
+					<sval type="int" val="1" />
+					<sval type="string" val="set script command reference conditions: command= [COMMAND_SATURN_CH_SHOP] textid= 1, 0, 0, 0, 0, 0, 0, 0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="99" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="101" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="103" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="106" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="109" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="110" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="115" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="117" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="119" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="121" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="124" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="127" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="127" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="------------------------------------------------------------" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="127" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="127" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Global signals" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="127" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="127" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="132" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="134" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="135" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="136" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="137" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="137" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="138" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="138" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

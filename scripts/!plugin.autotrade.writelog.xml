@@ -1,0 +1,422 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>!plugin.autotrade.writelog</name>
+	<version>182</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Write logfile</description>
+	<arguments>
+		<argument index="1" name="text.id" type="Var/Number" desc="text.id" />
+		<argument index="2" name="arg1" type="Value" desc="arg1" />
+		<argument index="3" name="arg2" type="Value" desc="arg2" />
+		<argument index="4" name="arg3" type="Value" desc="arg3" />
+		<argument index="5" name="arg4" type="Value" desc="arg4" />
+		<argument index="6" name="arg5" type="Value" desc="arg5" />
+		<argument index="7" name="timestamp" type="Var/Boolean" desc="ts" />
+	</arguments>
+	<sourcetext>
+		<line linenr="001" indent="">
+			<var>$page.id</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.PageID'</text>
+		</line>
+		<line linenr="002" indent="">
+			<var>$xml</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>global</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'autotrade.XML'</text>
+		</line>
+		<line linenr="003" indent="" />
+		<line linenr="004" indent="" />
+		<line linenr="005" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$timestamp</var>
+		</line>
+		<line linenr="006" indent="&#160;">
+			<comment>* header timestamp</comment>
+		</line>
+		<line linenr="007" indent="&#160;">
+			<var>$timestamp</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>205</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$xml</var>
+		</line>
+		<line linenr="008" indent="&#160;" interruptable="@">
+			<var>$timestamp</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!lib.sprintf.format.gametime</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<var>$page.id</var>
+			<text> </text>
+			<text>argument2</text>
+			<text>=</text>
+			<var>$timestamp</var>
+		</line>
+		<line linenr="009" indent="">
+			<text>else</text>
+		</line>
+		<line linenr="010" indent="&#160;">
+			<var>$timestamp</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>substring</text>
+			<text> </text>
+			<text>of</text>
+			<text> </text>
+			<text>' '</text>
+			<text> </text>
+			<text>offset</text>
+			<text>=</text>
+			<var>0</var>
+			<text> </text>
+			<text>length</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="011" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="012" indent="" />
+		<line linenr="013" indent="">
+			<comment>* text</comment>
+		</line>
+		<line linenr="014" indent="">
+			<var>$text.id</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$text.id</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$xml</var>
+		</line>
+		<line linenr="015" indent="">
+			<var>$output</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>sprintf</text>
+			<text>:</text>
+			<text> </text>
+			<text>pageid</text>
+			<text>=</text>
+			<var>$page.id</var>
+			<text> </text>
+			<text>textid</text>
+			<text>=</text>
+			<var>$text.id</var>
+			<text>,</text>
+			<text> </text>
+			<var>$arg1</var>
+			<text>,</text>
+			<text> </text>
+			<var>$arg2</var>
+			<text>,</text>
+			<text> </text>
+			<var>$arg3</var>
+			<text>,</text>
+			<text> </text>
+			<var>$arg4</var>
+			<text>,</text>
+			<text> </text>
+			<var>$arg5</var>
+		</line>
+		<line linenr="016" indent="" />
+		<line linenr="017" indent="">
+			<text>write</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>log</text>
+			<text> </text>
+			<text>file</text>
+			<text> </text>
+			<var>$page.id</var>
+			<text> </text>
+			<text>append</text>
+			<text>=</text>
+			<var>[TRUE]</var>
+			<text> </text>
+			<text>printf</text>
+			<text>:</text>
+			<text> </text>
+			<text>fmt</text>
+			<text>=</text>
+			<text>'%s%s'</text>
+			<text>,</text>
+			<text> </text>
+			<var>$timestamp</var>
+			<text>,</text>
+			<text> </text>
+			<var>$output</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+			<text>,</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="018" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>$output</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="!plugin.autotrade.writelog" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Write logfile" />
+			<sval type="int" val="182" />
+			<sval type="int" val="0" />
+			<sval type="array" size="10">
+				<sval type="string" val="text.id" />
+				<sval type="string" val="arg1" />
+				<sval type="string" val="arg2" />
+				<sval type="string" val="arg3" />
+				<sval type="string" val="arg4" />
+				<sval type="string" val="arg5" />
+				<sval type="string" val="timestamp" />
+				<sval type="string" val="page.id" />
+				<sval type="string" val="xml" />
+				<sval type="string" val="output" />
+			</sval>
+			<sval type="array" size="11">
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.PageID" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="158" />
+					<sval type="int" val="5" />
+					<sval type="string" val="autotrade.XML" />
+					<sval type="int" val="8" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610611197" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="3" />
+					<sval type="int" val="4" />
+					<sval type="int" val="205" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="102" />
+					<sval type="string" val="!lib.sprintf.format.gametime" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="1077" />
+					<sval type="int" val="6" />
+					<sval type="int" val="5" />
+					<sval type="string" val=" " />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="0" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="16">
+					<sval type="int" val="150" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="17">
+					<sval type="int" val="405" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="10" />
+					<sval type="int" val="5" />
+					<sval type="string" val="%s%s" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+				</sval>
+			</sval>
+			<sval type="array" size="7">
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="string" val="text.id" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="string" val="arg1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="string" val="arg2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="string" val="arg3" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="string" val="arg4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="string" val="arg5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="string" val="ts" />
+				</sval>
+			</sval>
+			<sval type="array" size="8">
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="2" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="string" val="header timestamp" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="6" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="7" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="string" val="text" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

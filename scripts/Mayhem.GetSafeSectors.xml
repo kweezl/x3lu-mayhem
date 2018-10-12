@@ -1,0 +1,273 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>Mayhem.GetSafeSectors</name>
+	<version>1</version>
+	<engineversion>50</engineversion>
+	<description></description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="" />
+		<line linenr="002" indent="">
+			<var>$safeSectors</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
+		<line linenr="003" indent="" />
+		<line linenr="004" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Argon Prime]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="005" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Kingdom End]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="006" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Paranid Prime]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="007" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Family Pride]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="008" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Ianamus Zura]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="009" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[The Moon (11, 14)]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="010" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Oort Cloud (11, 17)]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="011" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Senator's Badlands]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="012" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Void of Opportunity]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="013" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Xenon Core 023]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="014" indent="">
+			<text>append</text>
+			<text> </text>
+			<var>[Elysium of Light]</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+		<line linenr="015" indent="" />
+		<line linenr="016" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>$safeSectors</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="Mayhem.GetSafeSectors" />
+			<sval type="int" val="50" />
+			<sval type="string" val="" />
+			<sval type="int" val="1" />
+			<sval type="int" val="2" />
+			<sval type="array" size="1">
+				<sval type="string" val="safeSectors" />
+			</sval>
+			<sval type="array" size="13">
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="65539" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="65542" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="458754" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="655368" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="917515" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1114123" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="786437" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="1376262" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="135" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="65544" />
+					<sval type="int" val="917509" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

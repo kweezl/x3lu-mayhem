@@ -1,0 +1,1390 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>!plugin.autotrade.getroute</name>
+	<version>1895</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Get a trade route</description>
+	<arguments>
+		<argument index="1" name="profit.min" type="Var/Number" desc="Min profit" />
+		<argument index="2" name="ware.last.trade" type="Var/Ware" desc="Ware of last trade run" />
+		<argument index="3" name="price.last.trade" type="Var/Number" desc="price of last trade run" />
+	</arguments>
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* Gnasirator, 05.03.2012</comment>
+		</line>
+		<line linenr="002" indent="" />
+		<line linenr="003" indent="">
+			<comment>* enable this to rename ships that are currently on a helper mission</comment>
+		</line>
+		<line linenr="004" indent="">
+			<comment>* $show.ecohelp.mode = [FALSE]</comment>
+		</line>
+		<line linenr="005" indent="">
+			<comment>* $show.ecohelp.mode = [TRUE]</comment>
+		</line>
+		<line linenr="006" indent="" />
+		<line linenr="007" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>wanted</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="008" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>destination</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="009" indent="">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>wanted</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>count</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+		<line linenr="010" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<text>wait</text>
+			<text> </text>
+			<text>randomly</text>
+			<text> </text>
+			<text>from</text>
+			<text> </text>
+			<var>10</var>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>50</var>
+			<text> </text>
+			<text>ms</text>
+		</line>
+		<line linenr="011" indent="">
+			<var>$is.unitrader</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>0</var>
+		</line>
+		<line linenr="012" indent="">
+			<var>$homesector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>homesector</text>
+		</line>
+		<line linenr="013" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$homesector</var>
+		</line>
+		<line linenr="014" indent="&#160;">
+			<var>$is.unitrader</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>5</var>
+		</line>
+		<line linenr="015" indent="&#160;">
+			<var>$homesector</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[SECTOR]</var>
+		</line>
+		<line linenr="016" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="017" indent="">
+			<var>$sellrange</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'sellrange'</text>
+		</line>
+		<line linenr="018" indent="">
+			<var>$experience</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>local</text>
+			<text> </text>
+			<text>variable</text>
+			<text>:</text>
+			<text> </text>
+			<text>name</text>
+			<text>=</text>
+			<text>'experience'</text>
+		</line>
+		<line linenr="019" indent="" />
+		<line linenr="020" indent="" />
+		<line linenr="021" indent="">
+			<comment>* ***************</comment>
+		</line>
+		<line linenr="022" indent="">
+			<comment>* ECOHELP section 1</comment>
+		</line>
+		<line linenr="023" indent="">
+			<comment>* ***************</comment>
+		</line>
+		<line linenr="024" indent="">
+			<comment>* debug tracing</comment>
+		</line>
+		<line linenr="025" indent="">
+			<comment>* rename to old name</comment>
+		</line>
+		<line linenr="026" indent="">
+			<comment>* $name = [THIS]-&gt; get name</comment>
+		</line>
+		<line linenr="027" indent="">
+			<comment>* $name.help = ' (Ecohelp)'</comment>
+		</line>
+		<line linenr="028" indent="">
+			<comment>* $tmp = find position of pattern $name.help in $name</comment>
+		</line>
+		<line linenr="029" indent="">
+			<comment>* if $tmp &gt;= 0</comment>
+		</line>
+		<line linenr="030" indent="">
+			<comment>* $name = get substring of $name offset=0 length=$tmp</comment>
+		</line>
+		<line linenr="031" indent="">
+			<comment>* [THIS]-&gt; set name to $name</comment>
+		</line>
+		<line linenr="032" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="033" indent="" />
+		<line linenr="034" indent="">
+			<comment>* $name = [THIS]-&gt; get name</comment>
+		</line>
+		<line linenr="035" indent="">
+			<comment>* $name.help = '---- BREAKPOINT ----'</comment>
+		</line>
+		<line linenr="036" indent="">
+			<comment>* $tmp = find position of pattern $name.help in $name</comment>
+		</line>
+		<line linenr="037" indent="">
+			<comment>* if $tmp &gt;= 0</comment>
+		</line>
+		<line linenr="038" indent="">
+			<comment>* $name = get substring of $name offset=0 length=$tmp</comment>
+		</line>
+		<line linenr="039" indent="">
+			<comment>* [THIS]-&gt; set name to $name</comment>
+		</line>
+		<line linenr="040" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="041" indent="" />
+		<line linenr="042" indent="">
+			<comment>* $name = [THIS]-&gt; get name</comment>
+		</line>
+		<line linenr="043" indent="">
+			<comment>* $name.help = ' Mode: '</comment>
+		</line>
+		<line linenr="044" indent="">
+			<comment>* $tmp = find position of pattern $name.help in $name</comment>
+		</line>
+		<line linenr="045" indent="">
+			<comment>* if $tmp &gt;= 0</comment>
+		</line>
+		<line linenr="046" indent="">
+			<comment>* $name = get substring of $name offset=0 length=$tmp</comment>
+		</line>
+		<line linenr="047" indent="">
+			<comment>* [THIS]-&gt; set name to $name</comment>
+		</line>
+		<line linenr="048" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="049" indent="">
+			<comment>* *****************</comment>
+		</line>
+		<line linenr="050" indent="">
+			<comment>* End ecohelp section 1</comment>
+		</line>
+		<line linenr="051" indent="">
+			<comment>* *****************</comment>
+		</line>
+		<line linenr="052" indent="" />
+		<line linenr="053" indent="">
+			<var>$route</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[FALSE]</var>
+		</line>
+		<line linenr="054" indent="" />
+		<line linenr="055" indent="">
+			<comment>* buy at docked station</comment>
+		</line>
+		<line linenr="056" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>[DOCKEDAT]</var>
+		</line>
+		<line linenr="057" indent="&#160;" interruptable="@">
+			<var>$route</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.getroute.docked</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>profit.min</text>
+			<text>=</text>
+			<var>$profit.min</var>
+		</line>
+		<line linenr="058" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="059" indent="" />
+		<line linenr="060" indent="" />
+		<line linenr="061" indent="" />
+		<line linenr="062" indent="">
+			<comment>* sell rest wares</comment>
+		</line>
+		<line linenr="063" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$route</var>
+		</line>
+		<line linenr="064" indent="&#160;" interruptable="@">
+			<var>$route</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.getroute.rest</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>profit.min</text>
+			<text>=</text>
+			<var>$profit.min</var>
+			<text> </text>
+			<text>price.bought</text>
+			<text>=</text>
+			<var>$price.last.trade</var>
+			<text> </text>
+			<text>ware.bought</text>
+			<text>=</text>
+			<var>$ware.last.trade</var>
+		</line>
+		<line linenr="065" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="066" indent="" />
+		<line linenr="067" indent="">
+			<comment>* *********************</comment>
+		</line>
+		<line linenr="068" indent="">
+			<comment>* Ecohelp section 2</comment>
+		</line>
+		<line linenr="069" indent="">
+			<comment>* ********************</comment>
+		</line>
+		<line linenr="070" indent="" />
+		<line linenr="071" indent="">
+			<comment>* help the economy</comment>
+		</line>
+		<line linenr="072" indent="">
+			<comment>* if not $route</comment>
+		</line>
+		<line linenr="073" indent="">
+			<comment>* if $experience &gt;= 20 + $is.unitrader</comment>
+		</line>
+		<line linenr="074" indent="">
+			<comment>* capped traders get new objective: help the economy</comment>
+		</line>
+		<line linenr="075" indent="">
+			<comment>* they check their current sector for stations that need only one resource</comment>
+		</line>
+		<line linenr="076" indent="">
+			<comment>* to start their production cycle. if profit is right, the trader will go fetch it</comment>
+		</line>
+		<line linenr="077" indent="">
+			<comment>* $route = [THIS]-&gt; call script 'plugin.autotrade.getroute.ecohlp' :</comment>
+		</line>
+		<line linenr="078" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="079" indent="" />
+		<line linenr="080" indent="">
+			<comment>* debug trace, change name while in help mode</comment>
+		</line>
+		<line linenr="081" indent="">
+			<comment>* if $show.ecohelp.mode</comment>
+		</line>
+		<line linenr="082" indent="">
+			<comment>* if $route</comment>
+		</line>
+		<line linenr="083" indent="">
+			<comment>* $name = [THIS]-&gt; get name</comment>
+		</line>
+		<line linenr="084" indent="">
+			<comment>* if not match regular expression: $name.help to string $name</comment>
+		</line>
+		<line linenr="085" indent="">
+			<comment>* $name.help = ' (Ecohelp)'</comment>
+		</line>
+		<line linenr="086" indent="">
+			<comment>* $name.mode = $route[6]</comment>
+		</line>
+		<line linenr="087" indent="">
+			<comment>* $name.help = $name + $name.help + $name.mode</comment>
+		</line>
+		<line linenr="088" indent="">
+			<comment>* [THIS]-&gt; set name to $name.help</comment>
+		</line>
+		<line linenr="089" indent="" />
+		<line linenr="090" indent="">
+			<comment>* net loss means stalled fab</comment>
+		</line>
+		<line linenr="091" indent="" />
+		<line linenr="092" indent="">
+			<comment>* So 3 possible ways to enter eco boos mode:</comment>
+		</line>
+		<line linenr="093" indent="">
+			<comment>* 1.: A fab needs more than 29% of its resources to start producing and lacks some</comment>
+		</line>
+		<line linenr="094" indent="">
+			<comment>* if it needs less, chances are good that sooner or later another mk3 trader will</comment>
+		</line>
+		<line linenr="095" indent="">
+			<comment>* find a profitable trade for it and enter eco boost mode 2</comment>
+		</line>
+		<line linenr="096" indent="">
+			<comment>* this is the most important mode. traders will do a net loss here</comment>
+		</line>
+		<line linenr="097" indent="" />
+		<line linenr="098" indent="">
+			<comment>* 2.: Profits are very small but the fab only needs one resource to get back on</comment>
+		</line>
+		<line linenr="099" indent="">
+			<comment>* so from time to time do a good deed and deliver to these, as well</comment>
+		</line>
+		<line linenr="100" indent="" />
+		<line linenr="101" indent="">
+			<comment>* 3.: if there is more than enough profit in the trade, go for it anyway</comment>
+		</line>
+		<line linenr="102" indent="" />
+		<line linenr="103" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="104" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="105" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="106" indent="">
+			<comment>* end</comment>
+		</line>
+		<line linenr="107" indent="">
+			<comment>* **************</comment>
+		</line>
+		<line linenr="108" indent="">
+			<comment>* end ecohelp section 2</comment>
+		</line>
+		<line linenr="109" indent="">
+			<comment>* ******************</comment>
+		</line>
+		<line linenr="110" indent="" />
+		<line linenr="111" indent="">
+			<comment>* normal search</comment>
+		</line>
+		<line linenr="112" indent="">
+			<text>if</text>
+			<text> </text>
+			<text>not</text>
+			<text> </text>
+			<var>$route</var>
+		</line>
+		<line linenr="113" indent="&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$sellrange</var>
+			<text> </text>
+			<text>&lt;=</text>
+			<text> </text>
+			<var>2</var>
+		</line>
+		<line linenr="114" indent="&#160;&#160;">
+			<comment>* $route = [THIS]-&gt; call script '!plugin.autotrade.getroute.short.old' : profit.min=$profit.min</comment>
+		</line>
+		<line linenr="115" indent="&#160;&#160;" interruptable="@">
+			<var>$route</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.getroute.short</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>profit.min</text>
+			<text>=</text>
+			<var>$profit.min</var>
+		</line>
+		<line linenr="116" indent="&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="117" indent="&#160;&#160;" interruptable="@">
+			<var>$route</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.getroute.long</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>profit.min</text>
+			<text>=</text>
+			<var>$profit.min</var>
+		</line>
+		<line linenr="118" indent="&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="119" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="120" indent="" />
+		<line linenr="121" indent="" />
+		<line linenr="122" indent="" />
+		<line linenr="123" indent="" />
+		<line linenr="124" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$route</var>
+		</line>
+		<line linenr="125" indent="&#160;">
+			<var>$ware</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$route</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+		</line>
+		<line linenr="126" indent="&#160;">
+			<var>$amount</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$route</var>
+			<text>[</text>
+			<var>1</var>
+			<text>]</text>
+		</line>
+		<line linenr="127" indent="&#160;">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>wanted</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>$ware</var>
+		</line>
+		<line linenr="128" indent="&#160;">
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>set</text>
+			<text> </text>
+			<text>wanted</text>
+			<text> </text>
+			<text>ware</text>
+			<text> </text>
+			<text>count</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<var>$amount</var>
+		</line>
+		<line linenr="129" indent="&#160;">
+			<text>return</text>
+			<text> </text>
+			<var>$route</var>
+		</line>
+		<line linenr="130" indent="">
+			<text>else</text>
+		</line>
+		<line linenr="131" indent="&#160;">
+			<text>return</text>
+			<text> </text>
+			<var>[FALSE]</var>
+		</line>
+		<line linenr="132" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="133" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="!plugin.autotrade.getroute" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Get a trade route" />
+			<sval type="int" val="1895" />
+			<sval type="int" val="0" />
+			<sval type="array" size="10">
+				<sval type="string" val="profit.min" />
+				<sval type="string" val="ware.last.trade" />
+				<sval type="string" val="price.last.trade" />
+				<sval type="string" val="is.unitrader" />
+				<sval type="string" val="homesector" />
+				<sval type="string" val="sellrange" />
+				<sval type="string" val="experience" />
+				<sval type="string" val="route" />
+				<sval type="string" val="ware" />
+				<sval type="string" val="amount" />
+			</sval>
+			<sval type="array" size="30">
+				<sval type="array" size="5">
+					<sval type="int" val="650" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="519" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="649" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="107" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="4" />
+					<sval type="int" val="10" />
+					<sval type="int" val="4" />
+					<sval type="int" val="50" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="1162" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536868604" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="3" />
+					<sval type="int" val="1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="5" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="156" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="sellrange" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="156" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="experience" />
+					<sval type="int" val="6" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610609149" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.getroute.docked" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536866812" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="12">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.getroute.rest" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-536865532" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="13">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610607613" />
+					<sval type="int" val="3" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+					<sval type="int" val="15" />
+					<sval type="int" val="5" />
+					<sval type="int" val="3" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-2" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.getroute.short" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="21" />
+				</sval>
+				<sval type="array" size="8">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.getroute.long" />
+					<sval type="int" val="7" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610605565" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="8" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="129" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="650" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="8" />
+				</sval>
+				<sval type="array" size="5">
+					<sval type="int" val="649" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="7" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="29" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="string" val="Min profit" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="13" />
+					<sval type="string" val="Ware of last trade run" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="string" val="price of last trade run" />
+				</sval>
+			</sval>
+			<sval type="array" size="105">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Gnasirator, 05.03.2012" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="enable this to rename ships that are currently on a helper mission" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$show.ecohelp.mode = [FALSE]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$show.ecohelp.mode = [TRUE]" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="***************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="ECOHELP section 1" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="***************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="debug tracing" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="rename to old name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = [THIS]-&gt; get name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.help = ' (Ecohelp)'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$tmp = find position of pattern $name.help in $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $tmp &gt;= 0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = get substring of $name offset=0 length=$tmp" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="[THIS]-&gt; set name to $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = [THIS]-&gt; get name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.help = '---- BREAKPOINT ----'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$tmp = find position of pattern $name.help in $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $tmp &gt;= 0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = get substring of $name offset=0 length=$tmp" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="[THIS]-&gt; set name to $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = [THIS]-&gt; get name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.help = ' Mode: '" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$tmp = find position of pattern $name.help in $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $tmp &gt;= 0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = get substring of $name offset=0 length=$tmp" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="[THIS]-&gt; set name to $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="*****************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="End ecohelp section 1" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="11" />
+					<sval type="int" val="1" />
+					<sval type="string" val="*****************" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="12" />
+					<sval type="int" val="1" />
+					<sval type="string" val="buy at docked station" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="14" />
+					<sval type="int" val="1" />
+					<sval type="string" val="sell rest wares" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="*********************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="Ecohelp section 2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="********************" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="help the economy" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not $route" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $experience &gt;= 20 + $is.unitrader" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="capped traders get new objective: help the economy" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="they check their current sector for stations that need only one resource" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="to start their production cycle. if profit is right, the trader will go fetch it" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$route = [THIS]-&gt; call script 'plugin.autotrade.getroute.ecohlp' :" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="debug trace, change name while in help mode" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $show.ecohelp.mode" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if $route" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name = [THIS]-&gt; get name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if not match regular expression: $name.help to string $name" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.help = ' (Ecohelp)'" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.mode = $route[6]" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$name.help = $name + $name.help + $name.mode" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="[THIS]-&gt; set name to $name.help" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="net loss means stalled fab" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="So 3 possible ways to enter eco boos mode:" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="1.: A fab needs more than 29% of its resources to start producing and lacks some" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="if it needs less, chances are good that sooner or later another mk3 trader will" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="find a profitable trade for it and enter eco boost mode 2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="this is the most important mode. traders will do a net loss here" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="2.: Profits are very small but the fab only needs one resource to get back on" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="so from time to time do a good deed and deliver to these, as well" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="3.: if there is more than enough profit in the trade, go for it anyway" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="**************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="end ecohelp section 2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="******************" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="16" />
+					<sval type="int" val="1" />
+					<sval type="string" val="normal search" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="18" />
+					<sval type="int" val="1" />
+					<sval type="string" val="$route = [THIS]-&gt; call script '!plugin.autotrade.getroute.short.old' : profit.min=$profit.min" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="20" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="21" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="28" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="29" />
+					<sval type="int" val="4" />
+				</sval>
+			</sval>
+			<sval type="string" val="COMMAND_MK3_6505_SCAN" />
+		</sval>
+	</codearray>
+</script>

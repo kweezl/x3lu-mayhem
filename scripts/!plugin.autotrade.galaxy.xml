@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>!plugin.autotrade.galaxy</name>
+	<version>182</version>
+	<engineversion>50</engineversion>
+	<description>Autotrade - Galaxy trading main script</description>
+	<arguments />
+	<sourcetext>
+		<line linenr="001" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>Lib.Gen.ColourShipName</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<text>'*ut'</text>
+			<text> </text>
+			<text>argument2</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>argument3</text>
+			<text>=</text>
+			<var>[FALSE]</var>
+			<text> </text>
+			<text>argument4</text>
+			<text>=</text>
+			<var>[FALSE]</var>
+			<text> </text>
+			<text>argument5</text>
+			<text>=</text>
+			<var>[THIS]</var>
+		</line>
+		<line linenr="002" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>[THIS]</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>!plugin.autotrade.main</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>start.sector</text>
+			<text>=</text>
+			<var>null</var>
+			<text> </text>
+			<text>traderange</text>
+			<text>=</text>
+			<var>null</var>
+		</line>
+		<line linenr="003" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>null</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="!plugin.autotrade.galaxy" />
+			<sval type="int" val="50" />
+			<sval type="string" val="Autotrade - Galaxy trading main script" />
+			<sval type="int" val="182" />
+			<sval type="int" val="0" />
+			<sval type="int" val="0" />
+			<sval type="array" size="3">
+				<sval type="array" size="16">
+					<sval type="int" val="102" />
+					<sval type="string" val="Lib.Gen.ColourShipName" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="int" val="5" />
+					<sval type="string" val="*ut" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="10">
+					<sval type="int" val="102" />
+					<sval type="string" val="!plugin.autotrade.main" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="1" />
+					<sval type="int" val="2" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+			<sval type="array" size="0" />
+			<sval type="string" val="COMMAND_AUTOTRADER_UNIVERSE" />
+		</sval>
+	</codearray>
+</script>
