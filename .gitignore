@@ -1,0 +1,7 @@
+# ignore all
+*
+
+# do not ignore certain files
+!*/
+!*.xml
+!.gitignore
